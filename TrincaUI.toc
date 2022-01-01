@@ -1,0 +1,37 @@
+## Interface: 90105
+## Title: Trinca |cff1a9fc0UI|r
+## Notes: Minimalistic and transparent oUF layout. Based on ZorkUI and oUF_Farva code, and inspired by AfenarUI.
+## Author: Trincasidra
+## Credits Zork, Scrable, Afenar
+## OptionalDeps: LibSharedMedia-3.0
+## X-oUF: TrincaUI
+## X-SlashCmdList: /trinca
+
+libs\oUF\oUF.xml
+libs\rLib\rLib.xml
+libs\rBuffFrame\rBuffFrame.xml
+
+init.lua
+config.lua
+
+modules\oUF_DebuffHighlight.lua
+modules\rAbsorbBar.lua
+modules\rBuffFrame.lua
+modules\minimap.lua
+modules\disableRaidManager.lua
+
+core\functions.lua
+core\tags.lua
+core\style.lua
+
+unitframes\player.lua
+unitframes\pet.lua
+unitframes\target.lua
+unitframes\targettarget.lua
+unitframes\focus.lua
+unitframes\nameplate.lua
+unitframes\boss.lua
+unitframes\party.lua
+unitframes\raid.lua
+
+core\spawn.lua
