@@ -3,20 +3,23 @@
 ## Notes: Minimalistic and transparent oUF layout. Based on ZorkUI and oUF_Farva code, and inspired by AfenarUI.
 ## Author: Trincasidra
 ## Credits Zork, Scrable, Afenar
-## OptionalDeps: LibSharedMedia-3.0
+## OptionalDeps: LibSharedMedia-3.0, Dominos
 ## X-oUF: TrincaUI
 ## X-SlashCmdList: /trinca
+
+config.lua
 
 libs\oUF\oUF.xml
 libs\rLib\rLib.xml
 libs\rBuffFrame\rBuffFrame.xml
+libs\rButtonTemplate\rButtonTemplate.xml
 
 init.lua
-config.lua
 
 modules\oUF_DebuffHighlight.lua
 modules\rAbsorbBar.lua
 modules\rBuffFrame.lua
+modules\rButtonTemplate.lua
 modules\minimap.lua
 modules\disableRaidManager.lua
 
