@@ -9,6 +9,8 @@ L.C = {
     tapped = {.5, .5, .5, .7},
     dead = {.5, 0, 0, .5},
     mouseover = {1, 1, 1, .1},
+    border = {0, 0, 0},
+    equippedBorder = {0, .7, 0},
     health = {
       default = {.2, .2, .2, .7},
       shield = {1, 1, 0, .45},
@@ -60,11 +62,34 @@ L.C = {
       tanking = {.88, .165, .165}
     }
   },
-  rBuffFrame = true, --use false if using other buff frame addons like Raven
-  minimapPoint = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", -50, 50},
+  buffFrameConfig = {
+    enabled         = true, --disable if using other buff frame addons like Raven
+    framePoint      = {"TOPLEFT", UIParent, "TOPLEFT", 10, -10},
+    frameScale      = 1,
+    framePadding    = 5,
+    buttonWidth     = 32,
+    buttonHeight    = 32,
+    buttonMargin    = 5,
+    numCols         = 10,
+    startPoint      = "TOPLEFT",
+    --rowMargin       = 20,
+  },
+  debuffFrameConfig = {
+    enabled         = true, --disable if using other buff frame addons like Raven
+    framePoint      = {"TOPLEFT", UIParent, "TOPLEFT", 10, -100},
+    frameScale      = 1,
+    framePadding    = 5,
+    buttonWidth     = 40,
+    buttonHeight    = 40,
+    buttonMargin    = 5,
+    numCols         = 8,
+    startPoint      = "TOPLEFT",
+  },
+  minimapPoint = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -10, 10},
   objectiveTrackerPoint = {"TOPRIGHT", UIParent, "TOPRIGHT", -10, -10},
-  vehicleSeatIndicatorPoint = {"RIGHT", MinimapCluster, "LEFT", -50, 0},
-  durabilityFramePoint = {"BOTTOM", MinimapCluster, "TOP", 0, 20}
+  vehicleSeatIndicatorPoint = {"RIGHT", MinimapCluster, "LEFT", -120, 0},
+  durabilityFramePoint = {"RIGHT", MinimapCluster, "LEFT", -50, 00},
+  tooltipPoint = {"BOTTOMRIGHT", MinimapCluster, "TOPRIGHT", 0, 20}
 }
 
 L.C.player = {

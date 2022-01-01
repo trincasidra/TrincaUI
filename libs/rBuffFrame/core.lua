@@ -166,6 +166,3 @@ function rBuffFrame:CreateDebuffFrame(addonName,cfg)
   end
   return frame
 end
-
---create slash commands
-rLib:CreateSlashCmd(L.addonName, L.addonShortcut, L.dragFrames, L.addonColor)
