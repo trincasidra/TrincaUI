@@ -91,11 +91,13 @@ oUF.Tags.Methods["TrincaUI:color"] = function(unit)
     c = RAID_CLASS_COLORS[class]
   else
     local reaction = UnitReaction(unit, "player");
-    if (reaction < 4) then
+    if not reaction then
+      --do nothing
+    elseif reaction < 4 then
       c = CreateColor(unpack(L.C.colors.reaction.harm))
-    elseif (reaction == 4) then
+    elseif reaction == 4 then
       c = CreateColor(unpack(L.C.colors.reaction.neutral))
-    elseif (reaction > 4) then
+    elseif reaction > 4 then
       c = CreateColor(unpack(L.C.colors.reaction.help))
     end
   end
