@@ -1,5 +1,5 @@
 ## Interface: 90105
-## Version: 1.0
+## Version: 1.1
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout. Based on ZorkUI and oUF_Farva code, and inspired by AfenarUI.
 ## Author: Trincasidra
