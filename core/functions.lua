@@ -65,13 +65,17 @@ local function PostUpdateHealth(Health, unit, min, max)
   self.Health.bg:SetPoint('LEFT', Health:GetStatusBarTexture(), 'RIGHT')
   self.Health.bg:SetHeight(hpHeight)
 
+  --Since PostUpdateHealth only triggers on health changes, border color won't happen when entering/leaving combat as desired.
+  --[[
   if unit == 'player' then
+    print('PostUpdateHealth player', UnitAffectingCombat('player'))
     if UnitAffectingCombat('player') then
       self.Glow:SetBackdropBorderColor(1, 0, 0)
     else
       self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
     end
   end
+  ]]
 
   if string.match(unit, 'nameplate') then
     local color = {}
@@ -434,7 +438,7 @@ end
 L.F.CreateHealthText = CreateHealthText
 
 local function CreatePowerText(self)
-  if not self.cfg.powerbar or not self.cfg.powerbar.power or not self.cfg.powerbar.power.enabled then return end
+  if not self.cfg.powerbar or not self.cfg.powerbar.enabled or not self.cfg.powerbar.power or not self.cfg.powerbar.power.enabled then return end
   local cfg = self.cfg.powerbar.power
   local text = CreateText(self.Power,L.C.font,cfg.size,cfg.outline,cfg.align,cfg.noshadow)
   if cfg.points then
