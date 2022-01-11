@@ -6,6 +6,9 @@ local copyTable = rLib.CopyTable
 local actionButtonConfig = {}
 L.C.actionButtonConfig = actionButtonConfig
 
+--Make the config available to rFilter_Zork
+rButtonTemplate_Zork_ActionButtonConfig = actionButtonConfig
+
 actionButtonConfig.icon = {
   texCoord = {.3, .7, .3, .7},
   points = {
