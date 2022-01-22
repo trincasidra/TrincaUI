@@ -17,3 +17,5 @@ I'm personally using the following to complete the interface (you'll need at lea
 ## Other notes
 Special thanks to Zork, scrable and Afenar for the inspiration and code that I based this on.
 Also definitely feel free to give feedback, propose changes, or fork to your own project.
+
+![trincaui](https://user-images.githubusercontent.com/15145418/150642334-dd7c9566-c1f0-4f1c-b81a-c307507075e3.png)
