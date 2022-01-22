@@ -101,6 +101,9 @@ oUF.Tags.Methods["TrincaUI:color"] = function(unit)
       c = CreateColor(unpack(L.C.colors.reaction.help))
     end
   end
-  return '|c'..c:GenerateHexColor()
+  if c then
+    return '|c'..c:GenerateHexColor()
+  end
+  return ''
 end
 oUF.Tags.Events["TrincaUI:color"] = "UNIT_NAME_UPDATE"

@@ -62,34 +62,12 @@ L.C = {
       tanking = {.88, .165, .165}
     }
   },
-  buffFrameConfig = {
-    enabled         = true, --disable if using other buff frame addons like Raven
-    framePoint      = {"TOPLEFT", UIParent, "TOPLEFT", 10, -10},
-    frameScale      = 1,
-    framePadding    = 5,
-    buttonWidth     = 32,
-    buttonHeight    = 32,
-    buttonMargin    = 5,
-    numCols         = 10,
-    startPoint      = "TOPLEFT",
-    --rowMargin       = 20,
-  },
-  debuffFrameConfig = {
-    enabled         = true, --disable if using other buff frame addons like Raven
-    framePoint      = {"TOPLEFT", UIParent, "TOPLEFT", 10, -100},
-    frameScale      = 1,
-    framePadding    = 5,
-    buttonWidth     = 40,
-    buttonHeight    = 40,
-    buttonMargin    = 5,
-    numCols         = 8,
-    startPoint      = "TOPLEFT",
-  },
   minimapPoint = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -10, 10},
   objectiveTrackerPoint = {"TOPRIGHT", UIParent, "TOPRIGHT", -10, -10},
   vehicleSeatIndicatorPoint = {"RIGHT", MinimapCluster, "LEFT", -120, 0},
   durabilityFramePoint = {"RIGHT", MinimapCluster, "LEFT", -50, 00},
-  tooltipPoint = {"BOTTOMRIGHT", MinimapCluster, "TOPRIGHT", 0, 20}
+  tooltipPoint = {"BOTTOMRIGHT", MinimapCluster, "TOPRIGHT", 0, 20},
+  enableBuffFrame = true --disable if using other buff frame addons like Raven
 }
 
 L.C.player = {
@@ -335,7 +313,7 @@ L.C.nameplate = {
   enabled = true,
   size = {105, 30},
   point = {"CENTER"}, --relative to the nameplate base!
-  scale = 1*UIParent:GetScale()*L.C.globalscale,--nameplates are not part of uiparent, they must be multiplied by uiparent scale!
+  scale = .9*UIParent:GetScale()*L.C.globalscale,--nameplates are not part of uiparent, they must be multiplied by uiparent scale!
   healthbar = {
     name = {
       enabled = true,
@@ -384,7 +362,7 @@ L.C.nameplate = {
     growthX = "RIGHT",
     growthY = "UP",
     disableCooldown = false,
-    filter = "HARMFUL|INCLUDE_NAME_PLATE_ONLY",
+    filter = "HARMFUL|PLAYER|INCLUDE_NAME_PLATE_ONLY",
     CustomFilter = CustomFilter
   }
 }
@@ -497,8 +475,8 @@ L.C.party = {
     health = {
       enabled = true,
       points = {
-        {"TOPLEFT", 2, 12},
-        {"TOPRIGHT", -2, 12}
+        {"TOPLEFT", 2, -2},
+        {"TOPRIGHT", -2, -2}
       },
       size = 12,
       tag = "[TrincaUI:leader][TrincaUI:role]"
@@ -540,12 +518,12 @@ L.C.party = {
     growthX = "LEFT",
     growthY = "DOWN",
     disableCooldown = false,
-    filter = "HELPFUL|PLAYER",
+    filter = "HELPFUL|PLAYER"
   },
   setup = {
     template = nil,
     visibility = "custom [group:party,nogroup:raid] show; hide",
-    showPlayer = false,
+    showPlayer = true,
     showSolo = false,
     showParty = true,
     showRaid = false,
