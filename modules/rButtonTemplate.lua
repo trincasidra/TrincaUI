@@ -10,7 +10,7 @@ L.C.actionButtonConfig = actionButtonConfig
 rButtonTemplate_Zork_ActionButtonConfig = actionButtonConfig
 
 actionButtonConfig.icon = {
-  texCoord = {.3, .7, .3, .7},
+  texCoord = {.1, .9, .1, .9},
   points = {
     {"TOPLEFT", 0, 0 },
     {"BOTTOMRIGHT", 0, 0},
