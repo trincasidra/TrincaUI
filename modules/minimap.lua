@@ -137,8 +137,10 @@ Minimap:SetScript("OnLeave", SetTimer)
 rLib:RegisterCallback("PLAYER_ENTERING_WORLD", Hide)
 Hide(Minimap)
 
-ObjectiveTrackerFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
-ObjectiveTrackerFrame.SetPoint = dummy
+local function MoveQuests()
+  ObjectiveTrackerFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
+end
+ObjectiveTrackerFrame:SetScript("OnUpdate", MoveQuests)
 
 local function NewTooltipAnchor()
 	GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");

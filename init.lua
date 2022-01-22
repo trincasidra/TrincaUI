@@ -11,4 +11,5 @@ if SharedMedia then
   SharedMedia:Register("font", "Expressway", "Interface\\AddOns\\"..L.addonName.."\\media\\Expressway.ttf")
 end
 
-rLib:CreateSlashCmd(L.addonName, L.addonShortcut, L.dragFrames, L.addonColor)
+--rLib:CreateSlashCmd(L.addonName, L.addonShortcut, L.dragFrames, L.addonColor)
+print("|c"..L.addonColor..L.addonName.."|r loaded.")

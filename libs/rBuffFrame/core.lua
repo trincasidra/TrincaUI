@@ -7,7 +7,6 @@
 -----------------------------
 
 local A, L = ...
-local rLib = L.rLib
 
 L.addonName       = A
 L.dragFrames      = {}
@@ -76,7 +75,7 @@ local function SetupButtonPoints(frame, buttonList, buttonWidth, buttonHeight, n
 end
 
 local function SetupButtonFrame(frame, framePadding, buttonList, buttonWidth, buttonHeight, buttonMargin, numCols, startPoint, rowMargin)
-  local numButtons = # buttonList
+  local numButtons = #buttonList
   numCols = max(min(numButtons, numCols),1)
   local numRows = max(ceil(numButtons/numCols),1)
   if not rowMargin then
@@ -134,8 +133,6 @@ function rBuffFrame:CreateBuffFrame(addonName,cfg)
     SetupButtonFrame(frame, cfg.framePadding, buttonList, cfg.buttonWidth, cfg.buttonHeight, cfg.buttonMargin, cfg.numCols, cfg.startPoint, cfg.rowMargin)
   end
   hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateAllBuffAnchors)
-  --add drag functions
-  rLib:CreateDragFrame(frame, L.dragFrames, -2, true)
   return frame
 end
 
@@ -160,9 +157,6 @@ function rBuffFrame:CreateDebuffFrame(addonName,cfg)
     relativeToName = relativeTo:GetName()
   elseif type(relativeTo) == "string" and _G[relativeTo] then
     relativeToName = relativeTo
-  end
-  if relativeToName ~= addonName.."BuffFrame" then
-    rLib:CreateDragFrame(frame, L.dragFrames, -2, true)
   end
   return frame
 end
