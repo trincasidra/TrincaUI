@@ -138,6 +138,7 @@ rLib:RegisterCallback("PLAYER_ENTERING_WORLD", Hide)
 Hide(Minimap)
 
 local function MoveQuests()
+  ObjectiveTrackerFrame:ClearAllPoints()
   ObjectiveTrackerFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
 end
 ObjectiveTrackerFrame:SetScript("OnUpdate", MoveQuests)
