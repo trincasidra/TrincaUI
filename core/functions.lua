@@ -3,6 +3,7 @@ local A, L = ...
 
 local floor, unpack = floor, unpack
 local backdrop = { edgeFile = L.C.texture, edgeSize = 1 }
+local backdropThick = { edgeFile = L.C.texture, edgeSize = L.C.nameplate.targetedBorderSize or 6 }
 local rLib = L.rLib
 if not rLib then return end
 
@@ -65,14 +66,32 @@ local function PostUpdateHealth(Health, unit, min, max)
   self.Health.bg:SetPoint('LEFT', Health:GetStatusBarTexture(), 'RIGHT')
   self.Health.bg:SetHeight(hpHeight)
 
-  --Red border for units in combat
-  if UnitAffectingCombat(unit) then
-    self.Glow:SetBackdropBorderColor(1, 0, 0)
-  else
-    self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
+  local unitType = string.match(unit, "%D+")
+
+  --Border for party and raid units in combat
+  if unitType == 'player' or unitType == 'party' or unitType == 'raid' then
+    local threatSituation = UnitThreatSituation(unit)
+    if threatSituation and threatSituation > 1 then
+      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.hasAggroBorder))
+    else
+      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
+    end
   end
 
-  if string.match(unit, 'nameplate') then
+  if unitType == 'nameplate' then
+    --Border for nameplates the player targets
+    if UnitIsUnit("target", unit) then
+      self.Glow:SetBackdrop(backdropThick)
+      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.nameplateTargetedBorder))
+      self.Glow:SetPoint("TOPLEFT", self, "TOPLEFT", -backdropThick.edgeSize, backdropThick.edgeSize)
+      self.Glow:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", backdropThick.edgeSize, -backdropThick.edgeSize)
+    else
+      self.Glow:SetBackdrop(backdrop)
+      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
+      self.Glow:SetPoint("TOPLEFT", self, "TOPLEFT", -backdrop.edgeSize, backdrop.edgeSize)
+      self.Glow:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", backdrop.edgeSize, -backdrop.edgeSize)
+    end
+
     local color = {}
     local threat = UnitThreatSituation('player', unit)
     if threat and GetSpecializationRole(GetSpecialization()) == 'TANK' then threat = 3 - threat end
@@ -112,6 +131,23 @@ local function PostUpdateHealth(Health, unit, min, max)
   end
 end
 
+local function MouseoverOnUpdate(self, elapsed)
+	if not UnitIsUnit(self.unit, "mouseover") then
+		self.Health.mouseover:Hide()
+	end
+end
+L.F.MouseoverOnUpdate = MouseoverOnUpdate
+
+local function UpdateMouseover(self,event)
+  if UnitIsUnit('mouseover', self.unit) then
+    self.Health.mouseover:Show()
+  else
+    self.Health.mouseover:Hide()
+  end
+  self:SetScript("OnUpdate", L.F.MouseoverOnUpdate)
+end
+L.F.UpdateMouseover = UpdateMouseover
+
 local function UpdateThreat(self,event,unit)
   if unit and self.unit ~= unit then
     return
@@ -119,6 +155,14 @@ local function UpdateThreat(self,event,unit)
   self.Health:ForceUpdate()
 end
 L.F.UpdateThreat = UpdateThreat
+
+local function UpdatePlayerTarget(self,event)
+  --Event fires thrice: for player, old target, and last target.
+  if self.unit ~= 'player' then
+    self.Health:ForceUpdate()
+  end
+end
+L.F.UpdatePlayerTarget = UpdatePlayerTarget
 
 local function CreateText(self,font,size,outline,align,noshadow)
   local text = self:CreateFontString(nil, "ARTWORK") --"BORDER", "OVERLAY"
@@ -230,8 +274,8 @@ local function CreateHealthBar(self)
   hp.PostUpdate = PostUpdateHealth
 
   local border = CreateFrame("Frame", nil, hp, BackdropTemplateMixin and "BackdropTemplate")
-  border:SetPoint("TOPLEFT", hp, "TOPLEFT", -1, 1)
-  border:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", 1, -1)
+  border:SetPoint("TOPLEFT", hp, "TOPLEFT", -backdrop.edgeSize, backdrop.edgeSize)
+  border:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", backdrop.edgeSize, -backdrop.edgeSize)
   border:SetBackdrop(backdrop)
   border:SetBackdropBorderColor(unpack(L.C.colors.health.border))
   border:SetFrameLevel(3)
@@ -244,6 +288,21 @@ local function CreateHealthBar(self)
   bg:SetPoint("LEFT", hp:GetStatusBarTexture(), "RIGHT")
   hp.bg = bg
 
+  local mouseover = hp:CreateTexture(nil, "BACKGROUND")
+  mouseover:SetTexture(L.C.texture)
+  mouseover:SetAllPoints()
+  mouseover:SetVertexColor(unpack(L.C.colors.mouseover))
+  hp.mouseover = mouseover
+  hp.mouseover:Hide()
+
+  local bdf = CreateFrame("Frame", nil, hp, BackdropTemplateMixin and "BackdropTemplate")
+  bdf:SetFrameLevel(hp:GetFrameLevel()-1 or 0)
+  bdf:SetPoint("TOPLEFT", hp, "TOPLEFT", -backdrop.edgeSize, backdrop.edgeSize)
+  bdf:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", backdrop.edgeSize, -backdrop.edgeSize)
+  bdf:SetBackdrop(backdrop)
+  bdf:SetBackdropColor(0, 0, 0, 0.8)
+  bdf:SetBackdropBorderColor(0, 0, 0, 0.8)
+  hp.bdf = bdf
   if self.cfg.healthbar.debuffHighlight then
     self.DebuffHighlight = hp.bdf
     self.DebuffHighlightBackdropBorder = true
@@ -256,15 +315,14 @@ local function CreateHealthBar(self)
   hp.colorReaction = self.cfg.healthbar.colorReaction
   hp.colorClass = self.cfg.healthbar.colorClass
   hp.colorHealth = self.cfg.healthbar.colorHealth
-  --hp.colorThreat = self.cfg.healthbar.colorThreat
-  --hp.colorThreatInvers = self.cfg.healthbar.colorThreatInvers
 
-  --if hp.colorThreat then
-    self:RegisterEvent("PLAYER_REGEN_ENABLED", L.F.UpdateThreat, true)
-    self:RegisterEvent("PLAYER_REGEN_DISABLED", L.F.UpdateThreat, true)
-    self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", L.F.UpdateThreat, false)
-    self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", L.F.UpdateThreat, false)
-  --end
+  self:RegisterEvent("PLAYER_REGEN_ENABLED", L.F.UpdateThreat, true)
+  self:RegisterEvent("PLAYER_REGEN_DISABLED", L.F.UpdateThreat, true)
+  self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", L.F.UpdateThreat, false)
+  self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", L.F.UpdateThreat, false)
+  self:RegisterEvent("PLAYER_TARGET_CHANGED", L.F.UpdatePlayerTarget, true)
+  self:RegisterEvent("UPDATE_MOUSEOVER_UNIT", L.F.UpdateMouseover, true)
+  --self:RegisterEvent("CURSOR_UPDATE", L.F.UpdateMouseover, true)
 
   return hp
 end
