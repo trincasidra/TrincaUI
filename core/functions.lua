@@ -65,17 +65,12 @@ local function PostUpdateHealth(Health, unit, min, max)
   self.Health.bg:SetPoint('LEFT', Health:GetStatusBarTexture(), 'RIGHT')
   self.Health.bg:SetHeight(hpHeight)
 
-  --Since PostUpdateHealth only triggers on health changes, border color won't happen when entering/leaving combat as desired.
-  --[[
-  if unit == 'player' then
-    print('PostUpdateHealth player', UnitAffectingCombat('player'))
-    if UnitAffectingCombat('player') then
-      self.Glow:SetBackdropBorderColor(1, 0, 0)
-    else
-      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
-    end
+  --Red border for units in combat
+  if UnitAffectingCombat(unit) then
+    self.Glow:SetBackdropBorderColor(1, 0, 0)
+  else
+    self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
   end
-  ]]
 
   if string.match(unit, 'nameplate') then
     local color = {}
@@ -261,15 +256,15 @@ local function CreateHealthBar(self)
   hp.colorReaction = self.cfg.healthbar.colorReaction
   hp.colorClass = self.cfg.healthbar.colorClass
   hp.colorHealth = self.cfg.healthbar.colorHealth
-  hp.colorThreat = self.cfg.healthbar.colorThreat
-  hp.colorThreatInvers = self.cfg.healthbar.colorThreatInvers
+  --hp.colorThreat = self.cfg.healthbar.colorThreat
+  --hp.colorThreatInvers = self.cfg.healthbar.colorThreatInvers
 
-  if hp.colorThreat then
+  --if hp.colorThreat then
     self:RegisterEvent("PLAYER_REGEN_ENABLED", L.F.UpdateThreat, true)
     self:RegisterEvent("PLAYER_REGEN_DISABLED", L.F.UpdateThreat, true)
     self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", L.F.UpdateThreat, false)
     self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", L.F.UpdateThreat, false)
-  end
+  --end
 
   return hp
 end
