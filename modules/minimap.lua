@@ -52,6 +52,13 @@ QueueStatusMinimapButtonBorder:Hide()
 QueueStatusMinimapButton:SetHighlightTexture (nil)
 QueueStatusMinimapButton:SetPushedTexture(nil)
 
+GarrisonLandingPageMinimapButton:SetParent(Minimap)
+GarrisonLandingPageMinimapButton:SetScale(.6)
+GarrisonLandingPageMinimapButton:ClearAllPoints()
+GarrisonLandingPageMinimapButton:SetPoint("TOPRIGHT", Minimap, 10, 10)
+GarrisonLandingPageMinimapButton.ClearAllPoints = dummy
+GarrisonLandingPageMinimapButton.SetPoint = dummy
+
 MiniMapMailFrame:ClearAllPoints()
 MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, -0, 0)
 --MiniMapMailIcon:SetTexture(mediapath.."mail")
@@ -83,7 +90,8 @@ TimeManagerClockTicker:SetFont(L.C.font, 12, "OUTLINE")
 TimeManagerClockTicker:SetTextColor(.8, .8, .6, 1)
 TimeManagerClockButton:SetAlpha(.9)
 
-GameTimeFrame:SetParent(Minimap)
+GameTimeFrame:Hide()
+--[[GameTimeFrame:SetParent(Minimap)
 GameTimeFrame:SetScale(.6)
 GameTimeFrame:ClearAllPoints()
 GameTimeFrame:SetPoint("TOPRIGHT", Minimap, -10, -10)
@@ -92,6 +100,7 @@ fs:ClearAllPoints()
 fs:SetPoint("CENTER", 0, -5)
 fs:SetFont(L.C.font, 20)
 fs:SetTextColor(.2, .2, .1, .9)
+]]
 
 Minimap:EnableMouseWheel()
 local function Zoom(self, direction)
@@ -111,7 +120,7 @@ DurabilityFrame.ClearAllPoints = dummy
 DurabilityFrame.SetPoint = dummy
 
 local function Show()
-  GameTimeFrame:SetAlpha(.9)
+  --GameTimeFrame:SetAlpha(.9)
   MiniMapTracking:SetAlpha(.9)
   MiniMapChallengeMode:SetAlpha(.9)
   MiniMapInstanceDifficulty:SetAlpha(.9)
@@ -123,7 +132,7 @@ local lasttime = 0
 local function Hide()
   if Minimap:IsMouseOver() then return end
   if time() == lasttime then return end
-  GameTimeFrame:SetAlpha(0)
+  --GameTimeFrame:SetAlpha(0)
   MiniMapTracking:SetAlpha(0)
   MiniMapChallengeMode:SetAlpha(0)
   MiniMapInstanceDifficulty:SetAlpha(0)
@@ -138,10 +147,12 @@ rLib:RegisterCallback("PLAYER_ENTERING_WORLD", Hide)
 Hide(Minimap)
 
 local function MoveQuests()
-  ObjectiveTrackerFrame:ClearAllPoints()
   ObjectiveTrackerFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
 end
-ObjectiveTrackerFrame:SetScript("OnUpdate", MoveQuests)
+local function AfterMoveQuests()
+  C_Timer.After(.1, MoveQuests)
+end
+ObjectiveTrackerFrame:SetScript("OnUpdate", AfterMoveQuests)
 
 local function NewTooltipAnchor()
 	GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");
