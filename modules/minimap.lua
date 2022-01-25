@@ -60,8 +60,8 @@ GarrisonLandingPageMinimapButton.ClearAllPoints = dummy
 GarrisonLandingPageMinimapButton.SetPoint = dummy
 
 MiniMapMailFrame:ClearAllPoints()
-MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, -0, 0)
---MiniMapMailIcon:SetTexture(mediapath.."mail")
+MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, 5, -5)
+MiniMapMailIcon:SetTexture("Interface\\AddOns\\"..L.addonName.."\\media\\mail.blp")
 MiniMapMailBorder:SetTexture("Interface\\Calendar\\EventNotificationGlow")
 MiniMapMailBorder:SetBlendMode("ADD")
 MiniMapMailBorder:ClearAllPoints()

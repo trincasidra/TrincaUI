@@ -1,5 +1,5 @@
 ## Interface: 90105
-## Version: 1.5
+## Version: 1.6
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout. Based on ZorkUI and oUF_Farva code, and inspired by AfenarUI.
 ## Author: Trincasidra
@@ -23,6 +23,7 @@ modules\rBuffFrame.lua
 modules\rButtonTemplate.lua
 modules\minimap.lua
 modules\disableRaidManager.lua
+modules\auraIndicators.lua
 
 core\functions.lua
 core\tags.lua
