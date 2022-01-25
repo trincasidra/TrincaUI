@@ -138,7 +138,7 @@ local function MouseoverOnUpdate(self, elapsed)
 end
 L.F.MouseoverOnUpdate = MouseoverOnUpdate
 
-local function UpdateMouseover(self,event)
+local function UpdateMouseover(self, event)
   if UnitIsUnit('mouseover', self.unit) then
     self.Health.mouseover:Show()
   else
@@ -148,7 +148,7 @@ local function UpdateMouseover(self,event)
 end
 L.F.UpdateMouseover = UpdateMouseover
 
-local function UpdateThreat(self,event,unit)
+local function UpdateThreat(self, event, unit)
   if unit and self.unit ~= unit then
     return
   end
@@ -156,13 +156,22 @@ local function UpdateThreat(self,event,unit)
 end
 L.F.UpdateThreat = UpdateThreat
 
-local function UpdatePlayerTarget(self,event)
+local function UpdatePlayerTarget(self, event)
   --Event fires thrice: for player, old target, and last target.
   if self.unit ~= 'player' then
     self.Health:ForceUpdate()
   end
 end
 L.F.UpdatePlayerTarget = UpdatePlayerTarget
+
+local function UpdateAuraIndicator(self, event, unit)
+  if IsInGroup() then
+    for i, button in ipairs(self.auraIndicators) do
+      L.AI.UpdateIndicator(button, unit)
+    end
+  end
+end
+L.F.UpdateAuraIndicator = UpdateAuraIndicator
 
 local function CreateText(self,font,size,outline,align,noshadow)
   local text = self:CreateFontString(nil, "ARTWORK") --"BORDER", "OVERLAY"
@@ -322,7 +331,6 @@ local function CreateHealthBar(self)
   self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", L.F.UpdateThreat, false)
   self:RegisterEvent("PLAYER_TARGET_CHANGED", L.F.UpdatePlayerTarget, true)
   self:RegisterEvent("UPDATE_MOUSEOVER_UNIT", L.F.UpdateMouseover, true)
-  --self:RegisterEvent("CURSOR_UPDATE", L.F.UpdateMouseover, true)
 
   return hp
 end
@@ -551,7 +559,6 @@ local function CreateBuffs(self)
 end
 L.F.CreateBuffs = CreateBuffs
 
---CreateDebuffs
 local function CreateDebuffs(self)
   if not self.cfg.debuffs or not self.cfg.debuffs.enabled then return end
   local cfg = self.cfg.debuffs
@@ -575,6 +582,36 @@ local function CreateDebuffs(self)
   return frame
 end
 L.F.CreateDebuffs = CreateDebuffs
+
+local function CreateAuraIndicators(self)
+  if not self.cfg.auraIndicators or not L.C.auraIndicators or not L.C.auraIndicators.enabled then return end
+  local _, englishClass, _ = UnitClass("player")
+  local cfg
+  if englishClass == 'DRUID' then
+    cfg = L.C.auraIndicators.druid
+  elseif englishClass == 'PRIEST' then
+    cfg = L.C.auraIndicators.priest
+  elseif englishClass == 'MONK' then
+    cfg = L.C.auraIndicators.monk
+  elseif englishClass == 'SHAMAN' then
+    cfg = L.C.auraIndicators.shaman
+  elseif englishClass == 'PALADIN' then
+    cfg = L.C.auraIndicators.paladin
+  else
+    return
+  end
+
+  local auraIndicators = {}
+  for i, v in ipairs(cfg) do
+    local indicator = L.AI.CreateIndicator(self, v)
+    indicator:Hide()
+    table.insert(auraIndicators, indicator)
+  end
+  self.auraIndicators = auraIndicators
+
+  self:RegisterEvent("UNIT_AURA", L.F.UpdateAuraIndicator, false)
+end
+L.F.CreateAuraIndicators = CreateAuraIndicators
 
 local function SetupHeader(self)
   if not self.settings.setupHeader then return end
