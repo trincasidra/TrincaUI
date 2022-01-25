@@ -62,5 +62,6 @@ local function CreateStyle(self)
   self.Debuffs = L.F.CreateDebuffs(self)
   self.Buffs = L.F.CreateBuffs(self)
   self.RaidTargetIndicator = L.F.CreateRaidMark(self)
+  self.AuraIndicators = L.F.CreateAuraIndicators(self)
 end
 L.F.CreateStyle = CreateStyle

@@ -72,6 +72,61 @@ L.C = {
   enableBuffFrame = true --disable if using other buff frame addons like Raven
 }
 
+L.C.auraIndicators = { --{spellid, color, anchorTo}
+  enabled = true,
+  iconSize = 14,
+  fontSize = 10,
+  druid = {
+  	{774,    'ffcc66cc', 'TOPRIGHT'},    --rejuvenation
+  	{8936,   'ff33cc33', 'BOTTOMLEFT'},  --regrowth
+  	{33763,  'ff2e5d17', 'TOPLEFT'},     --life bloom
+  	{188550, 'ff2e5d17', 'TOPLEFT'},     --also life bloom
+  	{48438,  'ffcc6600', 'BOTTOMRIGHT'}, --wild growth
+  	{102351, 'ff33cccc', 'BOTTOM'},      --cenarius ward
+  	{102352, 'ff33cccc', 'BOTTOM'},      --also cenarius ward
+  	{155777, 'ffcc66cc', 'RIGHT'},       --germination
+  	{200389, 'ffffff66', 'LEFT'},        --cultivation
+  	{203554, 'ffffff66', 'LEFT'},        --focused growth
+  	{207386, 'ff6633cc', 'TOP'}          --spring blossoms
+  },
+  priest = {
+  	{17,     'ffb3b3b3', 'TOPLEFT'},     --power word: shield
+  	{139,    'ff66b333', 'BOTTOMLEFT'},  --renew
+  	{6788,   'ffe31a1a', 'BOTTOMLEFT'},  --weakened soul
+  	{33206,  'ff7859bd', 'LEFT'},        --pain suppression
+  	{41635,  'ffffffa8', 'BOTTOMRIGHT'}, --prayer of mending
+  	{47788,  'ffdb7300', 'TOPRIGHT'},    --guardian spirit
+  	{193065, 'ff8a36c7', 'BOTTOMRIGHT'}, --masochism
+  	{194384, 'ffffffa8', 'TOPRIGHT'},    --atonement
+  	{214206, 'ffffffa8', 'TOPRIGHT'}     --also atonement
+  },
+  monk = {
+  	{115175, 'ff99e6e6', 'TOP'},         --soothing mist
+  	{116841, 'ff1fff87', 'RIGHT'},       --tiger's lust
+  	{116849, 'ff33cc33', 'TOPRIGHT'},    --life cocoon
+  	{119611, 'ff4dcc99', 'TOPLEFT'},     --renewing mist
+  	{124682, 'ffcccc40', 'BOTTOMLEFT'},  --envolving mist
+  	{191840, 'ff459eb3', 'BOTTOMRIGHT'}, --essence font
+  	{325209, 'ff4d9999', 'BOTTOM'}       --enveloping breath
+  },
+  shaman = {
+  	{974,    'ffffaa51', 'BOTTOMRIGHT'}, --earth shield
+  	{61295,  'ff3333ff', 'TOPRIGHT'}     --riptide
+  },
+  paladin = {
+  	{1022,   'ff3333ff', 'BOTTOMRIGHT'}, --blessing of protection
+  	{1044,   'ffe37300', 'BOTTOMRIGHT'}, --blessing of freedom
+  	{6940,   'ffe31a1a', 'BOTTOMRIGHT'}, --blessing of sacrifice
+  	{204018, 'ff33cccc', 'BOTTOMRIGHT'}, --blessing of spellwarding
+  	{53563,  'ffb34db3', 'TOPRIGHT'},    --beacon of light
+  	{156910, 'ffb34db3', 'TOPRIGHT'},    --beacon of faith
+  	{200025, 'ffb34db3', 'TOPRIGHT'},    --beacon of virtue
+  	{157047, 'ff2693d6', 'TOP'},         --saved by the light
+  	{223306, 'ffb3b34d', 'BOTTOMLEFT'},  --bestow faith
+  	{287280, 'ff33cc33', 'TOPLEFT'}      --glimmer of light
+  }
+}
+
 L.C.player = {
   size = {144, 45},
   point = {"RIGHT", UIParent, "CENTER", -167, -245},
@@ -464,6 +519,7 @@ L.C.party = {
   size = {107, 35},
   point = {"CENTER", -400, 0},
   scale = 1*L.C.globalscale,
+  auraIndicators = true,
   healthbar = {
     name = {
       enabled = true,
@@ -482,7 +538,7 @@ L.C.party = {
         {"TOPRIGHT", -2, -2}
       },
       size = 12,
-      tag = "[TrincaUI:leader][TrincaUI:role]"
+      tag = "[TrincaUI:role][TrincaUI:leader]"
     },
     debuffHighlight = true
   },
@@ -552,6 +608,7 @@ L.C.raid = {
     {"TOPRIGHT", "TrincaUIRaidHeader7", "TOPLEFT", -3, 0}
   },
   scale = 1*L.C.globalscale,
+  auraIndicators = true,
   healthbar = {
     name = {
       enabled = true,
