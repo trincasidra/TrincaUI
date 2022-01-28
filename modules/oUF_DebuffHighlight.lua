@@ -32,7 +32,6 @@ local function Update(self, event, unit)
   if self.unit ~= unit then return end
   local debuffType, texture = GetDebuffType(unit, self.DebuffHighlightFilter)
   if debuffType then
-    print(debuffType, unit)
     local color = L.C.colors.debuffhighlight[debuffType]
     if self.DebuffHighlight then
       self.DebuffHighlight:SetBackdropColor(color.r, color.g, color.b, color.a)
