@@ -60,14 +60,12 @@ oUF.Tags.Methods["TrincaUI:leader"] = function(unit)
 end
 oUF.Tags.Events["TrincaUI:leader"] = "PARTY_LEADER_CHANGED GROUP_ROSTER_UPDATE"
 
-oUF.Tags.Methods["TrincaUI:status"] = function(unit,...)
-  if UnitAffectingCombat(unit) then
-    return "|TInterface\\CharacterFrame\\UI-StateIcon:20:20:0:0:64:64:33:64:0:31|t"
-  elseif unit == "player" and IsResting() then
+oUF.Tags.Methods["TrincaUI:resting"] = function(unit,...)
+  if unit == "player" and IsResting() then
     return "|TInterface\\CharacterFrame\\UI-StateIcon:20:20:0:0:64:64:0:31:0:31|t"
   end
 end
-oUF.Tags.Events["TrincaUI:status"] = "PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED PLAYER_UPDATE_RESTING"
+oUF.Tags.Events["TrincaUI:resting"] = "PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED PLAYER_UPDATE_RESTING"
 
 oUF.Tags.Methods["TrincaUI:classification"] = function(unit)
   local c = UnitClassification(unit)

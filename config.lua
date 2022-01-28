@@ -139,7 +139,7 @@ L.C.player = {
         {"TOPRIGHT", -2, 6}
       },
       size = 12,
-      tag = "[TrincaUI:leader][TrincaUI:status]"
+      tag = "[TrincaUI:leader][TrincaUI:resting]"
     },
     health = {
       enabled = true,
@@ -383,7 +383,7 @@ L.C.nameplate = {
       align = "CENTER",
       tag = "[TrincaUI:classification][name]"
     },
-    debuffHighlight = true
+    debuffHighlight = false
   },
   raidmark = {
     enabled = true,
@@ -446,7 +446,7 @@ L.C.boss = {
       size = 18,
       tag = "[TrincaUI:healthpercentage]"
     },
-    debuffHighlight = true
+    debuffHighlight = false
   },
   powerbar = {
     enabled = true,
@@ -527,7 +527,7 @@ L.C.party = {
         {"LEFT",2,0},
         {"RIGHT",-2,0}
       },
-      size = 14,
+      size = 12,
       align = "CENTER",
       tag = "[TrincaUI:color][name]|r",
     },
@@ -616,7 +616,7 @@ L.C.raid = {
         {"LEFT", 2, 0},
         {"RIGHT", -2, 0}
       },
-      size = 14,
+      size = 12,
       align = "CENTER",
       tag = "[TrincaUI:color][name]|r"
     },
