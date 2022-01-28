@@ -4,6 +4,7 @@ local A, L = ...
 local floor, unpack = floor, unpack
 local backdrop = { edgeFile = L.C.texture, edgeSize = 1 }
 local backdropThick = { edgeFile = L.C.texture, edgeSize = L.C.nameplate.targetedBorderSize or 6 }
+local backdropFilled = { edgeFile = L.C.texture, edgeSize = 1, bgFile = L.C.texture }
 local rLib = L.rLib
 if not rLib then return end
 
@@ -68,10 +69,19 @@ local function PostUpdateHealth(Health, unit, min, max)
 
   local unitType = string.match(unit, "%D+")
 
-  --Border for party and raid units in combat
-  if unitType == 'player' or unitType == 'party' or unitType == 'raid' then
+  --Border for party and raid units with aggro
+  if unitType == 'party' or unitType == 'raid' then
     local threatSituation = UnitThreatSituation(unit)
     if threatSituation and threatSituation > 1 then
+      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.hasAggroBorder))
+    else
+      self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
+    end
+  end
+
+  --Border for player in combat
+  if unitType == 'player' then
+    if UnitAffectingCombat(unit) then
       self.Glow:SetBackdropBorderColor(unpack(L.C.colors.hasAggroBorder))
     else
       self.Glow:SetBackdropBorderColor(unpack(L.C.colors.health.border))
@@ -305,12 +315,12 @@ local function CreateHealthBar(self)
   hp.mouseover:Hide()
 
   local bdf = CreateFrame("Frame", nil, hp, BackdropTemplateMixin and "BackdropTemplate")
-  bdf:SetFrameLevel(hp:GetFrameLevel()-1 or 0)
-  bdf:SetPoint("TOPLEFT", hp, "TOPLEFT", -backdrop.edgeSize, backdrop.edgeSize)
-  bdf:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", backdrop.edgeSize, -backdrop.edgeSize)
-  bdf:SetBackdrop(backdrop)
-  bdf:SetBackdropColor(0, 0, 0, 0.8)
-  bdf:SetBackdropBorderColor(0, 0, 0, 0.8)
+  bdf:SetFrameLevel(hp:GetFrameLevel()+1 or 0)
+  bdf:SetPoint("TOPLEFT", hp, "TOPLEFT", -backdropFilled.edgeSize, backdropFilled.edgeSize)
+  bdf:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", backdropFilled.edgeSize, -backdropFilled.edgeSize)
+  bdf:SetBackdrop(backdropFilled)
+  bdf:SetBackdropColor(0, 0, 0, 0)
+  bdf:SetBackdropBorderColor(0, 0, 0, 0)
   hp.bdf = bdf
   if self.cfg.healthbar.debuffHighlight then
     self.DebuffHighlight = hp.bdf
