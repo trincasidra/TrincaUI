@@ -76,7 +76,7 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   enabled = true,
   iconSize = 14,
   fontSize = 10,
-  druid = {
+  DRUID = {
   	{774,    'ffcc66cc', 'TOPRIGHT'},    --rejuvenation
   	{8936,   'ff33cc33', 'BOTTOMLEFT'},  --regrowth
   	{33763,  'ff2e5d17', 'TOPLEFT'},     --life bloom
@@ -89,7 +89,7 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{203554, 'ffffff66', 'LEFT'},        --focused growth
   	{207386, 'ff6633cc', 'TOP'}          --spring blossoms
   },
-  priest = {
+  PRIEST = {
   	{17,     'ffb3b3b3', 'TOPLEFT'},     --power word: shield
   	{139,    'ff66b333', 'BOTTOMLEFT'},  --renew
   	{6788,   'ffe31a1a', 'BOTTOMLEFT'},  --weakened soul
@@ -100,7 +100,7 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{194384, 'ffffffa8', 'TOPRIGHT'},    --atonement
   	{214206, 'ffffffa8', 'TOPRIGHT'}     --also atonement
   },
-  monk = {
+  MONK = {
   	{115175, 'ff99e6e6', 'TOP'},         --soothing mist
   	{116841, 'ff1fff87', 'RIGHT'},       --tiger's lust
   	{116849, 'ff33cc33', 'TOPRIGHT'},    --life cocoon
@@ -109,11 +109,11 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{191840, 'ff459eb3', 'BOTTOMRIGHT'}, --essence font
   	{325209, 'ff4d9999', 'BOTTOM'}       --enveloping breath
   },
-  shaman = {
+  SHAMAN = {
   	{974,    'ffffaa51', 'BOTTOMRIGHT'}, --earth shield
   	{61295,  'ff3333ff', 'TOPRIGHT'}     --riptide
   },
-  paladin = {
+  PALADIN = {
   	{1022,   'ff3333ff', 'BOTTOMRIGHT'}, --blessing of protection
   	{1044,   'ffe37300', 'BOTTOMRIGHT'}, --blessing of freedom
   	{6940,   'ffe31a1a', 'BOTTOMRIGHT'}, --blessing of sacrifice
@@ -165,6 +165,7 @@ L.C.player = {
     growthX = "LEFT",
     growthY = "TOP",
     disableCooldown = false,
+    CustomFilter = L.filters.blacklistOnly
   },
   altpowerbar = {
     enabled = true,
@@ -276,7 +277,8 @@ L.C.target = {
     initialAnchor = "TOPLEFT",
     growthX = "RIGHT",
     growthY = "DOWN",
-    disableCooldown = false
+    disableCooldown = false,
+    showStealableBuffs = true
   },
   debuffs = {
     enabled = true,
@@ -288,7 +290,8 @@ L.C.target = {
     initialAnchor = "TOPRIGHT",
     growthX = "LEFT",
     growthY = "DOWN",
-    disableCooldown = false
+    disableCooldown = false,
+    CustomFilter = L.filters.blacklistOnly
   }
 }
 
@@ -325,7 +328,8 @@ L.C.targettarget = {
     initialAnchor = "TOPLEFT",
     growthX = "RIGHT",
     growthY = "DOWN",
-    disableCooldown = false
+    disableCooldown = false,
+    CustomFilter = L.filters.ccBossDebuffs
   }
 }
 
@@ -362,7 +366,8 @@ L.C.focus = {
     initialAnchor = "TOPLEFT",
     growthX = "RIGHT",
     growthY = "DOWN",
-    disableCooldown = false
+    disableCooldown = false,
+    CustomFilter = L.filters.bossDebuffs
   }
 }
 
@@ -409,6 +414,19 @@ L.C.nameplate = {
       point = {"BOTTOMRIGHT", "BOTTOMLEFT", 0, 0}
     }
   },
+  buffs = {
+    enabled = true,
+    point = {"BOTTOM", "TOP", 0, 30},
+    num = 1,
+    cols = 1,
+    size = 30,
+    spacing = 5,
+    initialAnchor = "TOPLEFT",
+    growthX = "RIGHT",
+    growthY = "UP",
+    disableCooldown = false,
+    CustomFilter = L.filters.dispellableBuffs
+  },
   debuffs = {
     enabled = true,
     point = {"BOTTOMLEFT", "TOPLEFT", 0, 12},
@@ -420,8 +438,7 @@ L.C.nameplate = {
     growthX = "RIGHT",
     growthY = "UP",
     disableCooldown = false,
-    filter = "HARMFUL|PLAYER|INCLUDE_NAME_PLATE_ONLY",
-    CustomFilter = CustomFilter
+    filter = "HARMFUL|PLAYER|INCLUDE_NAME_PLATE_ONLY"
   }
 }
 
@@ -564,7 +581,7 @@ L.C.party = {
     growthX = "RIGHT",
     growthY = "DOWN",
     disableCooldown = false,
-    filter = "RAID|HARMFUL"
+    CustomFilter = L.filters.ccBossDebuffs
   },
   buffs = {
     enabled = true,
@@ -577,7 +594,7 @@ L.C.party = {
     growthX = "LEFT",
     growthY = "DOWN",
     disableCooldown = false,
-    filter = "HELPFUL|PLAYER"
+    CustomFilter = L.filters.defensiveBuffs
   },
   setup = {
     template = nil,
