@@ -596,20 +596,8 @@ L.F.CreateDebuffs = CreateDebuffs
 local function CreateAuraIndicators(self)
   if not self.cfg.auraIndicators or not L.C.auraIndicators or not L.C.auraIndicators.enabled then return end
   local _, englishClass, _ = UnitClass("player")
-  local cfg
-  if englishClass == 'DRUID' then
-    cfg = L.C.auraIndicators.druid
-  elseif englishClass == 'PRIEST' then
-    cfg = L.C.auraIndicators.priest
-  elseif englishClass == 'MONK' then
-    cfg = L.C.auraIndicators.monk
-  elseif englishClass == 'SHAMAN' then
-    cfg = L.C.auraIndicators.shaman
-  elseif englishClass == 'PALADIN' then
-    cfg = L.C.auraIndicators.paladin
-  else
-    return
-  end
+  local cfg = L.C.auraIndicators[englishClass]
+  if not cfg then return end
 
   local auraIndicators = {}
   for i, v in ipairs(cfg) do

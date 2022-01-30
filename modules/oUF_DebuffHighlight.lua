@@ -30,8 +30,10 @@ end
 
 local function Update(self, event, unit)
   if self.unit ~= unit then return end
+  local _, englishClass, _ = UnitClass("player")
+  local cfg = canDispel[englishClass]
   local debuffType, texture = GetDebuffType(unit, self.DebuffHighlightFilter)
-  if debuffType and UnitIsFriend('player', unit) and UnitIsPlayer(unit) then
+  if cfg and cfg[debuffType] and debuffType and UnitIsFriend('player', unit) and UnitIsPlayer(unit) then
     local color = L.C.colors.debuffhighlight[debuffType]
     if self.DebuffHighlight then
       self.DebuffHighlight:SetBackdropColor(color.r, color.g, color.b, color.a)
