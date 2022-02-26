@@ -146,13 +146,50 @@ Minimap:SetScript("OnLeave", SetTimer)
 rLib:RegisterCallback("PLAYER_ENTERING_WORLD", Hide)
 Hide(Minimap)
 
+local QuestFrame = ObjectiveTrackerFrame
 local function MoveQuests()
-  ObjectiveTrackerFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
+  QuestFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
+  ObjectiveTracker_Update()
 end
 local function AfterMoveQuests()
-  C_Timer.After(.1, MoveQuests)
+  C_Timer.After(0, MoveQuests)
 end
-ObjectiveTrackerFrame:SetScript("OnUpdate", AfterMoveQuests)
+QuestFrame:SetScript("OnUpdate", AfterMoveQuests)
+QuestFrame:ClearAllPoints()
+QuestFrame:SetParent(UIParent)
+QuestFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
+QuestFrame.SetParent = dummy
+QuestFrame:SetClampedToScreen(false)
+QuestFrame.SetClampedToScreen = dummy
+QuestFrame:SetMovable(false)
+QuestFrame.SetMovable = dummy
+QuestFrame:ClearAllPoints()
+QuestFrame.ClearAllPoints = dummy
+QuestFrame.SetAllPoints = dummy
+QuestFrame:Show()
+
+local QuestHeader = QuestFrame.HeaderMenu
+QuestHeader:Show()
+QuestHeader.Hide = dummy
+QuestHeader.SetShown = dummy
+QuestHeader:SetSize(10, 21)
+QuestHeader:ClearAllPoints()
+QuestHeader.ClearAllPoints = dummy
+QuestHeader:SetPoint("TOPRIGHT", -20, -1)
+QuestHeader.SetPoint = dummy
+QuestHeader.Title:ClearAllPoints()
+QuestHeader.Title.ClearAllPoints = dummy
+QuestHeader.Title:SetPoint("RIGHT", -5, -1)
+QuestHeader.Title.SetPoint = dummy
+QuestHeader.Title:SetWidth(243)
+QuestHeader.Title:SetWordWrap(false)
+
+local MawBuffs = ScenarioBlocksFrame.MawBuffsBlock.Container
+ScenarioBlocksFrame:SetWidth(243)
+MawBuffs.List:SetParent(UIParent)
+MawBuffs.List:SetFrameLevel(MawBuffs:GetFrameLevel() - 1)
+MawBuffs.List:SetClampedToScreen(true)
+HelpTip:Hide(MawBuffs, JAILERS_TOWER_BUFFS_TUTORIAL)
 
 local function NewTooltipAnchor()
 	GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");

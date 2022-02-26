@@ -416,7 +416,7 @@ L.C.nameplate = {
   },
   buffs = {
     enabled = true,
-    point = {"BOTTOM", "TOP", 0, 30},
+    point = {"BOTTOM", "TOP", 0, 40},
     num = 1,
     cols = 1,
     size = 30,
@@ -445,7 +445,7 @@ L.C.nameplate = {
 L.C.boss = {
   enabled = true,
   size = {110, 29},
-  point = {"LEFT", UIParent, "CENTER", 300, -35}, --point of first boss frame
+  point = {"LEFT", UIParent, "CENTER", 500, -35}, --point of first boss frame
   scale = 1*L.C.globalscale,
   healthbar = {
     name = {
