@@ -129,7 +129,7 @@ if L.F.CreateBossStyle then
 end
 
 --spawn nameplates
-if L.F.CreateNamePlateStyle then
+if L.F.CreateNamePlateStyle and not IsAddOnLoaded("Plater") and not IsAddOnLoaded("TidyPlates") and not IsAddOnLoaded("Kui_Nameplates") then
   oUF:SetActiveStyle(A.."Nameplate")
   oUF:SpawnNamePlates(A, L.C.NamePlateCallback, L.C.NamePlateCVars)
 end
