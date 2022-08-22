@@ -14,11 +14,11 @@ end
 
 local function CreateIndicator(self, cfg)
   local unit = self.unit
-  local spellid, colorHex, anchorTo = unpack(cfg)
+  local spellid, colorHex, anchorTo, offsetX, offsetY = unpack(cfg)
   local color = CreateColorFromHexString(colorHex)
 
   local button = CreateFrame('Button', unit..'AuraIndicator'..spellid, self)
-  button:SetPoint(anchorTo, self, anchorTo)
+  button:SetPoint(anchorTo, self, anchorTo, offsetX or 0, offsetY or 0)
   button:SetSize(L.C.auraIndicators.iconSize, L.C.auraIndicators.iconSize)
   button:SetParent(self)
   button:SetFrameStrata("MEDIUM")

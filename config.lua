@@ -87,7 +87,8 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{155777, 'ffcc66cc', 'RIGHT'},       --germination
   	{200389, 'ffffff66', 'LEFT'},        --cultivation
   	{203554, 'ffffff66', 'LEFT'},        --focused growth
-  	{207386, 'ff6633cc', 'TOP'}          --spring blossoms
+  	{207386, 'ff6633cc', 'TOP'},         --spring blossoms
+  	{325748, 'ff7c6453', 'TOPRIGHT', -22}--adaptive swarm
   },
   PRIEST = {
   	{17,     'ffb3b3b3', 'TOPLEFT'},     --power word: shield
@@ -483,8 +484,8 @@ L.C.boss = {
   },
   castbar = {
     enabled = true,
-    size = {130, 6},
-    point = {"TOP","BOTTOM",0,-14},
+    size = {110, 16},
+    point = {"TOP","BOTTOM",0,-10},
     name = {
       enabled = true,
       points = {
@@ -573,8 +574,8 @@ L.C.party = {
   debuffs = {
     enabled = true,
     point = {"LEFT", "RIGHT", 3, 0},
-    num = 3,
-    cols = 3,
+    num = 4,
+    cols = 4,
     size = 35,
     spacing = 3,
     initialAnchor = "TOPLEFT",
@@ -603,8 +604,8 @@ L.C.party = {
     showSolo = false,
     showParty = true,
     showRaid = false,
-    groupBy = 'ROLE',
-    groupingOrder = "TANK, HEALER, DAMAGER, DAMAGER, DAMAGER",
+    groupBy = 'ASSIGNEDROLE',
+    groupingOrder = "TANK,HEALER,DAMAGER",
     point = "TOP",
     xOffset = 0,
     yOffset = -3
@@ -673,8 +674,8 @@ L.C.raid = {
     showSolo = false,
     showParty = false,
     showRaid = true,
-    groupBy = 'ROLE',
-    groupingOrder = "TANK, HEALER, DAMAGER, DAMAGER, DAMAGER",
+    groupBy = 'ASSIGNEDROLE',
+    groupingOrder = "TANK,HEALER,DAMAGER",
     point = "TOP",
     xOffset = 0,
     yOffset = -3

@@ -136,6 +136,8 @@ local function PostUpdateHealth(Health, unit, min, max)
 
   if UnitIsDeadOrGhost(unit) then
     self.Health.bg:SetVertexColor(unpack(L.C.colors.dead))
+  elseif not UnitIsConnected(unit) then
+    self.Health.bg:SetVertexColor(unpack(L.C.colors.disconnected))
   else
     self.Health.bg:SetVertexColor(unpack(L.C.colors.health.background))
   end

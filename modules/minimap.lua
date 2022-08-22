@@ -157,8 +157,8 @@ end
 QuestFrame:SetScript("OnUpdate", AfterMoveQuests)
 QuestFrame:ClearAllPoints()
 QuestFrame:SetParent(UIParent)
-QuestFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
 QuestFrame.SetParent = dummy
+QuestFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
 QuestFrame:SetClampedToScreen(false)
 QuestFrame.SetClampedToScreen = dummy
 QuestFrame:SetMovable(false)
@@ -187,6 +187,7 @@ QuestHeader.Title:SetWordWrap(false)
 local MawBuffs = ScenarioBlocksFrame.MawBuffsBlock.Container
 ScenarioBlocksFrame:SetWidth(243)
 MawBuffs.List:SetParent(UIParent)
+MawBuffs.List:SetPoint("RIGHT", -5, -1)
 MawBuffs.List:SetFrameLevel(MawBuffs:GetFrameLevel() - 1)
 MawBuffs.List:SetClampedToScreen(true)
 HelpTip:Hide(MawBuffs, JAILERS_TOWER_BUFFS_TUTORIAL)
