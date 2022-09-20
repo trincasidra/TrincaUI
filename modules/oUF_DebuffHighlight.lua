@@ -9,7 +9,8 @@ local canDispel = {
   PALADIN = { Magic = true, Poison = true, Disease = true, },
   MAGE = { Curse = true, },
   DRUID = { Magic = true, Curse = true, Poison = true, },
-  MONK = { Magic = true, Disease = true, Poison = true, }
+  MONK = { Magic = true, Disease = true, Poison = true, },
+  EVOKER = { Magic = true, Poison = true, Disease = true, Curse = true, Bleed = true }
 }
 local dispelList = canDispel[playerClass] or {}
 local origColors = {}
