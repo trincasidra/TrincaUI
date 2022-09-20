@@ -12,7 +12,7 @@ local A, L = ...
 -- CreateNamePlateStyle
 -----------------------------
 
-if not L.C.nameplate or not L.C.nameplate.enabled then return end
+if not L.C.nameplate or not L.C.nameplate.enabled or IsAddOnLoaded("Plater") or IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Kui_Nameplates") then return end
 
 local function CreateNamePlateStyle(self)
   --config

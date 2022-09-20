@@ -4,7 +4,7 @@
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
 ## Credits Zork, Scrable, Afenar
-## OptionalDeps: LibSharedMedia-3.0, Dominos
+## OptionalDeps: LibSharedMedia-3.0, Dominos, Plater, TidyPlates, Kui_Nameplates
 ## X-oUF: TrincaUI
 ## X-SlashCmdList: /trinca
 
