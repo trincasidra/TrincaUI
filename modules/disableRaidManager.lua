@@ -22,4 +22,4 @@ local function DisableBlizzard()
     StaticPopup_Show("TRINCAUI_RELOADUI_REQUEST")
   end
 end
-DisableBlizzard()
+--DisableBlizzard()

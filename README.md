@@ -1,5 +1,5 @@
 # TrincaUI
-My personal layout for oUF with some extras. It's quite basic, but hopefully I will be adding to it little by little.
+My personal layout for oUF with some extras. It is not very complex, but it has everything that I need.
 
 ## Description
   * Minimalist and simple interface using oUF. All dependencies are embedded, so no need to install any extra addon.
@@ -8,10 +8,10 @@ My personal layout for oUF with some extras. It's quite basic, but hopefully I w
   * All config is done in the config.lua file.
 
 ## Worthy additions
-I'm personally using the following to complete the interface (you'll need at least Dominos and Aurora to get the look from the screenshots):
-  * Dominos (you can find my profile [here](https://www.wowinterface.com/downloads/info26207.html))
-  * [aBag](https://github.com/trincasidra/aBag-retail) or [AdiBags](https://www.wowinterface.com/downloads/info25821-AdiBags-Shadowlands.html)
+With the new revamp to Blizzard's UI, I'm using as little other addons as possible. You can check:
+  * [Prat](https://wowinterface.com/downloads/info10783-Prat3.0.html) or [rChat](https://www.wowinterface.com/downloads/info18319-rChat.html)
   * [My own](https://wago.io/p/Trincasidra%232868) weakauras or [Afenar](https://github.com/Afenar/AfenarUI)'s weakauras
+  * [My own blizz's HUD layout](https://wago.io/fUPhvEiwl)
 
 ## Other notes
 Special thanks to Zork, scrable and Afenar for the inspiration and code that I based this on.

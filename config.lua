@@ -4,6 +4,16 @@ L.C = {
   texture = "Interface\\Buttons\\WHITE8x8",
   font = "Interface\\AddOns\\"..A.."\\media\\Expressway.ttf",
   globalscale = 1,
+  microMenuAndBagsPosition = {"TOPRIGHT", UiParent, "TOPRIGHT", -300, -10},
+  fade = {
+    microMenuAndBags = true,
+    expBar = true,
+    actionBar1 = true,
+    actionBar2 = true,
+    actionBar3 = true,
+    actionBar4 = true,
+    actionBar5 = false -- I keep this one always visible close to the minimap.
+  },
   colors = {
     disconnected = {.5, .5, .5, 1},
     tapped = {.5, .5, .5, .7},
@@ -77,54 +87,63 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   iconSize = 14,
   fontSize = 10,
   DRUID = {
-  	{774,    'ffcc66cc', 'TOPRIGHT'},    --rejuvenation
-  	{8936,   'ff33cc33', 'BOTTOMLEFT'},  --regrowth
-  	{33763,  'ff2e5d17', 'TOPLEFT'},     --life bloom
-  	{188550, 'ff2e5d17', 'TOPLEFT'},     --also life bloom
-  	{48438,  'ffcc6600', 'BOTTOMRIGHT'}, --wild growth
-  	{102351, 'ff33cccc', 'BOTTOM'},      --cenarius ward
-  	{102352, 'ff33cccc', 'BOTTOM'},      --also cenarius ward
-  	{155777, 'ffcc66cc', 'RIGHT'},       --germination
-  	{200389, 'ffffff66', 'LEFT'},        --cultivation
-  	{203554, 'ffffff66', 'LEFT'},        --focused growth
-  	{207386, 'ff6633cc', 'TOP'},         --spring blossoms
-  	{325748, 'ff7c6453', 'TOPRIGHT', -22}--adaptive swarm
+  	{774,    'ffcc66cc', 'TOPRIGHT'},         --rejuvenation
+  	{8936,   'ff33cc33', 'BOTTOMLEFT'},       --regrowth
+  	{33763,  'ff2e5d17', 'TOPLEFT'},          --life bloom
+  	{188550, 'ff2e5d17', 'TOPLEFT'},          --also life bloom
+  	{48438,  'ffcc6600', 'BOTTOMRIGHT'},      --wild growth
+  	{102351, 'ff33cccc', 'BOTTOM'},           --cenarius ward
+  	{102352, 'ff33cccc', 'BOTTOM'},           --also cenarius ward
+  	{155777, 'ffcc66cc', 'RIGHT'},            --germination
+  	{200389, 'ffffff66', 'LEFT'},             --cultivation
+  	{203554, 'ffffff66', 'LEFT'},             --focused growth
+  	{207386, 'ff6633cc', 'TOP'},              --spring blossoms
+  	{325748, 'ff7c6453', 'TOPRIGHT', -22}     --adaptive swarm
   },
   PRIEST = {
-  	{17,     'ffb3b3b3', 'TOPLEFT'},     --power word: shield
-  	{139,    'ff66b333', 'BOTTOMLEFT'},  --renew
-  	{6788,   'ffe31a1a', 'BOTTOMLEFT'},  --weakened soul
-  	{33206,  'ff7859bd', 'LEFT'},        --pain suppression
-  	{41635,  'ffffffa8', 'BOTTOMRIGHT'}, --prayer of mending
-  	{47788,  'ffdb7300', 'TOPRIGHT'},    --guardian spirit
-  	{193065, 'ff8a36c7', 'BOTTOMRIGHT'}, --masochism
-  	{194384, 'ffffffa8', 'TOPRIGHT'},    --atonement
-  	{214206, 'ffffffa8', 'TOPRIGHT'}     --also atonement
+  	{17,     'ffb3b3b3', 'TOPLEFT'},          --power word: shield
+  	{139,    'ff66b333', 'BOTTOMLEFT'},       --renew
+  	{6788,   'ffe31a1a', 'BOTTOMLEFT'},       --weakened soul
+  	{33206,  'ff7859bd', 'LEFT'},             --pain suppression
+  	{41635,  'ffffffa8', 'BOTTOMRIGHT'},      --prayer of mending
+  	{47788,  'ffdb7300', 'TOPRIGHT'},         --guardian spirit
+  	{193065, 'ff8a36c7', 'BOTTOMRIGHT'},      --masochism
+  	{194384, 'ffffffa8', 'TOPRIGHT'},         --atonement
+  	{214206, 'ffffffa8', 'TOPRIGHT'}          --also atonement
   },
   MONK = {
-  	{115175, 'ff99e6e6', 'TOP'},         --soothing mist
-  	{116841, 'ff1fff87', 'RIGHT'},       --tiger's lust
-  	{116849, 'ff33cc33', 'TOPRIGHT'},    --life cocoon
-  	{119611, 'ff4dcc99', 'TOPLEFT'},     --renewing mist
-  	{124682, 'ffcccc40', 'BOTTOMLEFT'},  --envolving mist
-  	{191840, 'ff459eb3', 'BOTTOMRIGHT'}, --essence font
-  	{325209, 'ff4d9999', 'BOTTOM'}       --enveloping breath
+  	{115175, 'ff99e6e6', 'TOP'},              --soothing mist
+  	{116841, 'ff1fff87', 'RIGHT'},            --tiger's lust
+  	{116849, 'ff33cc33', 'TOPRIGHT'},         --life cocoon
+  	{119611, 'ff4dcc99', 'TOPLEFT'},          --renewing mist
+  	{124682, 'ffcccc40', 'BOTTOMLEFT'},       --envolving mist
+  	{191840, 'ff459eb3', 'BOTTOMRIGHT'},      --essence font
+  	{325209, 'ff4d9999', 'BOTTOM'}            --enveloping breath
   },
   SHAMAN = {
-  	{974,    'ffffaa51', 'BOTTOMRIGHT'}, --earth shield
-  	{61295,  'ff3333ff', 'TOPRIGHT'}     --riptide
+  	{974,    'ffffaa51', 'BOTTOMRIGHT'},      --earth shield
+  	{61295,  'ff3333ff', 'TOPRIGHT'}          --riptide
   },
   PALADIN = {
-  	{1022,   'ff3333ff', 'BOTTOMRIGHT'}, --blessing of protection
-  	{1044,   'ffe37300', 'BOTTOMRIGHT'}, --blessing of freedom
-  	{6940,   'ffe31a1a', 'BOTTOMRIGHT'}, --blessing of sacrifice
-  	{204018, 'ff33cccc', 'BOTTOMRIGHT'}, --blessing of spellwarding
-  	{53563,  'ffb34db3', 'TOPRIGHT'},    --beacon of light
-  	{156910, 'ffb34db3', 'TOPRIGHT'},    --beacon of faith
-  	{200025, 'ffb34db3', 'TOPRIGHT'},    --beacon of virtue
-  	{157047, 'ff2693d6', 'TOP'},         --saved by the light
-  	{223306, 'ffb3b34d', 'BOTTOMLEFT'},  --bestow faith
-  	{287280, 'ff33cc33', 'TOPLEFT'}      --glimmer of light
+  	{1022,   'ff3333ff', 'BOTTOMRIGHT'},      --blessing of protection
+  	{1044,   'ffe37300', 'BOTTOMRIGHT'},      --blessing of freedom
+  	{6940,   'ffe31a1a', 'BOTTOMRIGHT'},      --blessing of sacrifice
+  	{204018, 'ff33cccc', 'BOTTOMRIGHT'},      --blessing of spellwarding
+  	{53563,  'ffb34db3', 'TOPRIGHT'},         --beacon of light
+  	{156910, 'ffb34db3', 'TOPRIGHT'},         --beacon of faith
+  	{200025, 'ffb34db3', 'TOPRIGHT'},         --beacon of virtue
+  	{157047, 'ff2693d6', 'TOP'},              --saved by the light
+  	{223306, 'ffb3b34d', 'BOTTOMLEFT'},       --bestow faith
+  	{287280, 'ff33cc33', 'TOPLEFT'}           --glimmer of light
+  },
+  EVOKER = {
+  	{364343, 'ffceff20', 'TOPRIGHT'},         --echo
+  	{366155, 'ffffffa8', 'BOTTOMRIGHT'},      --reversion
+  	{367364, 'ffffffa8', 'BOTTOMRIGHT', -22}, --reversion (echo'd)
+  	{357170, 'ffdb7300', 'BOTTOM'},           --time dilation
+  	{374227, 'ff7c6453', 'BOTTOMLEFT'},       --zephyr
+  	{373267, 'ffe31a1a', 'TOP'},              --lifebind
+  	{373268, 'ffe31a1a', 'TOP'}               --also lifebind
   }
 }
 

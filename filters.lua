@@ -7,6 +7,7 @@ L.filters = {
     32182,  -- Heroism
     80353,  -- Time Warp
     90355,  -- Ancient Hysteria
+	390386, -- Fury of the Aspects
     -- Paladin
     31821,  -- Aura Mastery
     1022,   -- Blessing of Protection
@@ -24,6 +25,8 @@ L.filters = {
     -- Shaman
     325174, -- Spirit Link
     20608,  -- Reincarnation
+	-- Evoker
+	357170, -- Time dilation
     -- Other
     97462,  -- Rallying Cry
     196718, -- Darkness
@@ -191,6 +194,9 @@ L.filters = {
   		203524, -- Neltharions Fury
   		190456, -- Ignore Pain
   		132404, -- Shield Block
+	-- Evoker
+		363916, -- Obsidian Scales
+		374348, -- Renewing Blaze
   	-- Racial
   		65116, -- Stoneform
   	-- Potion
@@ -458,6 +464,23 @@ L.filters = {
   		202164, -- Bounding Stride
   		215572, -- Frothing Berserker
   		199203, -- Thirst for Battle
+	-- Evoker
+		357170, -- Time Dilation
+		374227, -- Zephyr
+		357214, -- Wing Buffet
+		368970, -- Tail Swipe
+		372048, -- Opressing Roar
+		370960, -- Emerald Communion
+		370537, -- Stasis
+		359816, -- Dream Flight
+		370553, -- Tip the Scale
+		363534, -- Rewind
+		374968, -- Time Spiral
+		368432, -- Unravel
+		357210, -- Deep Breath
+		382411, -- Eternity Surge
+		370452, -- Shattering Star
+		375087, -- Dragonrage
   	-- Racials
   		65116, -- Stoneform
   		59547, -- Gift of the Naaru
@@ -668,6 +691,10 @@ L.filters = {
   		105771, -- Charge
   		199042, -- Thunderstruck
   		236077, -- Disarm
+	-- Evoker
+		-- Wing Buffet
+		-- Tail Swipe
+		-- Sky Terror
   	-- Racial
   		20549,  -- War Stomp
   		107079, -- Quaking Palm
