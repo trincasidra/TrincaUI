@@ -6,29 +6,6 @@ local dummy = function() end
 local unpack = unpack
 local backdrop = { edgeFile = L.C.texture, edgeSize = 1 }
 
--- Quest frame
-local QuestFrame = ObjectiveTrackerFrame
-local function MoveQuests()
-  QuestFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
-  ObjectiveTracker_Update()
-end
-local function AfterMoveQuests()
-  C_Timer.After(0, MoveQuests)
-end
-QuestFrame:SetScript("OnUpdate", AfterMoveQuests)
-QuestFrame:ClearAllPoints()
-QuestFrame:SetParent(UIParent)
-QuestFrame.SetParent = dummy
-QuestFrame:SetPoint(unpack(L.C.objectiveTrackerPoint))
-QuestFrame:SetClampedToScreen(false)
-QuestFrame.SetClampedToScreen = dummy
-QuestFrame:SetMovable(false)
-QuestFrame.SetMovable = dummy
-QuestFrame:ClearAllPoints()
-QuestFrame.ClearAllPoints = dummy
-QuestFrame.SetAllPoints = dummy
-QuestFrame:Show()
-
 -- Hide minimap border art
 MinimapBackdrop:Hide()
 MinimapCompassTexture:Hide()
