@@ -4,6 +4,14 @@ L.C = {
   texture = "Interface\\Buttons\\WHITE8x8",
   font = "Interface\\AddOns\\"..A.."\\media\\Expressway.ttf",
   globalscale = 1,
+  chat = {
+    enable = true,
+    dropshadow = {
+      offset = {1, -2},
+      color = {0, 0, 0, 0.25}
+    },
+    font = {STANDARD_TEXT_FONT, 13, "THINOUTLINE"}
+  },
   microMenuAndBagsPosition = {"TOPRIGHT", UiParent, "TOPRIGHT", -300, -10},
   fade = {
     microMenuAndBags = true,
