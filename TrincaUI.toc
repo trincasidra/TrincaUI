@@ -6,7 +6,6 @@
 ## Credits Zork, Scrable, Afenar
 ## OptionalDeps: LibSharedMedia-3.0, Dominos, Plater, TidyPlates, Kui_Nameplates, Prat-3.0
 ## X-oUF: TrincaUI
-## X-SlashCmdList: /trinca
 
 filters.lua
 config.lua
