@@ -8,13 +8,26 @@ My personal layout for oUF with some extras. It is not very complex, but it has 
   * All config is done in the `config.lua` file.
   * Except aura filters, those are on the `filters.lua` file.
 
+## Dragonflight update
+Make sure to follow [rRaidManager](https://www.wowinterface.com/downloads/info22236-rRaidManager.html) uninstall instructions if you get "blizzard compactraidframes" errors, and then /reload.
+
 ## Worthy additions
-With the new revamp to Blizzard's UI (check [my HUD](https://wago.io/fUPhvEiwl)) and some new modules, I'm now only using the usual suspects:
+With the new revamp to Blizzard's UI and some new modules, I'm now only using the usual suspects:
   * WeakAuras2: Check [my own](https://wago.io/p/Trincasidra%232868) or [Afenar](https://github.com/Afenar/AfenarUI)'s compilations.
   * Bigwigs/Littlewigs
   * Immersion
   * Details
   * OmniCD*
+  * My blizz's HUD
+
+<details>
+  <summary>Blizz's HUD import</summary>
+
+  ```
+  0 30 0 0 0 5 5 UIParent -1068.7 -550.3 -1 ##$$%/&&'%)$+$ 0 1 0 5 5 UIParent -1068.7 -509.5 -1 ##$$%/&&'%(#,$ 0 2 0 3 3 UIParent 1068.7 -550.3 -1 ##$$%/&&'%(#,$ 0 3 0 7 7 UIParent 767.9 2.0 -1 #$$%%/&&'%(#,$ 0 4 0 3 3 UIParent 1068.7 -508.3 -1 ##$$%/&&'%(#,$ 0 5 1 1 4 UIParent 0.0 0.0 -1 ##$$%/&('%(#,$ 0 6 1 1 7 MultiBar5 0.0 0.0 -1 ##$$%/&('%(#,$ 0 7 1 1 7 MultiBar6 0.0 0.0 -1 ##$$%/&('%(#,$ 0 10 0 4 4 UIParent 0.0 -469.7 -1 ##$$&('% 0 11 0 4 4 UIParent 0.0 -470.3 -1 ##$$&('%,# 0 12 0 4 4 UIParent 0.0 -265.8 -1 ##$$&('% 1 -1 0 4 4 UIParent 0.0 -227.3 -1 ##$# 2 -1 0 5 5 UIParent -2.0 -472.0 -1 ##$# 3 0 0 3 3 UIParent 648.7 -165.2 -1 $#3# 3 1 0 5 5 UIParent -648.7 -165.8 -1 %#3# 3 2 0 5 5 UIParent -1253.2 -238.5 -1 %#&#3# 3 3 0 7 7 UIParent -1004.8 702.0 -1 '$(#)#-#.#/#3# 3 4 0 5 5 UIParent -1968.7 198.5 -1 ,#-#.#/#0#1#2( 3 5 0 2 2 UIParent -384.2 -170.2 -1 &#*$3# 3 6 0 5 5 UIParent -368.7 258.8 -1 3# 4 -1 0 4 4 UIParent 0.0 -302.8 -1 # 5 -1 0 4 4 UIParent 0.0 -383.3 -1 # 6 0 0 1 1 UIParent -864.7 -2.0 -1 ##$#%$&.(()(*# 6 1 0 3 3 UIParent 2.0 409.7 -1 ##$#%$'+(()(*# 7 -1 0 3 3 UIParent 2.0 -287.7 -1 # 8 -1 1 6 6 UIParent 35.0 50.0 -1 #'$A%$&7 9 -1 0 5 5 UIParent -1468.7 -165.7 -1 # 10 -1 1 0 0 UIParent 16.0 -116.0 -1 # 11 -1 0 5 5 UIParent -2.0 -259.5 -1 # 12 -1 0 1 1 UIParent 947.2 -2.0 -1 #K
+  ```
+
+</details>
 
 <details>
   <summary>OmniCD installation instructions</summary>
