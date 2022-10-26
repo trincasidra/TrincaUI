@@ -4,6 +4,7 @@ local rLib = L.rLib
 L.addonName       = A
 L.dragFrames      = {}
 L.addonColor      = "00FF3300"
+L.hider           = CreateFrame("Frame", nil, UIParent)
 
 local SharedMedia = LibStub("LibSharedMedia-3.0")
 if SharedMedia then
