@@ -1,10 +1,10 @@
-## Interface: 100002
-## Version: 1.11r3
+## Interface: 100000
+## Version: 1.11r4
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
 ## Credits Zork, Scrable, Afenar
-## OptionalDeps: LibSharedMedia-3.0, Dominos, Plater, TidyPlates, Kui_Nameplates, Prat-3.0
+## OptionalDeps: LibSharedMedia-3.0, Plater, TidyPlates, Kui_Nameplates
 ## X-oUF: TrincaUI
 
 filters.lua
