@@ -12,6 +12,9 @@ L.C = {
     },
     font = {STANDARD_TEXT_FONT, 13, "THINOUTLINE"}
   },
+  styleTooltip = true,
+  styleRollHistory = true,
+  styleBag = true,
   microMenuAndBagsPosition = {"TOPRIGHT", UiParent, "TOPRIGHT", -300, -10},
   fade = {
     microMenuAndBags = true,
