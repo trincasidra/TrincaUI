@@ -535,13 +535,13 @@ local function PostCreateAura(self, button, isDebuff)
   end
   bg:SetPoint("TOPLEFT", -1, 1)
   bg:SetPoint("BOTTOMRIGHT", 1, -1)
-  button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-  button.count:SetFont(L.C.font, self.size/1.65, "OUTLINE")
-  button.count:SetShadowColor(0, 0, 0, 0.6)
-  button.count:SetShadowOffset(1, -1)
-  button.count:ClearAllPoints()
-  button.count:SetPoint("BOTTOMRIGHT", self.size/10, -self.size/10)
-  button.cd:SetReverse(true)
+  button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+  button.Count:SetFont(L.C.font, self.size/1.65, "OUTLINE")
+  button.Count:SetShadowColor(0, 0, 0, 0.6)
+  button.Count:SetShadowOffset(1, -1)
+  button.Count:ClearAllPoints()
+  button.Count:SetPoint("BOTTOMRIGHT", self.size/10, -self.size/10)
+  button.Cooldown:SetReverse(true)
   button:SetFrameStrata("LOW")
 end
 
@@ -563,7 +563,7 @@ local function CreateBuffs(self)
   frame.disableCooldown = cfg.disableCooldown
   frame.filter = cfg.filter
   frame.CustomFilter = cfg.CustomFilter
-  frame.PostCreateIcon = cfg.PostCreateAura or PostCreateAura
+  frame.PostCreateButton = cfg.PostCreateAura or PostCreateAura
   --frame.PostUpdateIcon = PostUpdateBuff
   frame:SetSize(CalcFrameSize(cfg.num,cfg.cols,cfg.size,cfg.size,cfg.spacing,0))
   --local t = frame:CreateTexture(nil,"BACKGROUND",nil,-8)
@@ -587,7 +587,7 @@ local function CreateDebuffs(self)
   frame.disableCooldown = cfg.disableCooldown
   frame.filter = cfg.filter
   frame.CustomFilter = cfg.CustomFilter
-  frame.PostCreateIcon = cfg.PostCreateDebuff or PostCreateDebuff
+  frame.PostCreateButton = cfg.PostCreateDebuff or PostCreateDebuff
   --frame.PostUpdateIcon = PostUpdateDebuff
   frame:SetSize(CalcFrameSize(cfg.num,cfg.cols,cfg.size,cfg.size,cfg.spacing,0))
   --local t = frame:CreateTexture(nil,"BACKGROUND",nil,-8)
