@@ -24,3 +24,6 @@ if L.C.fade.expBar then
     rLib:RegisterCallback("PLAYER_ENTERING_WORLD", HideExpBar)
     HideExpBar()
 end
+
+StatusTrackingBarManager:ClearAllPoints()
+StatusTrackingBarManager:SetPoint("TOP", UIParent, "TOP")

@@ -692,9 +692,9 @@ L.filters = {
   		199042, -- Thunderstruck
   		236077, -- Disarm
 	-- Evoker
-		-- Wing Buffet
-		-- Tail Swipe
-		-- Sky Terror
+		360806,  -- Wing Buffet
+		372245,  -- Terror of the Skies
+		372048,  -- Oppressing Roar
   	-- Racial
   		20549,  -- War Stomp
   		107079, -- Quaking Palm

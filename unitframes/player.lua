@@ -20,7 +20,7 @@ local function CreatePlayerStyle(self)
   self.settings.template = "player"
   self.settings.setupFrame = true
   self.settings.setupHeader = true
-  self.settings.createDrag = true
+  self.settings.createDrag = false
   --style
   L.F.CreateStyle(self)
 end
