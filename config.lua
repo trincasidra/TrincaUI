@@ -615,7 +615,7 @@ L.C.party = {
     CustomFilter = L.filters.ccBossDebuffs
   },
   buffs = {
-    enabled = true,
+    enabled = false,
     point = {"RIGHT", "LEFT", -3, 0},
     num = 3,
     cols = 3,
