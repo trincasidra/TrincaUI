@@ -225,7 +225,7 @@ local function AltPowerBarOverride(self, event, unit, powerType)
       el.bg:SetVertexColor(1*mu, 0*mu, 1*mu)
     end
   end
-  if ppmax == 0 then
+  if ppmax == 0 or ppcur == 0 then
     el:Hide()
   else
     el:Show()
@@ -235,20 +235,32 @@ end
 local function CreateAltPowerBar(self)
   if not self.cfg.altpowerbar or not self.cfg.altpowerbar.enabled then return end
 
-  local s = CreateFrame("StatusBar", nil, self)
-  s:SetStatusBarTexture(L.C.texture)
-  s:SetSize(unpack(self.cfg.altpowerbar.size))
-  s:SetOrientation(self.cfg.altpowerbar.orientation or "HORIZONTAL")
-  SetPoint(s,self,self.cfg.altpowerbar.point)
+  local ap = CreateFrame("StatusBar", nil, self, BackdropTemplateMixin and "BackdropTemplate")
+  ap:SetSize(unpack(self.cfg.altpowerbar.size))
+  ap:SetStatusBarTexture(L.C.texture)
+  ap:SetOrientation(self.cfg.altpowerbar.orientation or "HORIZONTAL")
+  SetPoint(ap, self, self.cfg.altpowerbar.point)
+  ap:GetStatusBarTexture():SetHorizTile(true)
+  ap:SetFrameLevel(3)
+  ap:SetAlpha(.8)
 
-  local bg = s:CreateTexture(nil, "BACKGROUND")
+  local border = CreateFrame("Frame", nil, ap, BackdropTemplateMixin and "BackdropTemplate")
+  border:SetPoint("TOPLEFT", ap, "TOPLEFT", -1, 1)
+  border:SetPoint("BOTTOMRIGHT", ap, "BOTTOMRIGHT", 1, -1)
+  border:SetBackdrop(backdrop)
+  border:SetBackdropBorderColor(unpack(L.C.colors.altpower.border))
+  border:SetFrameLevel(3)
+  self.Glow.ap = border
+
+  local bg = ap:CreateTexture(nil, "BACKGROUND")
   bg:SetTexture(L.C.texture)
   bg:SetAllPoints()
-  s.bg = bg
+  bg.multiplier = .4
+  bg:SetAlpha(.5)
+  ap.bg = bg
 
-  s.Override = AltPowerBarOverride
-  s.bg.multiplier = 1
-  return s
+  ap.Override = AltPowerBarOverride
+  return ap
 end
 L.F.CreateAltPowerBar = CreateAltPowerBar
 

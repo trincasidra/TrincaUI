@@ -58,6 +58,9 @@ L.C = {
       combo = {.65, .63, .35},
       border = {0, 0, 0}
     },
+    altpower = {
+      border = {0, 0, 0}
+    },
     cast = {
       default = {.9, 1, .61},
       defaultBG = {.45, .5, .305},
