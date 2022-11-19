@@ -205,6 +205,30 @@ L.C.player = {
     enabled = true,
     size = {144, 12},
     point = {"TOPLEFT", "BOTTOMLEFT", 0, -3}
+  },
+  castbar = {
+    enabled = true,
+    size = {200, 14},
+    point = {"CENTER", UIParent, "CENTER", 8, -227},
+    name = {
+      enabled = false,
+      points = {
+        {"LEFT", 4, 0},
+        {"RIGHT", -14, 0}
+      },
+      size = 12
+    },
+    timer = {
+      enabled = true,
+      point = {"RIGHT"},
+      size = 12
+    },
+    icon = {
+      enabled = true,
+      size = 14,
+      border = 1,
+      point = {"RIGHT", "LEFT", 0, 0}
+    }
   }
 }
 

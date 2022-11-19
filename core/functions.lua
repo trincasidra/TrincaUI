@@ -488,6 +488,18 @@ local function CreateCastBar(self)
     end
     cast.Text = name
   end
+
+  if self.cfg.castbar.timer and self.cfg.castbar.timer.enabled then
+    local cfg = self.cfg.castbar.timer
+    local timer = CreateText(cast, L.C.font, cfg.size, cfg.outline, cfg.align, cfg.noshadow)
+    if cfg.points then
+      SetPoints(timer, cast, cfg.points)
+    else
+      SetPoint(timer, cast, cfg.point)
+    end
+    cast.Time = timer
+  end
+  
   return cast
 end
 L.F.CreateCastBar = CreateCastBar
