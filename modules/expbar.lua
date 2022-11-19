@@ -8,7 +8,7 @@ if L.C.fade.expBar then
     local function ShowExpBar()
         StatusTrackingBarManager:SetAlpha(.9)
     end
-    StatusTrackingBarManager:SetScript("OnEnter", ShowExpBar)
+    StatusTrackingBarManager:HookScript("OnEnter", ShowExpBar)
     
     local expbarlasttime = 0
     local function HideExpBar()
@@ -20,7 +20,7 @@ if L.C.fade.expBar then
         expbarlasttime = time()
         C_Timer.After(1.5, HideExpBar)
     end
-    StatusTrackingBarManager:SetScript("OnLeave", SetExpBarTimer)
+    StatusTrackingBarManager:HookScript("OnLeave", SetExpBarTimer)
     rLib:RegisterCallback("PLAYER_ENTERING_WORLD", HideExpBar)
     HideExpBar()
 end

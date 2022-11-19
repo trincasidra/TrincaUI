@@ -586,7 +586,7 @@ local function CreateBuffs(self)
   frame["growth-y"] = cfg.growthY
   frame.disableCooldown = cfg.disableCooldown
   frame.filter = cfg.filter
-  frame.CustomFilter = cfg.CustomFilter
+  frame.FilterAura = cfg.CustomFilter
   frame.PostCreateButton = cfg.PostCreateAura or PostCreateAura
   --frame.PostUpdateIcon = PostUpdateBuff
   frame:SetSize(CalcFrameSize(cfg.num,cfg.cols,cfg.size,cfg.size,cfg.spacing,0))
@@ -610,7 +610,7 @@ local function CreateDebuffs(self)
   frame["growth-y"] = cfg.growthY
   frame.disableCooldown = cfg.disableCooldown
   frame.filter = cfg.filter
-  frame.CustomFilter = cfg.CustomFilter
+  frame.FilterAura = cfg.CustomFilter
   frame.PostCreateButton = cfg.PostCreateDebuff or PostCreateDebuff
   --frame.PostUpdateIcon = PostUpdateDebuff
   frame:SetSize(CalcFrameSize(cfg.num,cfg.cols,cfg.size,cfg.size,cfg.spacing,0))
