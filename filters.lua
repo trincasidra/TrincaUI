@@ -1161,51 +1161,51 @@ local function isDungeonDebuff(spellId)
 	return false
 end
 
-local function dispellableBuffs(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
-  if isStealable then return true end
+local function dispellableBuffs(self, unit, data)
+  if data.isStealable then return true end
   return false
 end
 L.filters.dispellableBuffs = dispellableBuffs
 
-local function defensiveBuffs(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
-  if isTurtle(spellId) then return true end
+local function defensiveBuffs(self, unit, data)
+  if isTurtle(data.spellId) then return true end
   return false
 end
 L.filters.defensiveBuffs = defensiveBuffs
 
-local function turtleCooldownDispellableBuffs(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
+local function turtleCooldownDispellableBuffs(self, unit, data)
   if isTurtle(spellId) then return true end
   if isCooldown(spellId) then return true end
-  if isStealable then return true end
+  if data.isStealable then return true end
   return false
 end
 L.filters.bossDebuffs = bossDebuffs
 
-local function blacklistOnly(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
-  if isBlacklist(spellId) then return false end
+local function blacklistOnly(self, unit, data)
+  if isBlacklist(data.spellId) then return false end
   return true
 end
 L.filters.blacklistOnly = blacklistOnly
 
-local function ccBossPlayerDebuffs(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
-  if isCC(spellId) then return true end
-  if isBossDebuff then return true end
-  if isBlacklist(spellId) then return false end
-  if caster == player then return true end
+local function ccBossPlayerDebuffs(self, unit, data)
+  if isCC(data.spellId) then return true end
+  if data.isBossDebuff then return true end
+  if isBlacklist(data.spellId) then return false end
+  if data.isPlayerAura then return true end
   return false
 end
 L.filters.ccBossPlayerDebuffs = ccBossPlayerDebuffs
 
-local function ccBossDebuffs(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
-  if isCC(spellId) then return true end
-  if isDungeonDebuff(spellId) then return true end
-  if isBossDebuff then return true end
+local function ccBossDebuffs(self, unit, data)
+  if isCC(data.spellId) then return true end
+  if isDungeonDebuff(data.spellId) then return true end
+  if data.isBossDebuff then return true end
   return false
 end
 L.filters.ccBossDebuffs = ccBossDebuffs
 
-local function bossDebuffs(element, unit, button, name, texture, count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellId, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
-  if isBossDebuff then return true end
+local function bossDebuffs(self, unit, data)
+  if data.isBossDebuff then return true end
   return false
 end
 L.filters.bossDebuffs = bossDebuffs
