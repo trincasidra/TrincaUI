@@ -92,7 +92,7 @@ local function Show()
   --MinimapCluster.GuildInstanceDifficulty:SetAlpha(.9)
   ExpansionLandingPageMinimapButton:SetAlpha(.9)
 end
-Minimap:SetScript("OnEnter", Show)
+Minimap:HookScript("OnEnter", Show)
 
 local lasttime = 0
 local function Hide()
@@ -108,6 +108,6 @@ local function SetTimer()
   lasttime = time()
   C_Timer.After(1.5, Hide)
 end
-Minimap:SetScript("OnLeave", SetTimer)
+Minimap:HookScript("OnLeave", SetTimer)
 rLib:RegisterCallback("PLAYER_ENTERING_WORLD", Hide)
 Hide(Minimap)
