@@ -244,3 +244,144 @@ if L.C.fade.actionBar5 then
     rLib:RegisterCallback("PLAYER_ENTERING_WORLD", HideActionBar5)
     HideActionBar5()
 end
+
+if L.C.fade.actionBar6 then
+    local function ShowActionBar6()
+        MultiBar5:SetAlpha(.9)
+    end
+    MultiBar5:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button1:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button2:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button3:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button4:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button5:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button6:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button7:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button8:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button9:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button10:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button11:HookScript("OnEnter", ShowActionBar6)
+    MultiBar5Button12:HookScript("OnEnter", ShowActionBar6)
+    
+    local actionbar6lasttime = 0
+    local function HideActionBar6()
+        if MultiBarRight:IsMouseOver() then return end
+        if time() == actionbar6lasttime then return end
+        MultiBar5:SetAlpha(0)
+    end
+    local function SetActionBar6Timer()
+        actionbar6lasttime = time()
+        C_Timer.After(1.5, HideActionBar6)
+    end
+    
+    MultiBar5:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button1:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button2:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button3:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button4:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button5:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button6:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button7:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button8:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button9:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button10:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button11:HookScript("OnLeave", SetActionBar6Timer)
+    MultiBar5Button12:HookScript("OnLeave", SetActionBar6Timer)
+
+    rLib:RegisterCallback("PLAYER_ENTERING_WORLD", HideActionBar6)
+    HideActionBar6()
+end
+
+if L.C.fade.actionBar7 then
+    local function ShowActionBar7()
+        MultiBar6:SetAlpha(.9)
+    end
+    MultiBar6:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button1:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button2:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button3:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button4:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button5:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button6:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button7:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button8:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button9:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button10:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button11:HookScript("OnEnter", ShowActionBar7)
+    MultiBar6Button12:HookScript("OnEnter", ShowActionBar7)
+    
+    local actionbar7lasttime = 0
+    local function HideActionBar7()
+        if MultiBar6:IsMouseOver() then return end
+        if time() == actionbar7lasttime then return end
+        MultiBar6:SetAlpha(0)
+    end
+    local function SetActionBar7Timer()
+        actionbar7lasttime = time()
+        C_Timer.After(1.5, HideActionBar7)
+    end
+    
+    MultiBar6:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button1:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button2:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button3:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button4:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button5:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button6:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button7:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button8:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button9:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button10:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button11:HookScript("OnLeave", SetActionBar7Timer)
+    MultiBar6Button12:HookScript("OnLeave", SetActionBar7Timer)
+
+    rLib:RegisterCallback("PLAYER_ENTERING_WORLD", HideActionBar7)
+    HideActionBar7()
+end
+
+if L.C.fade.actionBar8 then
+    local function ShowActionBar8()
+        MultiBar7:SetAlpha(.9)
+    end
+    MultiBar7:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button1:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button2:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button3:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button4:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button5:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button6:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button7:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button8:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button9:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button10:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button11:HookScript("OnEnter", ShowActionBar8)
+    MultiBar7Button12:HookScript("OnEnter", ShowActionBar8)
+    
+    local actionbar8lasttime = 0
+    local function HideActionBar8()
+        if MultiBar7:IsMouseOver() then return end
+        if time() == actionbar8lasttime then return end
+        MultiBar7:SetAlpha(0)
+    end
+    local function SetActionBar8Timer()
+        actionbar8lasttime = time()
+        C_Timer.After(1.5, HideActionBar8)
+    end
+    
+    MultiBar7:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button1:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button2:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button3:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button4:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button5:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button6:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button7:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button8:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button9:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button10:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button11:HookScript("OnLeave", SetActionBar8Timer)
+    MultiBar7Button12:HookScript("OnLeave", SetActionBar8Timer)
+
+    rLib:RegisterCallback("PLAYER_ENTERING_WORLD", HideActionBar8)
+    HideActionBar8()
+end
