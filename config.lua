@@ -23,7 +23,10 @@ L.C = {
     actionBar2 = true,
     actionBar3 = true,
     actionBar4 = true,
-    actionBar5 = false -- I keep this one always visible close to the minimap.
+    actionBar5 = true,
+    actionBar6 = true,
+    actionBar7 = true,
+    actionBar8 = true
   },
   colors = {
     disconnected = {.5, .5, .5, 1},
@@ -121,7 +124,7 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{33206,  'ff7859bd', 'LEFT'},             --pain suppression
   	{41635,  'ffffffa8', 'BOTTOMRIGHT'},      --prayer of mending
   	{47788,  'ffdb7300', 'TOPRIGHT'},         --guardian spirit
-  	{193065, 'ff8a36c7', 'BOTTOMRIGHT'},      --masochism
+  	--{193065, 'ff8a36c7', 'BOTTOMRIGHT'},      --masochism
   	{194384, 'ffffffa8', 'TOPRIGHT'},         --atonement
   	{214206, 'ffffffa8', 'TOPRIGHT'}          --also atonement
   },
