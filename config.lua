@@ -59,6 +59,7 @@ L.C = {
       alternative = {.2, .4, .8},
       holy = {.9, .88, .06},
       combo = {.65, .63, .35},
+      vigor = {0, .7, .9},
       border = {0, 0, 0}
     },
     altpower = {
@@ -115,7 +116,8 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{200389, 'ffffff66', 'LEFT'},             --cultivation
   	{203554, 'ffffff66', 'LEFT'},             --focused growth
   	{207386, 'ff6633cc', 'TOP'},              --spring blossoms
-  	{325748, 'ff7c6453', 'TOPRIGHT', -22}     --adaptive swarm
+  	{325748, 'ff7c6453', 'TOPRIGHT', -22},    --adaptive swarm
+  	{391891, 'ff7c6453', 'TOPRIGHT', -22}     --also adaptive swarm
   },
   PRIEST = {
   	{17,     'ffb3b3b3', 'TOPLEFT'},          --power word: shield
@@ -160,7 +162,9 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{357170, 'ffdb7300', 'BOTTOM'},           --time dilation
   	{374227, 'ff7c6453', 'BOTTOMLEFT'},       --zephyr
   	{373267, 'ffe31a1a', 'TOP'},              --lifebind
-  	{373268, 'ffe31a1a', 'TOP'}               --also lifebind
+  	{373268, 'ffe31a1a', 'TOP'},              --lifebind (echo'd)
+  	{355941, 'ff37fc83', 'TOPLEFT'},          --dream breath
+  	{376788, 'ff37fc83', 'TOPLEFT', 22}           --dream breath (echo'd)
   }
 }
 
@@ -207,7 +211,8 @@ L.C.player = {
   altpowerbar = {
     enabled = true,
     size = {144, 12},
-    point = {"TOPLEFT", "BOTTOMLEFT", 0, -3}
+    point = {"TOPLEFT", "BOTTOMLEFT", 0, -3},
+    dragonriding = true
   },
   castbar = {
     enabled = true,
@@ -445,6 +450,12 @@ L.C.nameplate = {
         {"TOPLEFT", 2, 11},
         {"TOPLEFT", -2, 11}
       },
+      health = {
+        enabled = true,
+        point = {"CENTER", 0, 0},
+        size = 20,
+        tag = "[TrincaUI:health]"
+      },  
       size = 14,
       align = "CENTER",
       tag = "[TrincaUI:classification][name]"
@@ -618,13 +629,19 @@ L.C.party = {
       size = 12,
       tag = "[TrincaUI:role][TrincaUI:leader]"
     },
+    status = {
+      enabled = true,
+      point = {"BOTTOM", 0, 2},
+      size = 10,
+      tag = "[offline][dead]"
+    },
     debuffHighlight = true
   },
   powerbar = {
     enabled = false,
     size = {107, 6},
     point = {"TOP", "BOTTOM", 0, -4},
-    colorPower = true,
+    colorPower = true
   },
   raidmark = {
     enabled = true,
@@ -706,6 +723,12 @@ L.C.raid = {
       },
       size = 12,
       tag = "[TrincaUI:role][TrincaUI:leader]"
+    },
+    status = {
+      enabled = true,
+      point = {"BOTTOM", 0, 2},
+      size = 10,
+      tag = "[offline][dead]"
     },
     debuffHighlight = true
   },

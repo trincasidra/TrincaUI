@@ -14,6 +14,54 @@ local A, L = ...
 
 if not L.C.nameplate or not L.C.nameplate.enabled or IsAddOnLoaded("Plater") or IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Kui_Nameplates") then return end
 
+-- Handle widget nameplates (like places to turn in things)
+local function NamePlateCallback(nameplate, event, unit)
+  if event == 'NAME_PLATE_UNIT_ADDED' then
+    nameplate.blizzPlate = nameplate:GetParent().UnitFrame
+    nameplate.widgetsOnly = UnitNameplateShowsWidgetsOnly(unit)
+		nameplate.widgetSet = UnitWidgetSet(unit)
+    if nameplate.widgetsOnly then
+			nameplate.Health:SetAlpha(0)
+			nameplate.widgetContainer = nameplate.blizzPlate.WidgetContainer
+			if nameplate.widgetContainer then
+				nameplate.widgetContainer:SetParent(nameplate)
+				nameplate.widgetContainer:ClearAllPoints()
+				nameplate.widgetContainer:SetPoint('BOTTOM', nameplate, 'BOTTOM')
+			end
+		end
+  elseif event == 'NAME_PLATE_UNIT_REMOVED' then
+		if nameplate.widgetsOnly and nameplate.widgetContainer then
+			nameplate.Health:SetAlpha(1)
+			nameplate.widgetContainer:SetParent(nameplate.blizzPlate)
+			nameplate.widgetContainer:ClearAllPoints()
+			nameplate.widgetContainer:SetPoint('TOP', nameplate.blizzPlate.castBar, 'BOTTOM')
+		end
+  end
+end
+L.C.NamePlateCallback = NamePlateCallback
+
+
+local cvars = {
+  nameplateMinScale         = 1,
+  nameplateMaxScale         = 1,
+  nameplateMinScaleDistance = 0,
+  nameplateMaxScaleDistance = 40,
+  nameplateGlobalScale      = 1,
+  NamePlateHorizontalScale  = 1,
+  NamePlateVerticalScale    = 1,
+  nameplateSelfScale        = 1,
+  nameplateSelectedScale    = 1,
+  nameplateLargerScale      = 1.2,
+  nameplateShowFriendlyNPCs = 1,
+  nameplateMinAlpha         = 0.5,
+  nameplateMaxAlpha         = 0.5,
+  nameplateMinAlphaDistance = 0,
+  nameplateMaxAlphaDistance = 40,
+  nameplateSelectedAlpha    = 1
+}
+
+L.C.NamePlateCVars = cvars
+
 local function CreateNamePlateStyle(self)
   --config
   self.cfg = L.C.nameplate

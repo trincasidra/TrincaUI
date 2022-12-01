@@ -132,16 +132,20 @@ local function PostUpdateHealth(Health, unit, min, max)
     for i, v in ipairs(color) do colorBG[i] = v*.3 end
     self.Health.bg:SetVertexColor(unpack(colorBG))
     return
-  end
-
-  if UnitIsDeadOrGhost(unit) then
-    self.Health.bg:SetVertexColor(unpack(L.C.colors.dead))
-  elseif not UnitIsConnected(unit) then
-    self.Health:SetAlpha(0)
-    self.Health.bg:SetVertexColor(unpack(L.C.colors.disconnected))
   else
-    self.Health:SetAlpha(1)
-    self.Health.bg:SetVertexColor(unpack(L.C.colors.health.background))
+    if UnitIsDeadOrGhost(unit) then
+      self.Health:SetAlpha(.75)
+      self.Health:SetStatusBarColor(unpack(L.C.colors.dead))
+      self.Health.bg:SetVertexColor(unpack(L.C.colors.dead))
+    elseif not UnitIsConnected(unit) then
+      self.Health:SetAlpha(.75)
+      self.Health:SetStatusBarColor(unpack(L.C.colors.disconnected))
+      self.Health.bg:SetVertexColor(unpack(L.C.colors.disconnected))
+    else
+      self.Health:SetAlpha(1)
+      self.Health:SetStatusBarColor(unpack(L.C.colors.health.default))
+      self.Health.bg:SetVertexColor(unpack(L.C.colors.health.background))
+    end  
   end
 end
 
@@ -243,6 +247,33 @@ local function CreateAltPowerBar(self)
   ap:GetStatusBarTexture():SetHorizTile(true)
   ap:SetFrameLevel(3)
   ap:SetAlpha(.8)
+
+  -- Dragonriding UI
+  if self.cfg.altpowerbar.dragonriding then 
+    UIWidgetPowerBarContainerFrame:SetAlpha(0)
+    ap:RegisterEvent("UPDATE_UI_WIDGET")
+    ap:SetScript("OnEvent", function(self, event, ...)
+      if (event == "UPDATE_UI_WIDGET") then
+        local widget = ...
+        if (widget.widgetSetID == 283) then
+          local visInfo = UIWidgetManager:GetWidgetTypeInfo(widget.widgetType).visInfoDataFunction(widget.widgetID)
+          if visInfo then
+            local widgetInfo = C_UIWidgetManager.GetFillUpFramesWidgetVisualizationInfo(widget.widgetID)
+            if widgetInfo then
+              local unit = "player"
+              local ppmax = UnitPowerMax(unit, ALTERNATE_POWER_INDEX, true) or 0
+              local ppcur = UnitPower(unit, ALTERNATE_POWER_INDEX, true)
+              local realcur = ppcur + (widgetInfo.fillValue/widgetInfo.fillMax)
+              if realcur > ppmax then realcur = ppmax end
+              self:SetMinMaxValues(0, ppmax)
+              self:SetValue(realcur)
+              self:SetStatusBarColor(unpack(L.C.colors.power.vigor))
+            end
+          end
+        end
+      end
+    end)
+  end
 
   local border = CreateFrame("Frame", nil, ap, BackdropTemplateMixin and "BackdropTemplate")
   border:SetPoint("TOPLEFT", ap, "TOPLEFT", -1, 1)
@@ -535,6 +566,19 @@ local function CreateHealthText(self)
   self:Tag(text, cfg.tag)
 end
 L.F.CreateHealthText = CreateHealthText
+
+local function CreateStatusText(self)
+  if not self.cfg.healthbar or not self.cfg.healthbar.status or not self.cfg.healthbar.status.enabled then return end
+  local cfg = self.cfg.healthbar.status
+  local text = CreateText(self.rAbsorbBar or self.Health,L.C.font,cfg.size,cfg.outline,cfg.align,cfg.noshadow)
+  if cfg.points then
+    SetPoints(text,self.rAbsorbBar or self.Health,cfg.points)
+  else
+    SetPoint(text,self.rAbsorbBar or self.Health,cfg.point)
+  end
+  self:Tag(text, cfg.tag)
+end
+L.F.CreateStatusText = CreateStatusText
 
 local function CreatePowerText(self)
   if not self.cfg.powerbar or not self.cfg.powerbar.enabled or not self.cfg.powerbar.power or not self.cfg.powerbar.power.enabled then return end

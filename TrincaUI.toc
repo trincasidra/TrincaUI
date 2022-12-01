@@ -1,5 +1,5 @@
 ## Interface: 100002
-## Version: 1.13r2
+## Version: 1.14
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
@@ -30,6 +30,7 @@ modules\tooltip.lua
 modules\loot.lua
 modules\bag.lua
 modules\rChat.lua
+modules\rSellPoor.lua
 
 core\functions.lua
 core\tags.lua
