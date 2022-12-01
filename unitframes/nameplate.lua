@@ -40,28 +40,6 @@ local function NamePlateCallback(nameplate, event, unit)
 end
 L.C.NamePlateCallback = NamePlateCallback
 
-
-local cvars = {
-  nameplateMinScale         = 1,
-  nameplateMaxScale         = 1,
-  nameplateMinScaleDistance = 0,
-  nameplateMaxScaleDistance = 40,
-  nameplateGlobalScale      = 1,
-  NamePlateHorizontalScale  = 1,
-  NamePlateVerticalScale    = 1,
-  nameplateSelfScale        = 1,
-  nameplateSelectedScale    = 1,
-  nameplateLargerScale      = 1.2,
-  nameplateShowFriendlyNPCs = 1,
-  nameplateMinAlpha         = 0.5,
-  nameplateMaxAlpha         = 0.5,
-  nameplateMinAlphaDistance = 0,
-  nameplateMaxAlphaDistance = 40,
-  nameplateSelectedAlpha    = 1
-}
-
-L.C.NamePlateCVars = cvars
-
 local function CreateNamePlateStyle(self)
   --config
   self.cfg = L.C.nameplate
