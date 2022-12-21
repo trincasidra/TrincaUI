@@ -144,16 +144,16 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
   	{61295,  'ff3333ff', 'TOPRIGHT'}          --riptide
   },
   PALADIN = {
-  	{1022,   'ff3333ff', 'BOTTOMRIGHT'},      --blessing of protection
-  	{1044,   'ffe37300', 'BOTTOMRIGHT'},      --blessing of freedom
-  	{6940,   'ffe31a1a', 'BOTTOMRIGHT'},      --blessing of sacrifice
-  	{204018, 'ff33cccc', 'BOTTOMRIGHT'},      --blessing of spellwarding
+  	{1022,   'ff3333ff', 'TOPLEFT'},      --blessing of protection
+  	{1044,   'ffe37300', 'TOPLEFT'},      --blessing of freedom
+  	{6940,   'ffe31a1a', 'TOPLEFT'},      --blessing of sacrifice
+  	{204018, 'ff33cccc', 'TOPLEFT'},      --blessing of spellwarding
   	{53563,  'ffb34db3', 'TOPRIGHT'},         --beacon of light
   	{156910, 'ffb34db3', 'TOPRIGHT'},         --beacon of faith
   	{200025, 'ffb34db3', 'TOPRIGHT'},         --beacon of virtue
   	{157047, 'ff2693d6', 'TOP'},              --saved by the light
   	{223306, 'ffb3b34d', 'BOTTOMLEFT'},       --bestow faith
-  	{287280, 'ff33cc33', 'TOPLEFT'}           --glimmer of light
+  	{287280, 'ff33cc33', 'BOTTOMRIGHT'}           --glimmer of light
   },
   EVOKER = {
   	{364343, 'ffceff20', 'TOPRIGHT'},         --echo
@@ -284,8 +284,8 @@ L.C.target = {
     name = {
       enabled = true,
       points = {
-        {"TOPLEFT", 2, 11},
-        {"TOPRIGHT", -2, 11},
+        {"TOPLEFT", 2, 13},
+        {"TOPRIGHT", -2, 13},
       },
       size = 16,
       tag = "[TrincaUI:classification][difficulty][TrincaUI:color][name]|r"

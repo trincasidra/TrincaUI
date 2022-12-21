@@ -117,7 +117,7 @@ local function PostUpdateHealth(Health, unit, min, max)
     elseif threat == 3 then
       color = L.C.colors.threat.tanking
     else
-      local reaction = UnitReaction(unit, "player")
+      local reaction = UnitReaction(unit, "player") or 4
       if reaction < 4 then
         color = L.C.colors.reaction.harm
       elseif reaction == 4 then
