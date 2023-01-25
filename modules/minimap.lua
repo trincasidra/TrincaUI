@@ -34,8 +34,8 @@ MinimapCluster.ZoneTextButton:Hide()
 MinimapCluster.BorderTop:Hide()
 
 -- Mail icon
-MinimapCluster.MailFrame:ClearAllPoints()
-MinimapCluster.MailFrame:SetPoint("BOTTOMRIGHT", Minimap.Border, -4, 4)
+MinimapCluster.IndicatorFrame.MailFrame:ClearAllPoints()
+MinimapCluster.IndicatorFrame.MailFrame:SetPoint("BOTTOMRIGHT", Minimap.Border, -4, 4)
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\"..L.addonName.."\\media\\mail.blp")
 
 -- Clock
