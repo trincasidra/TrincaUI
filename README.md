@@ -41,29 +41,7 @@ With the new revamp to Blizzard's UI and some new modules, I'm now only using th
 <details>
   <summary>OmniCD installation instructions</summary>
   
-  By default, you'll get an error with OmniCD as it doesn't support TrincaUI.
-
-  It is easily fixable by adding this:
-  ```lua
-  {   [1] = "TrincaUI",
-		[2] = "TrincaUIPartyHeaderUnitButton",
-		[3] = "unit",
-		[4] = 1,
-	},
-	{   [1] = "TrincaUI-Raid",
-		[2] = "TrincaUIRaidHeader%UnitButton",
-		[3] = "unit",
-		[4] = 1,
-		[5] = 40,
-	},
-	{   [1] = "TrincaUI-Raid40",
-		[2] = "TrincaUIRaidHeader%UnitButton",
-		[3] = "unit",
-		[4] = 1,
-		[5] = 40,
-	},
-  ```
-  To the `unitFrameData` table on the `Core/addons.lua` file.
+  OmniCD should now work by default with TrincaUI.
 
   You can then also import my profile:
   ```
