@@ -3,7 +3,7 @@ My personal layout for oUF with some extras. It is not very complex, but it has 
 
 ## Description
   * Minimalist and simple interface using oUF. All dependencies are embedded, so no need to install any extra addon.
-  * Most of the code is taken from [ZorkUI](https://www.wowinterface.com/downloads/info24252-ZorkUI.html), and also I took some tricks from oUF_Farva. Overall, my intent was to mimic my own configuration of AfenarUI, but using plain oUF instead of going through ElvUI.
+  * Most of the base code is taken from [ZorkUI](https://www.wowinterface.com/downloads/info24252-ZorkUI.html), and also I took some tricks from oUF_Farva. Overall, my intent was to mimic my own configuration of AfenarUI, but using plain oUF instead of going through ElvUI.
   * This is always work in progress, so functionalities may be missing and/or may never come. Testing comes from my own personal use, so hopefully it's enough.
   * All config is done in the `config.lua` file.
   * Except aura filters, those are on the `filters.lua` file.
@@ -17,11 +17,19 @@ With the new revamp to Blizzard's UI and some new modules, I'm now only using th
   * Bigwigs/Littlewigs
   * Immersion
   * Details
-  * OmniCD*
-  * My blizz's HUD
+  * OmniCD
 
 <details>
-  <summary>Blizz's HUD import (2k)</summary>
+  <summary>Blizz's HUD import (5120x1440)</summary>
+
+  ```
+  0 35 0 0 0 7 7 UIParent -227.9 2.0 -1 ##$$%/&&'%)$+$ 0 1 0 7 1 MainMenuBar 1.2 4.0 -1 ##$$%/&&'%(#,$ 0 2 0 7 7 UIParent 226.8 2.0 -1 ##$$%/&&'%(#,$ 0 3 0 7 7 UIParent -223.3 187.0 -1 #$$&%)&&'%(#,$ 0 4 0 7 1 MultiBarBottomRight -0.8 4.0 -1 ##$$%/&&'%(#,$ 0 5 0 5 3 MultiBar7 -4.0 -0.1 -1 #$$%%/&&'%(#,$ 0 6 0 5 3 MultiBarRight -4.0 0.0 -1 #$$%%/&&'%(#,$ 0 7 0 5 3 MultiBar6 -4.0 -0.0 -1 #$$%%/&&'%(#,$ 0 10 0 4 4 UIParent 0.0 -502.5 -1 ##$$&('% 0 11 0 7 1 MultiBarLeft -230.2 4.0 -1 ##$$&('%,# 0 12 0 7 1 MultiBarBottomLeft -147.1 4.0 -1 ##$$&('% 1 -1 0 4 4 UIParent 0.0 -227.3 -1 ##$# 2 -1 0 5 5 UIParent -935.3 -467.8 -1 ##$# 3 0 0 3 3 UIParent 1715.3 -159.4 -1 $#3# 3 1 0 3 3 UIParent 2315.3 -167.5 -1 %#3# 3 2 0 7 7 UIParent -291.9 158.7 -1 %#&#3# 3 3 0 0 0 UIParent 1553.7 -502.0 -1 '$(#)#-#.#/#1$3# 3 4 0 0 0 UIParent 1364.5 -504.0 -1 ,#-#.#/#0#1#2( 3 5 0 2 2 UIParent -1315.3 -352.0 -1 &#*$3# 3 6 0 2 2 UIParent -1317.9 -268.0 -1 3# 4 -1 0 4 4 UIParent 0.0 -342.8 -1 # 5 -1 0 4 4 UIParent 0.0 -423.3 -1 # 6 0 0 1 1 UIParent -1198.0 -2.0 -1 ##$#%$&.(()( 6 1 0 5 5 UIParent -3135.3 411.2 -1 ##$#%$'.(()( 7 -1 0 3 3 UIParent 735.3 -302.0 -1 # 8 -1 0 3 3 UIParent 767.3 -505.2 -1 #'$A%$&7 9 -1 0 7 1 MultiBarBottomLeft -206.8 4.0 -1 # 10 -1 1 0 0 UIParent 16.0 -116.0 -1 # 11 -1 0 5 5 UIParent -935.3 -259.5 -1 # 12 -1 0 1 1 UIParent 1080.5 -2.0 -1 #K 13 -1 0 5 3 MinimapCluster -4.0 -62.2 -1 ##$#%# 14 -1 0 7 7 UIParent 828.0 2.0 -1 ##$#%( 15 0 0 4 4 UIParent 0.0 587.8 -1 # 15 1 0 4 4 UIParent 0.0 566.3 -1 # 16 -1 0 3 3 UIParent 2835.3 -283.5 -1 #(
+  ```
+
+</details>
+
+<details>
+  <summary>Blizz's HUD import (2560x1440)</summary>
 
   ```
   0 30 0 0 0 7 7 UIParent -227.9 2.0 -1 ##$$%/&&'%)$+$ 0 1 0 7 1 MainMenuBar 1.2 4.0 -1 ##$$%/&&'%(#,$ 0 2 0 7 7 UIParent 226.8 2.0 -1 ##$$%/&&'%(#,$ 0 3 0 7 7 UIParent 768.7 2.0 -1 #$$%%/&&'%(#,$ 0 4 0 7 1 MultiBarBottomRight -0.8 4.0 -1 ##$$%/&&'%(#,$ 0 5 0 5 3 MultiBar7 -4.0 -0.1 -1 #$$%%/&&'%(#,$ 0 6 0 5 3 MultiBarRight -4.0 0.0 -1 #$$%%/&&'%(#,$ 0 7 0 5 3 MultiBar6 -4.0 -0.0 -1 #$$%%/&&'%(#,$ 0 10 0 4 4 UIParent 0.0 -503.0 -1 ##$$&('% 0 11 0 7 1 MultiBarLeft -230.2 4.0 -1 ##$$&('%,# 0 12 0 7 1 MultiBarBottomLeft -147.1 4.0 -1 ##$$&('% 1 -1 0 4 4 UIParent 0.0 -227.3 -1 ##$# 2 -1 0 5 5 UIParent -2.0 -472.0 -1 ##$# 3 0 0 3 3 UIParent 648.7 -165.2 -1 $#3# 3 1 0 5 5 UIParent -648.7 -165.8 -1 %#3# 3 2 0 5 5 UIParent -1253.2 -238.5 -1 %#&#3# 3 3 0 0 0 UIParent 23.9 -302.0 -1 '$(#)#-#.#/#1$3# 3 4 0 0 0 UIParent 20.6 -304.5 -1 ,#-#.#/#0#1#2( 3 5 0 2 2 UIParent -384.2 -170.2 -1 &#*$3# 3 6 0 2 2 UIParent -368.7 -176.2 -1 3# 4 -1 0 4 4 UIParent 0.0 -342.8 -1 # 5 -1 0 4 4 UIParent 0.0 -423.3 -1 # 6 0 0 1 1 UIParent -864.7 -2.0 -1 ##$#%$&.(()(*# 6 1 0 3 3 UIParent 2.0 411.4 -1 ##$#%$'+(()(*# 7 -1 0 3 3 UIParent 2.0 -303.5 -1 # 8 -1 0 3 3 UIParent 34.0 -504.2 -1 #'$A%$&7 9 -1 0 7 1 MultiBarBottomLeft -206.8 4.0 -1 # 10 -1 1 0 0 UIParent 16.0 -116.0 -1 # 11 -1 0 5 5 UIParent -2.0 -262.0 -1 # 12 -1 0 1 1 UIParent 947.2 -2.0 -1 #K
@@ -30,7 +38,7 @@ With the new revamp to Blizzard's UI and some new modules, I'm now only using th
 </details>
 
 <details>
-  <summary>Blizz's HUD import (1080p)</summary>
+  <summary>Blizz's HUD import (1920x1080)</summary>
 
   ```
   0 30 0 0 0 7 7 UIParent -227.9 2.0 -1 ##$$%/&&'%)$+$ 0 1 0 7 1 MainMenuBar 1.2 4.0 -1 ##$$%/&&'%(#,$ 0 2 0 7 7 UIParent 226.8 2.0 -1 ##$$%/&&'%(#,$ 0 3 0 7 7 UIParent 767.9 2.0 -1 #$$%%/&&'%(#,$ 0 4 0 3 5 MultiBarBottomLeft 4.0 0.0 -1 ##$$%/&&'%(#,$ 0 5 0 5 3 MultiBar7 -4.0 -0.1 -1 #$$%%/&&'%(#,$ 0 6 0 7 7 UIParent 689.8 2.0 -1 #$$%%/&&'%(#,$ 0 7 0 7 7 UIParent 612.2 2.0 -1 #$$%%/&&'%(#,$ 0 10 0 4 4 UIParent 0.0 -503.0 -1 ##$$&('% 0 11 0 7 1 MultiBarLeft -230.2 4.0 -1 ##$$&('%,# 0 12 0 7 1 MultiBarBottomLeft -148.8 4.0 -1 ##$$&('% 1 -1 0 4 4 UIParent 0.0 -227.3 -1 ##$# 2 -1 0 5 5 UIParent -2.0 -472.0 -1 ##$# 3 0 0 3 3 UIParent 648.7 -165.2 -1 $#3# 3 1 0 5 5 UIParent -648.7 -165.8 -1 %#3# 3 2 0 5 5 UIParent -1253.2 -238.5 -1 %## 3 3 0 0 0 UIParent 23.9 -302.0 -1 '$(#)#-#.#/#1$3# 3 4 0 0 0 UIParent 20.6 -304.5 -1 ,#-#.#/#0#1#2( 3 5 0 2 2 UIParent -384.2 -170.2 -1 &#*$3# 3 6 0 2 2 UIParent -368.7 -176.2 -1 3# 4 -1 0 4 4 UIParent 0.0 -342.8 -1 # 5 -1 0 4 4 UIParent 0.0 -423.3 -1 # 6 0 0 1 1 UIParent -864.7 -2.0 -1 ##$#%$&.(()(*# 6 1 0 3 3 UIParent 2.0 409.7 -1 ##$#%$'+(()(*# 7 -1 0 3 3 UIParent 2.0 -287.7 -1 # 8 -1 1 6 6 UIParent 35.0 50.0 -1 #'$A%$&7 9 -1 0 7 1 MultiBarBottomLeft -206.8 4.0 -1 # 10 -1 1 0 0 UIParent 16.0 -116.0 -1 # 11 -1 0 5 5 UIParent -2.0 -259.5 -1 # 12 -1 0 1 1 UIParent 947.2 -2.0 -1 #K
