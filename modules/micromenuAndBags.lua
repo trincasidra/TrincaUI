@@ -30,11 +30,6 @@ local bagRegions = {
     BagsBar
 }
 
-if L.C.microMenuAndBagsPosition then
-    MicroButtonAndBagsBar:ClearAllPoints()
-    MicroButtonAndBagsBar:SetPoint(unpack(L.C.microMenuAndBagsPosition))
-end
-
 if L.C.fade.microMenuAndBags then
     MicroMenu:SetAlpha(0)
     BagsBar:SetAlpha(0)

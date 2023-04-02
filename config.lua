@@ -15,7 +15,6 @@ L.C = {
   styleTooltip = true,
   styleRollHistory = true,
   styleBag = true,
-  microMenuAndBagsPosition = {"TOPRIGHT", UiParent, "TOPRIGHT", -300, -10},
   fade = {
     microMenuAndBags = true,
     expBar = false,
@@ -91,13 +90,7 @@ L.C = {
       unsafetanking = {1, .5, .31},
       tanking = {.88, .165, .165}
     }
-  },
-  minimapPoint = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -10, 10},
-  objectiveTrackerPoint = {"TOPRIGHT", UIParent, "TOPRIGHT", -10, -10},
-  vehicleSeatIndicatorPoint = {"RIGHT", MinimapCluster, "LEFT", -120, 0},
-  durabilityFramePoint = {"RIGHT", MinimapCluster, "LEFT", -50, 00},
-  tooltipPoint = {"BOTTOMRIGHT", MinimapCluster, "TOPRIGHT", 0, 20},
-  enableBuffFrame = true --disable if using other buff frame addons like Raven
+  }
 }
 
 L.C.auraIndicators = { --{spellid, color, anchorTo}
