@@ -449,13 +449,13 @@ end
 L.F.CreatePowerBar = CreatePowerBar
 
 local function SetCastBarColorShielded(self)
-  self.__owner:SetStatusBarColor(unpack(L.C.colorss.cast.shielded))
-  self.__owner.bg:SetVertexColor(unpack(L.C.colorss.cast.shieldedBG))
+  self.__owner:SetStatusBarColor(unpack(L.C.colors.cast.shielded))
+  self.__owner.bg:SetVertexColor(unpack(L.C.colors.cast.shieldedBG))
 end
 
 local function SetCastBarColorDefault(self)
-  self.__owner:SetStatusBarColor(unpack(L.C.colorss.cast.default))
-  self.__owner.bg:SetVertexColor(unpack(L.C.colorss.cast.defaultBG))
+  self.__owner:SetStatusBarColor(unpack(L.C.colors.cast.default))
+  self.__owner.bg:SetVertexColor(unpack(L.C.colors.cast.defaultBG))
 end
 
 local function CreateCastBar(self)
