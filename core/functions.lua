@@ -480,7 +480,7 @@ local function CreateCastBar(self)
   border:SetPoint("TOPLEFT", cast, "TOPLEFT", -1, 1)
   border:SetPoint("BOTTOMRIGHT", cast, "BOTTOMRIGHT", 1, -1)
   border:SetBackdrop(backdrop)
-  border:SetBackdropBorderColor(unpack(L.C.colors.power.border))
+  border:SetBackdropBorderColor(unpack(L.C.colors.cast.border))
   self.Glow.cast = border
 
   if self.cfg.castbar.icon and self.cfg.castbar.icon.enabled then
@@ -498,7 +498,7 @@ local function CreateCastBar(self)
     iborder:SetPoint("TOPLEFT", i, "TOPLEFT", -1, 1)
     iborder:SetPoint("BOTTOMRIGHT", i, "BOTTOMRIGHT", 1, -1)
     iborder:SetBackdrop(backdrop)
-    iborder:SetBackdropBorderColor(unpack(L.C.colors.power.border))
+    iborder:SetBackdropBorderColor(unpack(L.C.colors.cast.border))
     self.Glow.casticon = iborder
   end
 
@@ -530,6 +530,8 @@ local function CreateCastBar(self)
     end
     cast.Time = timer
   end
+
+  cast.PostCastStart = L.F.PostCastStart
   
   return cast
 end
@@ -585,13 +587,24 @@ local function CreatePowerText(self)
   local cfg = self.cfg.powerbar.power
   local text = CreateText(self.Power,L.C.font,cfg.size,cfg.outline,cfg.align,cfg.noshadow)
   if cfg.points then
-    SetPoints(text,self.Power,cfg.points)
+    SetPoints(text,self.Power, cfg.points)
   else
-    SetPoint(text,self.Power,cfg.point)
+    SetPoint(text,self.Power, cfg.point)
   end
   self:Tag(text, cfg.tag)
 end
 L.F.CreatePowerText = CreatePowerText
+
+local function PostCastStart(self, unit)
+  if self.notInterruptible then
+    self:SetStatusBarColor(unpack(L.C.colors.cast.shielded))
+    self.bg:SetVertexColor(unpack(L.C.colors.cast.shieldedBG))
+  else
+    self:SetStatusBarColor(unpack(L.C.colors.cast.default))
+    self.bg:SetVertexColor(unpack(L.C.colors.cast.defaultBG))
+  end
+end
+L.F.PostCastStart = PostCastStart
 
 local function PostCreateAura(self, button, isDebuff)
   local bg = button:CreateTexture(nil,"BACKGROUND",nil,-8)
