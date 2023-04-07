@@ -13,7 +13,7 @@ Make sure to follow [rRaidManager](https://www.wowinterface.com/downloads/info22
 
 ## Worthy additions
 With the new revamp to Blizzard's UI and some new modules, I'm now only using the usual suspects:
-  * WeakAuras2: Check [my own](https://wago.io/p/Trincasidra%232868) or [Afenar](https://github.com/Afenar/AfenarUI)'s compilations.
+  * WeakAuras2: Check [my own](https://wago.io/trincaui) or [Afenar](https://github.com/Afenar/AfenarUI)'s compilations.
   * Bigwigs/Littlewigs
   * Immersion
   * Details
