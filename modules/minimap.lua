@@ -6,6 +6,25 @@ local dummy = function() end
 local unpack = unpack
 local backdrop = { edgeFile = L.C.texture, edgeSize = 1 }
 
+--[[
+  Minimap wdigets:
+      +-----------------------------------------+
+      | Tracking    Instance Mode      Garrison |
+      |                                         |
+      |                                         |
+      |                                         |
+      |                                         |
+      |                                         |
+      | Addons                                  |
+      |                                         |
+      |                                         |
+      |                                         |
+      |                                         |
+      |                                         |
+      | LFG             Clock              Mail |
+      +-----------------------------------------+
+]]
+
 -- Hide minimap border art
 MinimapBackdrop:Hide()
 MinimapCompassTexture:Hide()
@@ -46,6 +65,13 @@ TimeManagerClockTicker:SetFont(L.C.font, 12, "OUTLINE")
 TimeManagerClockTicker:SetTextColor(.8, .8, .6, 1)
 TimeManagerClockButton:SetAlpha(.9)
 
+-- Addons
+AddonCompartmentFrame:ClearAllPoints()
+AddonCompartmentFrame:SetPoint("LEFT", Minimap.Border, "LEFT", 4, 0)
+AddonCompartmentFrame.Text:SetFont(L.C.font, 12, "OUTLINE")
+AddonCompartmentFrame.Text:SetTextColor(.8, .8, .6, 1)
+AddonCompartmentFrame:SetAlpha(.9)
+
 -- Calendar
 GameTimeFrame:Hide()
 
@@ -57,17 +83,11 @@ MinimapCluster.Tracking:SetPoint("TOPLEFT", Minimap.Border, 4, -4)
 MinimapCluster.Tracking.Background:Hide()
 MinimapCluster.Tracking:SetAlpha(0)
 
--- Instance diffculty
+-- Instance difficulty
 MinimapCluster.InstanceDifficulty.Instance:ClearAllPoints()
 MinimapCluster.InstanceDifficulty.Instance:SetPoint("TOP", Minimap.Border, "TOP", 0, -5)
 MinimapCluster.InstanceDifficulty.Instance.Border:Hide()
 MinimapCluster.InstanceDifficulty.Instance.Background:Hide()
---MinimapCluster.GuildInstanceDifficulty:ClearAllPoints()
---MinimapCluster.GuildInstanceDifficulty:SetPoint("TOP", Minimap.Border, "TOP", 0, -5)
---MinimapCluster.GuildInstanceDifficulty:SetScale(.7)
---MinimapCluster.ChallengeMode:ClearAllPoints()
---MinimapCluster.ChallengeMode:SetPoint("TOP", Minimap.Border, "TOP", 0, -10)
---MinimapCluster.ChallengeMode:SetScale(.6)
 
 -- LFG
 QueueStatusButton:SetParent(Minimap.Border)
@@ -87,9 +107,7 @@ ExpansionLandingPageMinimapButton:SetAlpha(.9)
 -- Hide/Show minimap buttons on mouseover
 local function Show()
   MinimapCluster.Tracking:SetAlpha(.9)
-  --MinimapCluster.ChallengeMode:SetAlpha(.9)
   MinimapCluster.InstanceDifficulty:SetAlpha(.9)
-  --MinimapCluster.GuildInstanceDifficulty:SetAlpha(.9)
   ExpansionLandingPageMinimapButton:SetAlpha(.9)
 end
 Minimap:HookScript("OnEnter", Show)
@@ -99,9 +117,7 @@ local function Hide()
   if Minimap:IsMouseOver() then return end
   if time() == lasttime then return end
   MinimapCluster.Tracking:SetAlpha(0)
-  --MinimapCluster.ChallengeMode:SetAlpha(0)
   MinimapCluster.InstanceDifficulty:SetAlpha(0)
-  --MinimapCluster.GuildInstanceDifficulty:SetAlpha(0)
   ExpansionLandingPageMinimapButton:SetAlpha(0)
 end
 local function SetTimer()

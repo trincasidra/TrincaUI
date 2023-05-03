@@ -13,12 +13,12 @@ L.C = {
     font = {STANDARD_TEXT_FONT, 13, "THINOUTLINE"}
   },
   styleTooltip = true,
-  styleRollHistory = true,
+  styleRollHistory = false,
   styleBag = true,
   styleBank = true,
-  -- These are only recommended for ultra-wide screens.
-  bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
-  bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
+  -- These are only recommended for ultra-wide screens. 
+  --bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
+  --bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
   fade = {
     microMenuAndBags = true,
     expBar = false,
