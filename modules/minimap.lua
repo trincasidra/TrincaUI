@@ -36,7 +36,7 @@ Minimap.ZoomOut.Show = dummy
 -- Square minimap
 Minimap:SetMaskTexture(L.C.texture)
 Minimap:ClearAllPoints()
-Minimap:SetPoint("CENTER")
+Minimap:SetPoint("CENTER", -10, 25)
 Minimap:SetSize(210, 210)
 
 -- New minimap border

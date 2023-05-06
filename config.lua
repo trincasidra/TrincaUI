@@ -12,19 +12,19 @@ L.C = {
     },
     font = {STANDARD_TEXT_FONT, 13, "THINOUTLINE"}
   },
-  styleTooltip = true,
+  styleTooltip = false,
   styleRollHistory = false,
-  styleBag = true,
-  styleBank = true,
+  styleBag = false,
+  styleBank = false,
   -- These are only recommended for ultra-wide screens. 
-  --bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
-  --bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
+  bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
+  bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
   fade = {
     microMenuAndBags = true,
     expBar = false,
     actionBar1 = true,
     actionBar2 = true,
-    actionBar3 = true,
+    actionBar3 = true,  
     actionBar4 = true,
     actionBar5 = true,
     actionBar6 = true,

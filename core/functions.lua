@@ -6,6 +6,7 @@ local backdrop = { edgeFile = L.C.texture, edgeSize = 1 }
 local backdropThick = { edgeFile = L.C.texture, edgeSize = L.C.nameplate.targetedBorderSize or 6 }
 local backdropFilled = { edgeFile = L.C.texture, edgeSize = 1, bgFile = L.C.texture }
 local rLib = L.rLib
+local VIGOR_POWER_INDEX = Enum.PowerType.AlternateMount or 25
 if not rLib then return end
 
 L.F = {}
@@ -255,14 +256,14 @@ local function CreateAltPowerBar(self)
     ap:SetScript("OnEvent", function(self, event, ...)
       if (event == "UPDATE_UI_WIDGET") then
         local widget = ...
-        if (widget.widgetSetID == 283) then
+        if (widget.widgetSetID == C_UIWidgetManager.GetPowerBarWidgetSetID()) then
           local visInfo = UIWidgetManager:GetWidgetTypeInfo(widget.widgetType).visInfoDataFunction(widget.widgetID)
           if visInfo then
             local widgetInfo = C_UIWidgetManager.GetFillUpFramesWidgetVisualizationInfo(widget.widgetID)
             if widgetInfo then
               local unit = "player"
-              local ppmax = UnitPowerMax(unit, ALTERNATE_POWER_INDEX, true) or 0
-              local ppcur = UnitPower(unit, ALTERNATE_POWER_INDEX, true)
+              local ppmax = UnitPowerMax(unit, VIGOR_POWER_INDEX, true) or 0
+              local ppcur = UnitPower(unit, VIGOR_POWER_INDEX, true)
               local realcur = ppcur + (widgetInfo.fillValue/widgetInfo.fillMax)
               if realcur > ppmax then realcur = ppmax end
               self:SetMinMaxValues(0, ppmax)
