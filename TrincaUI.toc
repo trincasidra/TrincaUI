@@ -1,5 +1,5 @@
 ## Interface: 100100
-## Version: 10.1.0
+## Version: 10.1.0r
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
