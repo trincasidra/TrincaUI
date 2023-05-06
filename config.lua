@@ -17,8 +17,8 @@ L.C = {
   styleBag = false,
   styleBank = false,
   -- These are only recommended for ultra-wide screens. 
-  bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
-  bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
+  --bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
+  --bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
   fade = {
     microMenuAndBags = true,
     expBar = false,
