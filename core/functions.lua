@@ -208,13 +208,39 @@ local function CreateText(self,font,size,outline,align,noshadow)
 end
 L.F.CreateText = CreateText
 
-local function AltPowerBarOverride(self, event, unit, powerType)
-  if self.unit ~= unit or powerType ~= "ALTERNATE" then return end
-  local ppmax = UnitPowerMax(unit, ALTERNATE_POWER_INDEX, true) or 0
-  local ppcur = UnitPower(unit, ALTERNATE_POWER_INDEX, true)
-  local _, r, g, b = GetUnitPowerBarTextureInfo(unit, 2)
-  local _, ppmin = UnitPowerBarID(unit)
-  local el = self.AlternativePower
+local function AltPowerBarOverride(self, event, unit, powerType, ...)
+  if (not (self.unit == unit and powerType == "ALTERNATE")) and (not (event == "UPDATE_UI_WIDGET" and unit == "player" and powerType == "VIGOR")) then return end
+  local ppmax, ppcur, ppmin, r, g, b, el
+  if powerType == "ALTERNATE" then
+    ppmax = UnitPowerMax(unit, ALTERNATE_POWER_INDEX, true) or 0
+    ppcur = UnitPower(unit, ALTERNATE_POWER_INDEX, true)
+    _, r, g, b = GetUnitPowerBarTextureInfo(unit, 2)
+    _, ppmin = UnitPowerBarID(unit)
+    el = self.AlternativePower
+  elseif powerType == "VIGOR" then
+    local widget = ...
+    if (widget.widgetSetID == C_UIWidgetManager.GetPowerBarWidgetSetID()) then
+      local visInfo = UIWidgetManager:GetWidgetTypeInfo(widget.widgetType).visInfoDataFunction(widget.widgetID)
+      if visInfo then
+        local widgetInfo = C_UIWidgetManager.GetFillUpFramesWidgetVisualizationInfo(widget.widgetID)
+        if widgetInfo then
+          local unit = "player"
+          ppmax = UnitPowerMax(unit, VIGOR_POWER_INDEX, true) or 0
+          local ppcurint = UnitPower(unit, VIGOR_POWER_INDEX, true)
+          ppcur = ppcurint + (widgetInfo.fillValue/widgetInfo.fillMax)
+          if ppcur > ppmax then ppcur = ppmax end
+          r, g, b = unpack(L.C.colors.power.vigor)
+          el = self
+        else
+          return
+        end
+      else
+        return
+      end
+    else
+      return
+    end
+  end
   el:SetMinMaxValues(ppmin or 0, ppmax)
   el:SetValue(ppcur)
   if b then
@@ -253,26 +279,8 @@ local function CreateAltPowerBar(self)
   if self.cfg.altpowerbar.dragonriding then 
     UIWidgetPowerBarContainerFrame:SetAlpha(0)
     ap:RegisterEvent("UPDATE_UI_WIDGET")
-    ap:SetScript("OnEvent", function(self, event, ...)
-      if (event == "UPDATE_UI_WIDGET") then
-        local widget = ...
-        if (widget.widgetSetID == C_UIWidgetManager.GetPowerBarWidgetSetID()) then
-          local visInfo = UIWidgetManager:GetWidgetTypeInfo(widget.widgetType).visInfoDataFunction(widget.widgetID)
-          if visInfo then
-            local widgetInfo = C_UIWidgetManager.GetFillUpFramesWidgetVisualizationInfo(widget.widgetID)
-            if widgetInfo then
-              local unit = "player"
-              local ppmax = UnitPowerMax(unit, VIGOR_POWER_INDEX, true) or 0
-              local ppcur = UnitPower(unit, VIGOR_POWER_INDEX, true)
-              local realcur = ppcur + (widgetInfo.fillValue/widgetInfo.fillMax)
-              if realcur > ppmax then realcur = ppmax end
-              self:SetMinMaxValues(0, ppmax)
-              self:SetValue(realcur)
-              self:SetStatusBarColor(unpack(L.C.colors.power.vigor))
-            end
-          end
-        end
-      end
+    ap:HookScript("OnEvent", function(self, event, ...)
+      self:Override("UPDATE_UI_WIDGET", "player", "VIGOR", ...)
     end)
   end
 
