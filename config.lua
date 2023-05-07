@@ -17,8 +17,14 @@ L.C = {
   styleBag = false,
   styleBank = false,
   -- These are only recommended for ultra-wide screens. 
-  --bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
-  --bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
+  bagPosition = {-1600, 140}, -- Anchored to UIParent's RIGHT so that all bags are top-aligned.
+  bankPosition = {"TOPLEFT", UIParent, "TOPLEFT", 1000, -150},
+  -- Check if screen is ultrawide in order to apply bag/bank position
+  --  4:3 => ~1.3
+  -- 16:9 => ~1.8
+  -- 21:9 => ~2.3
+  -- 32:9 => ~3.5
+  isUltraWide = (GetScreenWidth()/GetScreenHeight()) > 2,
   fade = {
     microMenuAndBags = true,
     expBar = false,

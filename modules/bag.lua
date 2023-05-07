@@ -2,7 +2,7 @@ local A, L = ...
 
 local rLib = L.rLib
 
-if L.C.bagPosition then
+if L.C.bagPosition and L.C.isUltraWide then
     local offsetX, offsetY = unpack(L.C.bagPosition)
 
     ContainerFrame6:SetPoint("TOPRIGHT", UIParent, "RIGHT", offsetX-5, offsetY)
@@ -27,7 +27,7 @@ if L.C.bagPosition then
     ContainerFrame5.SetPoint = function() end
 end
 
-if L.C.bankPosition then
+if L.C.bankPosition and L.C.isUltraWide then
     BankFrame:SetPoint(unpack(L.C.bankPosition))
     BankFrame.SetPoint = function() end
 
