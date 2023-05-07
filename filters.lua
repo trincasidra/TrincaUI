@@ -721,6 +721,23 @@ L.filters = {
 	--[[
 		Mists of Pandaria
 	]]
+	-- Vortex Pinnacle
+		87618,  -- Static Cling
+		410870, -- Cyclone
+		86292,  -- Cyclone Shield
+		88282,  -- Upwind of Altairus
+		88286,  -- Downwind of Altairus
+		410997, -- Rushing Wind
+		411003, -- Turbulence
+		87771,  -- Crusader Strike
+		87759,  -- Shockwave
+		88314,  -- Twisting Winds
+		76622,  -- Sunder Armor
+		88171,  -- Hurricane
+		88182,  -- Lethargic Poison
+	--[[
+		Mists of Pandaria
+	]]
 	-- Temple of the Jade Serpent
 		396150, -- Feeling of Superiority
 		397878, -- Tainted Ripple
@@ -733,7 +750,7 @@ L.filters = {
 		396093, -- Savage Leap
 		106823, -- Serpent Strike
 		396152, -- Feeling of Inferiority
-		110125, -- Shattered Resolve		
+		110125, -- Shattered Resolve
 	--[[
 		Warlords of Draenor
 	]]
@@ -841,7 +858,21 @@ L.filters = {
 		198944, -- Breach Armor
 		215430, -- Thunderstrike 1
 		215429, -- Thunderstrike 2
-		203963, -- Eye of the Storm	
+		203963, -- Eye of the Storm
+	-- Neltharion's Lair
+		199705, -- Devouring
+		199178, -- Spiked Tongue
+		210166, -- Toxic Retch 1
+		217851, -- Toxic Retch 2
+		193941, -- Impaling Shard
+		183465, -- Viscid Bile
+		226296, -- Piercing Shards
+		226388, -- Rancid Ooze
+		200154, -- Burning Hatred
+		183407, -- Acid Splatter
+		215898, -- Crystalline Ground
+		188494, -- Rancid Maw
+		192800, -- Choking Dust	
 	--[[
 		Battle for Azeroth
 	]]
@@ -1512,7 +1543,223 @@ L.filters = {
 		388984, -- Vicious Ambush
 		388544, -- Barkbreaker
 		377008, -- Deafening Screech
-  }
+	-- Brackenhide Hollow
+		385361, -- Rotting Sickness
+		378020, -- Gash Frenzy
+		385356, -- Ensnaring Trap
+		373917, -- Decaystrike 1
+		377864, -- Infectious Spit
+		376933, -- Grasping Vines
+		384425, -- Smell Like Meat
+		373912, -- Decaystrike 2
+		373896, -- Withering Rot
+		377844, -- Bladestorm 1
+		378229, -- Marked for Butchery
+		381835, -- Bladestorm 2
+		376149, -- Choking Rotcloud
+		384725, -- Feeding Frenzy
+		385303, -- Teeth Trap
+		368299, -- Toxic Trap
+		384970, -- Scented Meat 1
+		384974, -- Scented Meat 2
+		368091, -- Infected Bite
+		385185, -- Disoriented
+		387210, -- Decaying Strength
+		382808, -- Withering Contagion 1
+		383087, -- Withering Contagion 2
+		382723, -- Crushing Smash
+		382787, -- Decay Claws
+		385058, -- Withering Poison
+		383399, -- Rotting Surge
+		367484, -- Vicious Clawmangle
+		367521, -- Bone Bolt
+		368081, -- Withering
+		374245, -- Rotting Creek
+		367481, -- Bloody Bite
+	-- Halls of Infusion
+		387571, -- Focused Deluge
+		383935, -- Spark Volley
+		385555, -- Gulp
+		384524, -- Titanic Fist
+		385963, -- Frost Shock
+		374389, -- Gulp Swog Toxin
+		386743, -- Polar Winds
+		389179, -- Power Overload
+		389181, -- Power Field
+		257274, -- Vile Coating
+		375384, -- Rumbling Earth
+		374563, -- Dazzle
+		389446, -- Nullifying Pulse
+		374615, -- Cheap Shot
+		391610, -- Blinding Winds
+		374724, -- Molten Subduction
+		385168, -- Thunderstorm
+		387359, -- Waterlogged
+		391613, -- Creeping Mold
+		374706, -- Pyretic Burst
+		389443, -- Purifying Blast
+		374339, -- Demoralizing Shout
+		374020, -- Containment Beam
+		391634, -- Deep Chill
+		393444, -- Gushing Wound
+	-- Neltharus
+		374534, -- Heated Swings
+		373735, -- Dragon Strike
+		377018, -- Molten Gold
+		374842, -- Blazing Aegis 1
+		392666, -- Blazing Aegis 2
+		375890, -- Magma Eruption
+		396332, -- Fiery Focus
+		389059, -- Slag Eruption
+		376784, -- Flame Vulnerability
+		377542, -- Burning Ground
+		374451, -- Burning Chain
+		372461, -- Imbued Magma
+		378818, -- Magma Conflagration
+		377522, -- Burning Pursuit
+		375204, -- Liquid Hot Magma
+		374482, -- Grounding Chain
+		372971, -- Reverberating Slam
+		384161, -- Mote of Combustion
+		374854, -- Erupted Ground
+		373089, -- Scorching Fusillade
+		372224, -- Dragonbone Axe
+		372570, -- Bold Ambush
+		372459, -- Burning
+		372208, -- Djaradin Lava
+	-- Uldaman: Legacy of Tyr
+		368996, -- Purging Flames
+		369792, -- Skullcracker
+		372718, -- Earthen Shards
+		382071, -- Resonating Orb
+		377405, -- Time Sink
+		369006, -- Burning Heat
+		369110, -- Unstable Embers
+		375286, -- Searing Cannonfire
+		372652, -- Resonating Orb
+		377825, -- Burning Pitch
+		369411, -- Sonic Burst
+		382576, -- Scorn of Tyr
+		369366, -- Trapped in Stone
+		369365, -- Curse of Stone
+		369419, -- Venomous Fangs
+		377486, -- Time Blade
+		369818, -- Diseased Bite
+		377732, -- Jagged Bite
+		369828, -- Chomp
+		369811, -- Brutal Slam
+		376325, -- Eternity Zone
+		369337, -- Difficult Terrain
+		376333, -- Temporal Zone
+		377510, -- Stolen Time
+	-- Eranog
+		370648, -- Primal Flow
+		390715, -- Primal Rifts
+		370597, -- Kill Order
+	-- Terros
+		382776, -- Awakened Earth 1
+		381253, -- Awakened Earth 2
+		386352, -- Rock Blast
+		382458, -- Resonant Aftermath
+	-- The Primal Council
+		371624, -- Conductive Mark
+		372027, -- Slashing Blaze
+		374039, -- Meteor Axe
+	-- Sennarth, the Cold Breath
+		371976, -- Chilling Blast
+		372082, -- Enveloping Webs
+		374659, -- Rush
+		374104, -- Wrapped in Webs Slow
+		374503, -- Wrapped in Webs Stun
+		373048, -- Suffocating Webs
+	-- Dathea, Ascended
+		391686, -- Conductive Mark
+		388290, -- Cyclone
+	-- Kurog Grimtotem
+		377780, -- Skeletal Fractures
+		372514, -- Frost Bite
+		374554, -- Lava Pool
+		374709, -- Seismic Rupture
+		374023, -- Searing Carnage
+		374427, -- Ground Shatter
+		390920, -- Shocking Burst
+		372458, -- Below Zero
+	-- Broodkeeper Diurna
+		388920, -- Frozen Shroud
+		378782, -- Mortal Wounds
+		378787, -- Crushing Stoneclaws
+		375620, -- Ionizing Charge
+		375578, -- Flame Sentry
+	-- Raszageth the Storm-Eater
+		381615, -- Static Charge
+		399713, -- Magnetic Charge
+		385073, -- Ball Lightning
+		377467, -- Fulminating Charge
+	-- Kazzara
+		406530, -- Riftburn
+		402420, -- Molten Scar
+		402253, -- Ray of Anguish
+		406525, -- Dread Rift
+		404743, -- Terror Claws
+	-- Molgoth
+		405084, -- Lingering Umbra
+		405645, -- Engulfing Heat
+		405642, -- Blistering Twilight
+		402617, -- Blazing Heat
+		401809, -- Corrupting Shadow
+		405394, -- Shadowflame
+	-- Experimentation of Dracthyr
+		406317, -- Mutilation 1
+		406365, -- Mutilation 2
+		405392, -- Disintegrate 1
+		405423, -- Disintegrate 2
+		406233, -- Deep Breath
+		407327, -- Unstable Essence
+		406313, -- Infused Strikes
+		407302, -- Infused Explosion
+	-- Zaqali Invasion
+		408873, -- Heavy Cudgel
+		410353, -- Flaming Cudgel
+		407017, -- Vigorous Gale
+		401407, -- Blazing Spear 1
+		401452, -- Blazing Spear 2
+		409275, -- Magma Flow
+	-- Rashok
+		407547, -- Flaming Upsurge
+		407597, -- Earthen Crush
+		405819, -- Searing Slam
+		408857, -- Doom Flame
+	-- Zskarn
+		404955, -- Shrapnel Bomb
+		404010, -- Unstable Embers
+		404942, -- Searing Claws
+		403978, -- Blast Wave
+		405592, -- Salvage Parts
+		405462, -- Dragonfire Traps
+		409942, -- Elimination Protocol
+	-- Magmorax
+		404846, -- Incinerating Maws 1
+		408955, -- Incinerating Maws 2
+		402994, -- Molten Spittle
+		403747, -- Igniting Roar
+	-- Echo of Neltharion
+		409373, -- Disrupt Earth
+		407220, -- Rushing Shadows 1
+		407182, -- Rushing Shadows 2
+		405484, -- Surrendering to Corruption
+		409058, -- Seeping Lava
+		402120, -- Collapsed Earth
+		407728, -- Sundered Shadow
+		401998, -- Calamitous Strike
+		408160, -- Shadow Strike
+		403846, -- Sweeping Shadows
+		401133, -- Wildshift (Druid)
+		401131, -- Wild Summoning (Warlock)
+		401130, -- Wild Magic (Mage)
+		401135, -- Wild Breath (Evoker)
+		408071, -- Shapeshifter's Fervor
+	-- Scalecommander Sarkareth
+	}
 }
 
 local function isBlacklist(spellId)
