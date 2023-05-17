@@ -480,6 +480,12 @@ L.C.nameplate = {
     enabled = true,
     size = {105, 8},
     point = {"TOP", "BOTTOM", 0, -1},
+    target = {
+      enabled = true,
+      point = {"TOPLEFT", "BOTTOMLEFT", 0, -4},
+      align = "LEFT",
+      size = 14
+    },
     name = {
       enabled = true,
       points = {

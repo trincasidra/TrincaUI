@@ -604,6 +604,19 @@ local function CreatePowerText(self)
 end
 L.F.CreatePowerText = CreatePowerText
 
+local function CreateCastTargetText(self)
+  if not self.cfg.castbar or not self.cfg.castbar.target or not self.cfg.castbar.enabled then return end
+  local cfg = self.cfg.castbar.target
+  local text = CreateText(self.Castbar, L.C.font, cfg.size, cfg.outline, cfg.align, cfg.noshadow)
+  if cfg.points then
+    SetPoints(text,self.Castbar, cfg.points)
+  else
+    SetPoint(text,self.Castbar, cfg.point)
+  end
+  self.Castbar.TargetText = text
+end
+L.F.CreateCastTargetText = CreateCastTargetText
+
 local function PostCastStart(self, unit)
   if self.notInterruptible then
     self:SetStatusBarColor(unpack(L.C.colors.cast.shielded))
@@ -612,6 +625,22 @@ local function PostCastStart(self, unit)
     self:SetStatusBarColor(unpack(L.C.colors.cast.default))
     self.bg:SetVertexColor(unpack(L.C.colors.cast.defaultBG))
   end
+  if not self.TargetText then return end
+  if string.find(unit, "nameplate") and UnitExists(unit.."target") and not UnitPlayerControlled(unit) then
+    local castTargetName = GetUnitName(unit.."target")
+    local _, className = UnitClass(unit.."target")
+    local r, g, b = GetClassColor(className)
+    if castTargetName == GetUnitName("player") then
+      r = .9
+      g = 0
+      b = 0
+      castTargetName = "YOU!!"
+    end
+    self.TargetText:SetText(">> "..castTargetName)
+    self.TargetText:SetTextColor(r, g, b)
+  else
+    self.TargetText:SetText(" ")
+  end 
 end
 L.F.PostCastStart = PostCastStart
 
