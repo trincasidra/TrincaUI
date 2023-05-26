@@ -38,8 +38,9 @@ Minimap:SetMaskTexture(L.C.texture)
 Minimap:ClearAllPoints()
 Minimap:SetPoint("CENTER", -10, 25)
 Minimap:SetSize(210, 210)
-Minimap:SetArchBlobRingScalar( 0 )
-Minimap:SetQuestBlobRingScalar( 0 )
+Minimap:SetArchBlobRingScalar(0)
+Minimap:SetQuestBlobRingScalar(0)
+Minimap:SetTaskBlobRingScalar(0)
 function GetMinimapShape() return "SQUARE" end
 
 -- New minimap border
