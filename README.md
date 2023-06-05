@@ -1,6 +1,10 @@
 # TrincaUI
 My personal layout for oUF with some extras. It is not very complex, but it has everything that I need.
 
+```diff
+! Please note I've quit playing wow for the foreseeable future, so I won't be maintaning any addons any more.
+```
+
 ## Description
   * Minimalist and simple interface using oUF. All dependencies are embedded, so no need to install any extra addon.
   * Most of the base code is taken from [ZorkUI](https://www.wowinterface.com/downloads/info24252-ZorkUI.html), and also I took some tricks from oUF_Farva. Overall, my intent was to mimic my own configuration of AfenarUI, but using plain oUF instead of going through ElvUI.
