@@ -96,14 +96,19 @@ MinimapCluster.InstanceDifficulty.Instance.Background:Hide()
 
 -- LFG
 local function MoveLfgEye()
-  QueueStatusButton:SetParent(Minimap.Border)
-  QueueStatusButton:ClearAllPoints()
-  QueueStatusButton:SetScale(.8)
-  QueueStatusButton:SetPoint("BOTTOMLEFT", Minimap.Border, 4, 4)
-  QueueStatusButton:SetFrameStrata("HIGH")
+  if not QueueStatusButton.alreadyMoved then
+	  print('OnShow lfg eye')
+    QueueStatusButton:SetParent(Minimap.Border)
+    QueueStatusButton:ClearAllPoints()
+    QueueStatusButton:SetScale(.8)
+    QueueStatusButton:SetPoint("BOTTOMLEFT", Minimap.Border, 4, 4)
+    QueueStatusButton:SetFrameStrata("HIGH")
+    QueueStatusButton.SetPoint = dummy
+    MicroMenuContainer.Layout = dummy
+    QueueStatusButton.alreadyMoved = true
+  end
 end
 QueueStatusButton:HookScript("OnShow", MoveLfgEye)
-MoveLfgEye()
 
 -- Garrison
 ExpansionLandingPageMinimapButton:SetParent(Minimap.Border)
