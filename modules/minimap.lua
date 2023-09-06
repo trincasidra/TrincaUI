@@ -36,8 +36,8 @@ Minimap.ZoomOut.Show = dummy
 -- Square minimap
 Minimap:SetMaskTexture(L.C.texture)
 Minimap:ClearAllPoints()
-Minimap:SetPoint("CENTER", -10, 25)
-Minimap:SetSize(210, 210)
+Minimap:SetPoint("CENTER", -10, -22)
+Minimap:SetSize(240, 240)
 Minimap:SetArchBlobRingScalar(0)
 Minimap:SetQuestBlobRingScalar(0)
 Minimap:SetTaskBlobRingScalar(0)
@@ -58,8 +58,9 @@ MinimapCluster.BorderTop:Hide()
 
 -- Mail icon
 MinimapCluster.IndicatorFrame.MailFrame:ClearAllPoints()
-MinimapCluster.IndicatorFrame.MailFrame:SetPoint("BOTTOMRIGHT", Minimap.Border, -4, 4)
-MiniMapMailIcon:SetTexture("Interface\\AddOns\\"..L.addonName.."\\media\\mail.blp")
+MinimapCluster.IndicatorFrame.MailFrame:SetPoint("BOTTOMRIGHT", Minimap.Border, "BOTTOMRIGHT", -4, 4)
+MinimapCluster.IndicatorFrame.MailFrame:SetAlpha(.9)
+MinimapCluster.IndicatorFrame.MailFrame.SetPoint = dummy
 
 -- Clock
 LoadAddOn("Blizzard_TimeManager")
@@ -94,10 +95,15 @@ MinimapCluster.InstanceDifficulty.Instance.Border:Hide()
 MinimapCluster.InstanceDifficulty.Instance.Background:Hide()
 
 -- LFG
-QueueStatusButton:SetParent(Minimap.Border)
-QueueStatusButton:SetScale(.6)
-QueueStatusButton:ClearAllPoints()
-QueueStatusButton:SetPoint("BOTTOMLEFT", Minimap.Border, 4, 4)
+local function MoveLfgEye()
+  QueueStatusButton:SetParent(Minimap.Border)
+  QueueStatusButton:ClearAllPoints()
+  QueueStatusButton:SetScale(.8)
+  QueueStatusButton:SetPoint("BOTTOMLEFT", Minimap.Border, 4, 4)
+  QueueStatusButton:SetFrameStrata("HIGH")
+end
+QueueStatusButton:HookScript("OnShow", MoveLfgEye)
+MoveLfgEye()
 
 -- Garrison
 ExpansionLandingPageMinimapButton:SetParent(Minimap.Border)

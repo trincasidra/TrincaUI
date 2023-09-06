@@ -2,7 +2,7 @@
 My personal layout for oUF with some extras. It is not very complex, but it has everything that I need.
 
 ```diff
-! Please note I've quit playing wow for the foreseeable future, so I won't be maintaning any addons any more.
+! Please note I'm not actively playing, so updates will be scarce or non-existent.
 ```
 
 ## Description

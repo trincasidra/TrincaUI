@@ -2,7 +2,7 @@ local A, L = ...
 
 local rLib = L.rLib
 
-if L.C.styleRollHistory then
+if L.C.styleTooltip then
     GameTooltip.NineSlice.TopLeftCorner:SetAlpha(0)
     GameTooltip.NineSlice.TopEdge:SetAlpha(0)
     GameTooltip.NineSlice.TopRightCorner:SetAlpha(0)

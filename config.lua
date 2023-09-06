@@ -12,7 +12,7 @@ L.C = {
     },
     font = {STANDARD_TEXT_FONT, 13, "THINOUTLINE"}
   },
-  styleTooltip = false,
+  styleTooltip = true,
   styleRollHistory = false,
   styleBag = false,
   styleBank = false,
