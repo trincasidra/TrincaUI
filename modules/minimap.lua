@@ -97,7 +97,6 @@ MinimapCluster.InstanceDifficulty.Instance.Background:Hide()
 -- LFG
 local function MoveLfgEye()
   if not QueueStatusButton.alreadyMoved then
-	  print('OnShow lfg eye')
     QueueStatusButton:SetParent(Minimap.Border)
     QueueStatusButton:ClearAllPoints()
     QueueStatusButton:SetScale(.8)

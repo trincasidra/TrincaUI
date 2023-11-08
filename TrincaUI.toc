@@ -1,10 +1,10 @@
-## Interface: 100107
-## Version: 10.1.7
+## Interface: 100200
+## Version: 10.2.0
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
 ## Credits Zork, Scrable, Afenar
-## OptionalDeps: Plater, TidyPlates, Kui_Nameplates, OmniCD
+## OptionalDeps: Plater, TidyPlates, Kui_Nameplates, OmniCD, cargBags_Nivaya, AdiBags, ArkInventory, Bagnon
 ## X-oUF: TrincaUI
 
 filters.lua

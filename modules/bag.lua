@@ -1,8 +1,9 @@
 local A, L = ...
 
-local rLib = L.rLib
+local unpack = unpack
+local noBagAddons = not (cargBags_Nivaya or AdiBags or ArkInventory or Bagnon)
 
-if L.C.bagPosition and L.C.isUltraWide then
+if noBagAddons and L.C.bagPosition and L.C.isUltraWide then
     local offsetX, offsetY = unpack(L.C.bagPosition)
 
     ContainerFrame6:SetPoint("TOPRIGHT", UIParent, "RIGHT", offsetX-5, offsetY)
@@ -27,7 +28,7 @@ if L.C.bagPosition and L.C.isUltraWide then
     ContainerFrame5.SetPoint = function() end
 end
 
-if L.C.bankPosition and L.C.isUltraWide then
+if noBagAddons and L.C.bankPosition and L.C.isUltraWide then
     BankFrame:SetPoint(unpack(L.C.bankPosition))
     BankFrame.SetPoint = function() end
 
@@ -53,7 +54,7 @@ if L.C.bankPosition and L.C.isUltraWide then
     ContainerFrame13.SetPoint = function() end
 end
 
-if L.C.styleBag then
+if noBagAddons and L.C.styleBag then
     ContainerFrameCombinedBags.NineSlice.TopLeftCorner:SetAlpha(0)
     ContainerFrameCombinedBags.NineSlice.TopEdge:SetAlpha(0)
     ContainerFrameCombinedBags.NineSlice.TopRightCorner:SetAlpha(0)
@@ -147,7 +148,7 @@ if L.C.styleBag then
     ContainerFrame6.CloseButton:Hide(0)
 end
 
-if L.C.styleBank then
+if noBagAddons and L.C.styleBank then
     BankFrameTab1:Hide()
     BankFrameTab2:Hide()
 
