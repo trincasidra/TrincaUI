@@ -72,6 +72,19 @@ L.filters = {
 	328891, -- A Gilded Perspective
 	348443, -- Experience Eliminated
 	234143, -- Temptation (Upper Karazhan Ring Debuff)
+	287825, -- Lethargy debuff (fight or flight)
+	306600, -- Experience Eliminated (oor - 5m)
+	313015, -- Recently Failed (Mechagnome racial)
+	322695, -- Drained
+	328891, -- A Gilded Perspective
+	348443, -- Experience Eliminated
+	374037, -- Overwhelming Rage
+	383600, -- Surrounding Storm (Strunraan)
+	390106, -- Riding Along
+	392960, -- Waygate Travel
+	392992, -- Silent Lava
+	393798, -- Activated Defense Systems
+	418990  -- Wicker Men's Curse
   },
   turtleBuffs = {
     -- Death Knight
@@ -707,960 +720,1056 @@ L.filters = {
 	]]
 		209858, -- Necrotic
 		226512, -- Sanguine
-		240559, -- Grievous
 		240443, -- Bursting
+		240559, -- Grievous
 		373364, -- Vampiric Claws
-		373429, -- Carrion Swarm
 		373370, -- Nightmare Cloud
 		373391, -- Nightmare
+		373429, -- Carrion Swarm
+		373509, -- Shadow Claws (Stacking)
 		373570, -- Hypnosis
 		373607, -- Shadowy Barrier (Hypnosis)
-		373509, -- Shadow Claws (Stacking)
-		396369, -- Mark of Lightning
 		396364, -- Mark of Wind
+		396369, -- Mark of Lightning
+		409492, -- Afflicted Cry
 	--[[
-		Mists of Pandaria
+		Cataclysm
 	]]
+	-- Throne of the Tides
+		75992,  -- Lightning Surge
+		76363,  -- Wave of Corruption
+		76516,  -- Poisoned Spear
+		76820,  -- Hex
+		426608, -- Null Blast
+		426660, -- Razor Jaws
+		426663, -- Ravenous Pursuit
+		426688, -- Volatile Acid
+		426727, -- Acid Barrage
+		426741, -- Shellbreaker
+		426783, -- Mind Flay
+		427559, -- Bubbling Ooze
+		427668, -- Festering Shockwave
+		427670, -- Crushing Claw
+		428103, -- Frostbolt
+		428403, -- Grimy
+		428404, -- Blotting Darkness
+		428407, -- Blotting Barrage
+		428542, -- Crushing Depths
+		428868, -- Putrid Roar
+		429048, -- Flame Shock
 	-- Vortex Pinnacle
-		87618,  -- Static Cling
-		410870, -- Cyclone
-		86292,  -- Cyclone Shield
-		88282,  -- Upwind of Altairus
-		88286,  -- Downwind of Altairus
-		410997, -- Rushing Wind
-		411003, -- Turbulence
-		87771,  -- Crusader Strike
-		87759,  -- Shockwave
-		88314,  -- Twisting Winds
 		76622,  -- Sunder Armor
+		86292,  -- Cyclone Shield
+		87618,  -- Static Cling
+		87759,  -- Shockwave
+		87771,  -- Crusader Strike
 		88171,  -- Hurricane
 		88182,  -- Lethargic Poison
+		88282,  -- Upwind of Altairus
+		88286,  -- Downwind of Altairus
+		88314,  -- Twisting Winds
+		410870, -- Cyclone
+		410997, -- Rushing Wind
+		411003, -- Turbulence
 	--[[
 		Mists of Pandaria
 	]]
 	-- Temple of the Jade Serpent
-		396150, -- Feeling of Superiority
-		397878, -- Tainted Ripple
 		106113, -- Touch of Nothingness
-		397914, -- Defiling Mist
+		106823, -- Serpent Strike
+		110125, -- Shattered Resolve
+		374037, -- Overwhelming Rage
+		395859, -- Haunting Scream
+		396093, -- Savage Leap
+		396150, -- Feeling of Superiority
+		396152, -- Feeling of Inferiority
+		397878, -- Tainted Ripple
 		397904, -- Setting Sun Kick
 		397911, -- Touch of Ruin
-		395859, -- Haunting Scream
-		374037, -- Overwhelming Rage
-		396093, -- Savage Leap
-		106823, -- Serpent Strike
-		396152, -- Feeling of Inferiority
-		110125, -- Shattered Resolve
+		397914, -- Defiling Mist
 	--[[
 		Warlords of Draenor
 	]]
+	-- Everbloom
+		164294, -- Unchecked Growth
+		164302, -- Unchecked Growth
+		164886, -- Dreadpetal Pollen
+		164965, -- Choking Vines
+		165123, -- Venom Burst
+		169179, -- Colossal Blow
+		169445, -- Noxious Eruption
+		169658, -- Poisonous Claws
+		169839, -- Pyroblast
+		169840, -- Frostbolt II
+		426991, -- Blazing Cinders
+		427510, -- Noxious Charge
+		427513, -- Noxious Discharge
+		427863, -- Frostbolt I
+		428084, -- Glacial Fusion
+		428834, -- Verdant Eruption
 	-- Grimrail Depot
-		162057, -- Spinning Spear
 		156357, -- Blackrock Shrapnel
-		160702, -- Blackrock Mortar Shells
 		160681, -- Suppressive Fire
-		166570, -- Slag Blast (Stacking)
-		164218, -- Double Slash
-		162491, -- Acquiring Targets 1
-		162507, -- Acquiring Targets 2
+		160702, -- Blackrock Mortar Shells
 		161588, -- Diffused Energy
+		162057, -- Spinning Spear
 		162065, -- Freezing Snare
+		162491, -- Acquiring Targets
+		162507, -- Acquiring Targets
+		164218, -- Double Slash
+		166570, -- Slag Blast (Stacking)
 	-- Iron Docks
-		163276, -- Shredded Tendons
+		158341, -- Gushing Wounds
 		162415, -- Time to Feed
-		168398, -- Rapid Fire Targeting
-		172889, -- Charging Slash
+		163276, -- Shredded Tendons
 		164504, -- Intimidated
+		167240, -- Leg Shot
+		168398, -- Rapid Fire Targeting
+		169341, -- Demoralizing Roar
 		172631, -- Knocked Down
 		172636, -- Slippery Grease
-		158341, -- Gushing Wounds
-		167240, -- Leg Shot
-		173105, -- Whirling Chains
-		173324, -- Jagged Caltrops
 		172771, -- Incendiary Slug
+		172889, -- Charging Slash
+		173105, -- Whirling Chains
 		173307, -- Serrated Spear
-		169341, -- Demoralizing Roar
+		173324, -- Jagged Caltrops
 	-- Shadowmoon Burial Grounds
-		156776, -- Rending Voidlash
-		153692, -- Necrotic Pitch
+		152979, -- Soul Shred
+		153501, -- Void Blast
 		153524, -- Plague Spit
+		153692, -- Necrotic Pitch
+		154442, -- Malevolence
 		154469, -- Ritual of Bones
+		156776, -- Rending Voidlash
+		158061, -- Blessed Waters of Purity
 		162652, -- Lunar Purity
 		164907, -- Void Cleave
-		152979, -- Soul Shred
-		158061, -- Blessed Waters of Purity
-		154442, -- Malevolence
-		153501, -- Void Blast
 	--[[
 		Legion
 	]]
+	-- Black Rook Hold
+		194966, -- Soul Echoes
+		197478, -- Dark Rush
+		197521, -- Blazing Trail
+		197546, -- Brutal Glaive
+		197821, -- Felblazed Ground
+		197974, -- Bonecrushing Strike
+		198079, -- Hateful Gaze
+		198446, -- Fel Vomit
+		198501, -- Fel Vomitus
+		198635, -- Unerring Shear
+		199097, -- Cloud of Hypnosis
+		199168, -- Itchy!
+		199368, -- Legacy of the Ravencrest
+		200084, -- Soul Blade
+		200261, -- Bonecrushing Strike
+		201733, -- Stinging Swarm
+		202019, -- Shadow Bolt Volley
+		203163, -- Sic Bats!
+		204896, -- Drain Life
+		214002, -- Raven's Dive
+		224188, -- Hateful Charge
+		225732, -- Strike Down
+		225909, -- Soul Venom
+		225963, -- Bloodthirsty Leap
 	-- Return to Karazhan: Upper
-		229248, -- Fel Beam
-		227592, -- Frostbite
-		228252, -- Shadow Rend
+		227465, -- Power Discharge
 		227502, -- Unstable Mana
+		227592, -- Frostbite
+		228249, -- Inferno Bolt
+		228252, -- Shadow Rend
 		228261, -- Flame Wreath
+		228958, -- Inferno Bolt
+		229083, -- Burning Blast (Stacking)
+		229159, -- Chaotic Shadows
 		229241, -- Acquiring Target
+		229248, -- Fel Beam
 		230083, -- Nullification
 		230221, -- Absorbed Mana
-		228249, -- Inferno Bolt 1
-		228958, -- Inferno Bolt 2
-		229159, -- Chaotic Shadows
-		227465, -- Power Discharge
-		229083, -- Burning Blast (Stacking)
 	-- Return to Karazhan: Lower
+		29574,  -- Rend
+		29690,  -- Drunken Skull Crack
+		32752,  -- Summoning Disorientation
+		227404, -- Intangible Presence
+		227493, -- Mortal Strike
+		227508, -- Mass Repentance
+		227742, -- Garrote (Stacking)
+		227832, -- Coat Check
+		227848, -- Sacred Ground (Stacking)
+		227851, -- Coat Check
 		227917, -- Poetry Slam
 		228164, -- Hammer Down
-		228215, -- Severe Dusting 1
-		228221, -- Severe Dusting 2
-		29690,  -- Drunken Skull Crack
-		227493, -- Mortal Strike
+		228215, -- Severe Dusting
+		228221, -- Severe Dusting
 		228280, -- Oath of Fealty
-		29574,  -- Rend
-		230297, -- Brittle Bones
 		228526, -- Flirt
-		227851, -- Coat Check 1
-		227832, -- Coat Check 2
-		32752,  -- Summoning Disorientation
 		228559, -- Charming Perfume
-		227508, -- Mass Repentance
-		241774, -- Shield Smash
-		227742, -- Garrote (Stacking)
-		238606, -- Arcane Eruption
-		227848, -- Sacred Ground (Stacking)
-		227404, -- Intangible Presence
-		228610, -- Burning Brand
 		228576, -- Allured
+		228610, -- Burning Brand
+		230297, -- Brittle Bones
+		238606, -- Arcane Eruption
+		241774, -- Shield Smash
 	-- Court of Stars
 		207278, -- Arcane Lockdown
-		209516, -- Mana Fang
-		209512, -- Disrupting Energy
-		211473, -- Shadow Slash
 		207979, -- Shockwave
-		207980, -- Disintegration Beam 1
-		207981, -- Disintegration Beam 2
-		211464, -- Fel Detonation
+		207980, -- Disintegration Beam
+		207981, -- Disintegration Beam
 		208165, -- Withering Soul
-		209413, -- Suppress
 		209027, -- Quelling Strike
+		209413, -- Suppress
+		209512, -- Disrupting Energy
+		209516, -- Mana Fang
+		211464, -- Fel Detonation
+		211473, -- Shadow Slash
 	-- Halls of Valor
-		197964, -- Runic Brand Orange
-		197965, -- Runic Brand Yellow
-		197963, -- Runic Brand Purple
-		197967, -- Runic Brand Green
-		197966, -- Runic Brand Blue
-		193783, -- Aegis of Aggramar Up
-		196838, -- Scent of Blood
-		199674, -- Wicked Dagger
 		193260, -- Static Field
 		193743, -- Aegis of Aggramar Wielder
-		199652, -- Sever
+		193783, -- Aegis of Aggramar Up
+		196838, -- Scent of Blood
+		197963, -- Runic Brand Purple
+		197964, -- Runic Brand Orange
+		197965, -- Runic Brand Yellow
+		197966, -- Runic Brand Blue
+		197967, -- Runic Brand Green
 		198944, -- Breach Armor
-		215430, -- Thunderstrike 1
-		215429, -- Thunderstrike 2
+		199652, -- Sever
+		199674, -- Wicked Dagger
 		203963, -- Eye of the Storm
+		215429, -- Thunderstrike
+		215430, -- Thunderstrike
 	-- Neltharion's Lair
-		199705, -- Devouring
-		199178, -- Spiked Tongue
-		210166, -- Toxic Retch 1
-		217851, -- Toxic Retch 2
-		193941, -- Impaling Shard
-		183465, -- Viscid Bile
-		226296, -- Piercing Shards
-		226388, -- Rancid Ooze
-		200154, -- Burning Hatred
 		183407, -- Acid Splatter
-		215898, -- Crystalline Ground
+		183465, -- Viscid Bile
 		188494, -- Rancid Maw
 		192800, -- Choking Dust	
+		193941, -- Impaling Shard
+		199178, -- Spiked Tongue
+		199705, -- Devouring
+		200154, -- Burning Hatred
+		210166, -- Toxic Retch
+		215898, -- Crystalline Ground
+		217851, -- Toxic Retch
+		226296, -- Piercing Shards
+		226388, -- Rancid Ooze
 	--[[
 		Battle for Azeroth
 	]]
 	-- Freehold
-		258323, -- Infected Wound
+		256363, -- Ripper Punch
+		257436, -- Poisoning Strike
 		257775, -- Plague Step
 		257908, -- Oiled Blade
-		257436, -- Poisoning Strike
+		258323, -- Infected Wound
+		258875, -- Blackout Barrel
 		274389, -- Rat Traps
 		274555, -- Scabrous Bites
-		258875, -- Blackout Barrel
-		256363, -- Ripper Punch
 	-- Shrine of the Storm
-		264560, -- Choking Brine
-		268233, -- Electrifying Shock
-		268322, -- Touch of the Drowned
-		268896, -- Mind Rend
-		268104, -- Explosive Void
-		267034, -- Whispers of Power
-		276268, -- Heaving Blow
 		264166, -- Undertow
 		264526, -- Grasp of the Depths
-		274633, -- Sundering Blow
-		268214, -- Carving Flesh
+		264560, -- Choking Brine
+		267034, -- Whispers of Power
 		267818, -- Slicing Blast
+		268104, -- Explosive Void
+		268214, -- Carving Flesh
+		268233, -- Electrifying Shock
 		268309, -- Unending Darkness
 		268317, -- Rip Mind
+		268322, -- Touch of the Drowned
 		268391, -- Mental Assault
+		268896, -- Mind Rend
+		274633, -- Sundering Blow
 		274720, -- Abyssal Strike
+		276268, -- Heaving Blow
 	-- Siege of Boralus
+		256897, -- Clamping Jaws
 		257168, -- Cursed Slash
-		272588, -- Rotting Wounds
-		272571, -- Choking Waters
-		274991, -- Putrid Waters
-		275835, -- Stinging Venom Coating
-		273930, -- Hindering Cut
+		257169, -- Terrifying Roar
 		257292, -- Heavy Slash
 		261428, -- Hangman's Noose
-		256897, -- Clamping Jaws
+		272571, -- Choking Waters
+		272588, -- Rotting Wounds
+		272713, -- Crushing Slam
+		272834, -- Viscous Slobber
 		272874, -- Trample
 		273470, -- Gut Shot
-		272834, -- Viscous Slobber
-		257169, -- Terrifying Roar
-		272713, -- Crushing Slam
+		273930, -- Hindering Cut
+		274991, -- Putrid Waters
+		275835, -- Stinging Venom Coating
 	-- Tol Dagor
-		258128, -- Debilitating Shout
-		265889, -- Torch Strike
-		257791, -- Howling Fear
-		258864, -- Suppression Fire
-		257028, -- Fuselighter
-		258917, -- Righteous Flames
-		257777, -- Crippling Shiv
-		258079, -- Massive Chomp
-		258058, -- Squeeze
-		260016, -- Itchy Bite
-		257119, -- Sand Trap
-		260067, -- Vicious Mauling
-		258313, -- Handcuff
-		259711, -- Lockdown
-		256198, -- Azerite Rounds: Incendiary
+		256044, -- Deadeye
 		256101, -- Explosive Burst (mythic)
 		256105, -- Explosive Burst (mythic+)
-		256044, -- Deadeye
+		256198, -- Azerite Rounds: Incendiary
 		256474, -- Heartstopper Venom
+		257028, -- Fuselighter
+		257119, -- Sand Trap
+		257777, -- Crippling Shiv
+		257791, -- Howling Fear
+		258058, -- Squeeze
+		258079, -- Massive Chomp
+		258128, -- Debilitating Shout
+		258313, -- Handcuff
+		258864, -- Suppression Fire
+		258917, -- Righteous Flames
+		259711, -- Lockdown
+		260016, -- Itchy Bite
+		260067, -- Vicious Mauling
+		265889, -- Torch Strike
 	-- Waycrest Manor
+		260569, -- Wildfire
 		260703, -- Unstable Runic Mark
-		263905, -- Marking Cleave
-		265880, -- Dread Mark
-		265882, -- Lingering Dread
-		264105, -- Runic Mark
-		264050, -- Infected Thorn
-		261440, -- Virulent Pathogen
-		263891, -- Grasping Thorns
-		264378, -- Fragment Soul
-		266035, -- Bone Splinter
-		266036, -- Drain Essence
-		260907, -- Soul Manipulation
 		260741, -- Jagged Nettles
-		264556, -- Tearing Strike
-		265760, -- Thorned Barrage
-		260551, -- Soul Thorns
-		263943, -- Etch
-		265881, -- Decaying Touch
+		260900, -- Soul Manipulation
+		260926, -- Soul Manipulation
+		261140, -- Virulent Pathogen
 		261438, -- Wasting Strike
-		268202, -- Death Lens
+		263943, -- Etch
+		264040, -- Uprooted Thorns
+		264050, -- Infected Thorn
+		264105, -- Runic Mark
+		264378, -- Fragment Soul
+		264520, -- Severing Serpent
+		264712, -- Rotten Expulsion
+		265407, -- Dinner Bell
+		265761, -- Thorned Barrage
+		265880, -- Dread Mark
+		265881, -- Decaying Touch
+		265882, -- Lingering Dread
+		267907, -- Soul Thorns
+		268080, -- Aura of Apathy
+		268086, -- Aura of Dread
+		268125, -- Aura of Thorns
+		271178, -- Ravaging Leap
+		278444, -- Infest
 		278456, -- Infest
-		264153, -- Spit
-	-- AtalDazar
-		252781, -- Unstable Hex
-		250096, -- Wracking Pain
-		250371, -- Lingering Nausea
+	-- Atal'Dazar
+		250036, -- Shadowy Remains
+		250372, -- Lingering Nausea
+		250585, -- Toxic Pool
+		252687, -- Venomfang Strike
 		253562, -- Wildfire
-		255582, -- Molten Gold
+		254959, -- Soulburn
 		255041, -- Terrifying Screech
 		255371, -- Terrifying Visage
-		252687, -- Venomfang Strike
-		254959, -- Soulburn
-		255814, -- Rending Maul
-		255421, -- Devour
 		255434, -- Serrated Teeth
-		256577, -- Soulfeast
+		255558, -- Tainted Blood
+		255567, -- Frenzied Charge
+		255582, -- Molten Gold
+		255814, -- Rending Maul
+		255835, -- Transfusion Boss
+		255836, -- Transfusion Boss
+		257407, -- Pursuit
+		257483, -- Pile of Bones
+		258723, -- Grotesque Pool
+		260666, -- Transfusion
+		260668, -- Transfusion
 	-- King's Rest
-		270492, -- Hex
-		267763, -- Wretched Discharge
-		276031, -- Pit of Despair
 		265773, -- Spit Gold
-		270920, -- Seduction
-		270865, -- Hidden Blade
-		271564, -- Embalming Fluid
-		270507, -- Poison Barrage
+		266191, -- Whirling Axes
+		266231, -- Severing Axe
+		266238, -- Shattered Defenses
 		267273, -- Poison Nova
-		270003, -- Suppression Slam
-		270084, -- Axe Barrage
 		267618, -- Drain Fluids
 		267626, -- Dessication
-		270487, -- Severing Blade
-		266238, -- Shattered Defenses
-		266231, -- Severing Axe
-		266191, -- Whirling Axes
-		272388, -- Shadow Barrage
-		271640, -- Dark Revelation
-		268796, -- Impaling Spear
+		267763, -- Wretched Discharge
 		268419, -- Gale Slash
+		268796, -- Impaling Spear
 		269932, -- Gust Slash
+		270003, -- Suppression Slam
+		270084, -- Axe Barrage
+		270487, -- Severing Blade
+		270492, -- Hex
+		270507, -- Poison Barrage
+		270865, -- Hidden Blade
+		270920, -- Seduction
+		271564, -- Embalming Fluid
+		271640, -- Dark Revelation
+		272388, -- Shadow Barrage
+		276031, -- Pit of Despair
 	-- Motherlode
-		263074, -- Festering Bite
-		280605, -- Brain Freeze
 		257337, -- Shocking Claw
-		270882, -- Blazing Azerite
-		268797, -- Transmute: Enemy to Goo
-		259856, -- Chemical Burn
-		269302, -- Toxic Blades
-		280604, -- Iced Spritzer
 		257371, -- Tear Gas
 		257544, -- Jagged Cut
-		268846, -- Echo Blade
-		262794, -- Energy Lash
-		262513, -- Azerite Heartseeker
+		259856, -- Chemical Burn
 		260829, -- Homing Missle (travelling)
 		260838, -- Homing Missle (exploded)
+		262513, -- Azerite Heartseeker
+		262794, -- Energy Lash
+		263074, -- Festering Bite
 		263637, -- Clothesline
+		268797, -- Transmute: Enemy to Goo
+		268846, -- Echo Blade
+		269302, -- Toxic Blades
+		270882, -- Blazing Azerite
+		280604, -- Iced Spritzer
+		280605, -- Brain Freeze
 	-- Temple of Sethraliss
-		269686, -- Plague
-		268013, -- Flame Shock
-		268008, -- Snake Charm
-		273563, -- Neurotoxin
-		272657, -- Noxious Breath
-		267027, -- Cytotoxin
-		272699, -- Venomous Spit
 		263371, -- Conduction
-		272655, -- Scouring Sand
 		263914, -- Blinding Sand
 		263958, -- A Knot of Snakes
 		266923, -- Galvanize
+		267027, -- Cytotoxin
 		268007, -- Heart Attack
+		268008, -- Snake Charm
+		268013, -- Flame Shock
+		269686, -- Plague
+		272655, -- Scouring Sand
+		272657, -- Noxious Breath
+		272699, -- Venomous Spit
+		273563, -- Neurotoxin
 	-- Underrot
-		265468, -- Withering Curse
-		278961, -- Decaying Mind
 		259714, -- Decaying Spores
-		272180, -- Death Bolt
-		272609, -- Maddening Gaze
-		269301, -- Putrid Blood
-		265533, -- Blood Maw
+		260455, -- Serrated Fangs	
+		260685, -- Taint of G'huun
 		265019, -- Savage Cleave
 		265377, -- Hooked Snare
+		265468, -- Withering Curse
+		265533, -- Blood Maw
 		265625, -- Dark Omen
-		260685, -- Taint of G'huun
 		266107, -- Thirst for Blood
-		260455, -- Serrated Fangs	
+		269301, -- Putrid Blood
+		272180, -- Death Bolt
+		272609, -- Maddening Gaze
+		278961, -- Decaying Mind
 	-- Operation Mechagon
-		291928, -- Giga-Zap
-		292267, -- Giga-Zap
-		302274, -- Fulminating Zap
-		298669, -- Taze
-		295445, -- Wreck
-		294929, -- Blazing Chomp
-		297257, -- Electrical Charge
-		294855, -- Blossom Blast
-		291972, -- Explosive Leap
 		285443, -- 'Hidden' Flame Cannon
-		291974, -- Obnoxious Monologue
-		296150, -- Vent Blast
-		298602, -- Smoke Cloud
-		296560, -- Clinging Static
-		297283, -- Cave In
 		291914, -- Cutting Beam
-		302384, -- Static Discharge
-		294195, -- Arcing Zap
-		299572, -- Shrink
-		300659, -- Consuming Slime
-		300650, -- Suffocating Smog
-		301712, -- Pounce
-		299475, -- B.O.R.K
+		291928, -- Giga-Zap
+		291972, -- Explosive Leap
+		291974, -- Obnoxious Monologue
+		292267, -- Giga-Zap
 		293670, -- Chain Blade
+		294195, -- Arcing Zap
+		294855, -- Blossom Blast
+		294929, -- Blazing Chomp
+		295445, -- Wreck
+		296150, -- Vent Blast
+		296560, -- Clinging Static
+		297257, -- Electrical Charge
+		297283, -- Cave In
+		298602, -- Smoke Cloud
+		298669, -- Taze
+		299475, -- B.O.R.K
+		299572, -- Shrink
+		300650, -- Suffocating Smog
+		300659, -- Consuming Slime
+		301712, -- Pounce
+		302274, -- Fulminating Zap
+		302384, -- Static Discharge
 	--[[
 		Shadowlands
 	]]
 	-- Tazavesh, the Veiled Market
+		346116, -- Shearing Swings
+		346297, -- Unstable Explosion
+		346828, -- Sanitizing Field
+		346961, -- Purging Field
+		347481, -- Shuri
+		347728, -- Flock!
+		347744, -- Quickblade
+		349999, -- Anima Detonation
+		350013, -- Gluttonous Feast
+		350134, -- Infinite Breath
 		350804, -- Collapsing Energy
 		350885, -- Hyperlight Jolt
 		351101, -- Energy Fragmentation
-		346828, -- Sanitizing Field
-		355641, -- Scintillate
-		355451, -- Undertow
-		355581, -- Crackle
-		349999, -- Anima Detonation
-		346961, -- Purging Field
 		351956, -- High-Value Target
-		346297, -- Unstable Explosion
-		347728, -- Flock!
-		356408, -- Ground Stomp
-		347744, -- Quickblade
-		347481, -- Shuri
-		355915, -- Glyph of Restraint
-		350134, -- Infinite Breath
-		350013, -- Gluttonous Feast
+		355451, -- Undertow
 		355465, -- Boulder Throw
-		346116, -- Shearing Swings
+		355581, -- Crackle
+		355641, -- Scintillate
+		355915, -- Glyph of Restraint
 		356011, -- Beam Splicer
+		356408, -- Ground Stomp
 	-- Halls of Atonement
-		335338, -- Ritual of Woe
-		326891, -- Anguish
-		329321, -- Jagged Swipe 1
-		344993, -- Jagged Swipe 2
 		319603, -- Curse of Stone
 		319611, -- Turned to Stone
+		323650, -- Haunting Fixation
 		325876, -- Curse of Obliteration
 		326632, -- Stony Veins
-		323650, -- Haunting Fixation
 		326874, -- Ankle Bites
+		326891, -- Anguish
+		329321, -- Jagged Swipe 1
+		335338, -- Ritual of Woe
 		340446, -- Mark of Envy
+		344993, -- Jagged Swipe 2
 	-- Mists of Tirna Scithe
-		325027, -- Bramble Burst
-		323043, -- Bloodletting
-		322557, -- Soul Split
-		331172, -- Mind Link
-		322563, -- Marked Prey
-		322487, -- Overgrowth 1
-		322486, -- Overgrowth 2
-		328756, -- Repulsive Visage
-		325021, -- Mistveil Tear
 		321891, -- Freeze Tag Fixation
+		322486, -- Overgrowth 2
+		322487, -- Overgrowth 1
+		322557, -- Soul Split
+		322563, -- Marked Prey
+		323043, -- Bloodletting
+		325021, -- Mistveil Tear
+		325027, -- Bramble Burst
 		325224, -- Anima Injection
-		326092, -- Debilitating Poison
 		325418, -- Volatile Acid
+		326092, -- Debilitating Poison
+		328756, -- Repulsive Visage
+		331172, -- Mind Link
 	-- Plaguefall
-		336258, -- Solitary Prey
-		331818, -- Shadow Ambush
-		329110, -- Slime Injection
-		325552, -- Cytotoxic Slash
-		336301, -- Web Wrap
+		320512, -- Corroded Claws
+		320542, -- Wasting Blight
 		322358, -- Burning Strain
 		322410, -- Withering Filth
+		325552, -- Cytotoxic Slash
 		328180, -- Gripping Infection
-		320542, -- Wasting Blight
-		340355, -- Rapid Infection
 		328395, -- Venompiercer
-		320512, -- Corroded Claws
-		333406, -- Assassinate
-		332397, -- Shroudweb
+		329110, -- Slime Injection
 		330069, -- Concentrated Plague
+		331818, -- Shadow Ambush
+		332397, -- Shroudweb
+		333406, -- Assassinate
+		336258, -- Solitary Prey
+		336301, -- Web Wrap
+		340355, -- Rapid Infection
 	-- The Necrotic Wake
-		321821, -- Disgusting Guts
-		323365, -- Clinging Darkness
-		338353, -- Goresplatter
-		333485, -- Disease Cloud
-		338357, -- Tenderize
-		328181, -- Frigid Cold
 		320170, -- Necrotic Bolt
-		323464, -- Dark Ichor
-		323198, -- Dark Exile
-		343504, -- Dark Grasp
-		343556, -- Morbid Fixation 1
-		338606, -- Morbid Fixation 2
-		324381, -- Chill Scythe
 		320573, -- Shadow Well
+		320717, -- Blood Hunger
+		321821, -- Disgusting Guts
+		323198, -- Dark Exile
+		323365, -- Clinging Darkness
+		323464, -- Dark Ichor
+		324381, -- Chill Scythe
+		328181, -- Frigid Cold
+		333485, -- Disease Cloud
+		333489, -- Necrotic Breath
 		333492, -- Necrotic Ichor
 		334748, -- Drain Fluids
-		333489, -- Necrotic Breath
-		320717, -- Blood Hunger
+		338353, -- Goresplatter
+		338357, -- Tenderize
+		338606, -- Morbid Fixation 2
+		343504, -- Dark Grasp
+		343556, -- Morbid Fixation 1
 	-- Theater of Pain
+		319539, -- Soulless
+		319626, -- Phantasmal Parasite
+		321768, -- On the Hook
+		323406, -- Jagged Gash
+		323750, -- Vile Gas
+		323825, -- Grasping Rift
+		323831, -- Death Grasp
+		324449, -- Manifest Death
+		326892, -- Fixate
+		330608, -- Vile Eruption
+		330700, -- Decaying Blight
+		330868, -- Necrotic Bolt Volley
 		333299, -- Curse of Desolation 1
 		333301, -- Curse of Desolation 2
-		319539, -- Soulless
-		326892, -- Fixate
-		321768, -- On the Hook
-		323825, -- Grasping Rift
-		342675, -- Bone Spear
-		323831, -- Death Grasp
-		330608, -- Vile Eruption
-		330868, -- Necrotic Bolt Volley
-		323750, -- Vile Gas
-		323406, -- Jagged Gash
-		330700, -- Decaying Blight
-		319626, -- Phantasmal Parasite
-		324449, -- Manifest Death
 		341949, -- Withering Blight
+		342675, -- Bone Spear
 	-- Sanguine Depths
+		321038, -- Burden Soul
+		322429, -- Severing Slice
+		322554, -- Castigate
+		325254, -- Iron Spikes
 		326827, -- Dread Bindings
 		326836, -- Curse of Suppression
-		322554, -- Castigate
-		321038, -- Burden Soul
 		328593, -- Agonize
-		325254, -- Iron Spikes
-		335306, -- Barbed Shackles
-		322429, -- Severing Slice
 		334653, -- Engorge
+		335306, -- Barbed Shackles
 	-- Spires of Ascension
-		338729, -- Charged Stomp
-		323195, -- Purifying Blast
-		327481, -- Dark Lance
-		322818, -- Lost Confidence
-		322817, -- Lingering Doubt
-		324205, -- Blinding Flash
-		331251, -- Deep Connection
-		328331, -- Forced Confession
-		341215, -- Volatile Anima
-		323792, -- Anima Field
 		317661, -- Insidious Venom
-		330683, -- Raw Anima
+		322817, -- Lingering Doubt
+		322818, -- Lost Confidence
+		323195, -- Purifying Blast
+		323792, -- Anima Field
+		324205, -- Blinding Flash
+		327481, -- Dark Lance
+		328331, -- Forced Confession
 		328434, -- Intimidated
+		330683, -- Raw Anima
+		331251, -- Deep Connection
+		338729, -- Charged Stomp
+		341215, -- Volatile Anima
 	-- De Other Side
-		320786, -- Power Overwhelming
-		334913, -- Master of Death
-		325725, -- Cosmic Artifice
-		328987, -- Zealous
-		334496, -- Soporific Shimmerdust
-		339978, -- Pacifying Mists
-		323692, -- Arcane Vulnerability
-		333250, -- Reaver
-		330434, -- Buzz-Saw 1
 		320144, -- Buzz-Saw 2
-		331847, -- W-00F
-		327649, -- Crushed Soul
-		331379, -- Lubricate
-		332678, -- Gushing Wound
+		320786, -- Power Overwhelming
 		322746, -- Corrupted Blood
 		323687, -- Arcane Lightning
+		323692, -- Arcane Vulnerability
 		323877, -- Echo Finger Laser X-treme
+		325725, -- Cosmic Artifice
+		327649, -- Crushed Soul
+		328987, -- Zealous
+		330434, -- Buzz-Saw 1
+		331379, -- Lubricate
+		331847, -- W-00F
+		332678, -- Gushing Wound
+		333250, -- Reaver
+		334496, -- Soporific Shimmerdust
 		334535, -- Beak Slice
+		334913, -- Master of Death
+		339978, -- Pacifying Mists
 	-- Shriekwing
 		328897, -- Exsanguinated
-		330713, -- Reverberating Pain
 		329370, -- Deadly Descent
+		330713, -- Reverberating Pain
 		336494, -- Echo Screech
-		346301, -- Bloodlight
 		342077, -- Echolocation
+		346301, -- Bloodlight
 	-- Huntsman Altimor
-		335304, -- Sinseeker
+		334695, -- Destabilize
+		334852, -- Petrifying Howl
+		334945, -- Vicious Lunge
 		334971, -- Jagged Claws
 		335111, -- Huntsman's Mark 3
 		335112, -- Huntsman's Mark 2
 		335113, -- Huntsman's Mark 1
-		334945, -- Vicious Lunge
-		334852, -- Petrifying Howl
-		334695, -- Destabilize
+		335304, -- Sinseeker
 	-- Hungering Destroyer
-		334228, -- Volatile Ejection
 		329298, -- Gluttonous Miasma
+		334228, -- Volatile Ejection
 	-- Lady Inerva Darkvein
-		325936, -- Shared Cognition
-		335396, -- Hidden Desire
-		324983, -- Shared Suffering
 		324982, -- Shared Suffering (Partner)
-		332664, -- Concentrate Anima
+		324983, -- Shared Suffering
 		325382, -- Warped Desires
+		325936, -- Shared Cognition
+		332664, -- Concentrate Anima
+		335396, -- Hidden Desire
 	-- Sun King's Salvation
-		333002, -- Vulgar Brand
-		326078, -- Infuser's Boon
 		325251, -- Sin of Pride
-		341475, -- Crimson Flurry
-		341473, -- Crimson Flurry Teleport
+		326078, -- Infuser's Boon
 		328479, -- Eyes on Target
 		328889, -- Greater Castigation
+		333002, -- Vulgar Brand
+		341473, -- Crimson Flurry Teleport
+		341475, -- Crimson Flurry
 	-- Artificer Xy'mox
-		327902, -- Fixate
-		326302, -- Stasis Trap
 		325236, -- Glyph of Destruction
+		326302, -- Stasis Trap
 		327414, -- Possession
-		328468, -- Dimensional Tear 1
+		327902, -- Fixate
 		328448, -- Dimensional Tear 2
+		328468, -- Dimensional Tear 1
 		340860, -- Withering Touch
 	-- The Council of Blood
 		327052, -- Drain Essence 1
 		327773, -- Drain Essence 2
-		346651, -- Drain Essence Mythic
 		328334, -- Tactical Advance
 		330848, -- Wrong Moves
-		331706, -- Scarlet Letter
 		331636, -- Dark Recital 1
 		331637, -- Dark Recital 2
+		331706, -- Scarlet Letter
+		346651, -- Drain Essence Mythic
 	-- Sludgefist
+		331209, -- Hateful Gaze
+		332572, -- Falling Rubble
+		335270, -- Chain This One!
+		335293, -- Chain Link
+		335295, -- Shattering Chain
 		335470, -- Chain Slam
 		339181, -- Chain Slam (Root)
-		331209, -- Hateful Gaze
-		335293, -- Chain Link
-		335270, -- Chain This One!
 		342419, -- Chain Them! 1
 		342420, -- Chain Them! 2
-		335295, -- Shattering Chain
-		332572, -- Falling Rubble
 	-- Stone Legion Generals
+		333377, -- Wicked Mark
 		334498, -- Seismic Upheaval
-		337643, -- Unstable Footing
+		334541, -- Curse of Petrification
+		334616, -- Petrified
 		334765, -- Heart Rend
 		334771, -- Heart Hemorrhage
-		333377, -- Wicked Mark
-		334616, -- Petrified
-		334541, -- Curse of Petrification
+		337643, -- Unstable Footing
 		339690, -- Crystalize
 		342655, -- Volatile Anima Infusion
 		342698, -- Volatile Anima Infection
 		343881, -- Serrated Tear
 	-- Sire Denathrius
+		326699, -- Burden of Sin
 		326851, -- Blood Price
+		327039, -- Feeding Time
 		327796, -- Night Hunter
 		327992, -- Desolation
 		328276, -- March of the Penitent
-		326699, -- Burden of Sin
 		329181, -- Wracking Pain
-		335873, -- Rancor
 		329951, -- Impale
-		327039, -- Feeding Time
 		332794, -- Fatal Finesse
 		334016, -- Unworthy
+		335873, -- Rancor
 	-- The Tarragrue
-		347283, -- Predator's Howl
-		347286, -- Unshakeable Dread
+		346985, -- Overpower
 		346986, -- Crushed Armor
 		347269, -- Chains of Eternity
-		346985, -- Overpower
+		347283, -- Predator's Howl
+		347286, -- Unshakeable Dread
 	-- Eye of the Jailer
-		350606, -- Hopeless Lethargy
-		355240, -- Scorn
-		355245, -- Ire
-		349979, -- Dragging Chains
 		348074, -- Assailing Lance
+		349979, -- Dragging Chains
+		350606, -- Hopeless Lethargy
+		350763, -- Annihilating Glare
 		351827, -- Spreading Misery
 		355143, -- Deathlink
-		350763, -- Annihilating Glare
+		355240, -- Scorn
+		355245, -- Ire
 	-- The Nine
-		350287, -- Song of Dissolution
-		350542, -- Fragments of Destiny
-		350202, -- Unending Strike
-		350475, -- Pierce Soul
-		350555, -- Shard of Destiny
-		350109, -- Brynja's Mournful Dirge
-		350483, -- Link Essence
 		350039, -- Arthura's Crushing Gaze
+		350109, -- Brynja's Mournful Dirge
 		350184, -- Daschla's Mighty Impact
+		350202, -- Unending Strike
+		350287, -- Song of Dissolution
 		350374, -- Wings of Rage
+		350475, -- Pierce Soul
+		350483, -- Link Essence
+		350542, -- Fragments of Destiny
+		350555, -- Shard of Destiny
 	-- Remnant of Ner'zhul
-		350073, -- Torment
 		349890, -- Suffering
+		350073, -- Torment
 		350469, -- Malevolence
-		354634, -- Spite 1
-		354479, -- Spite 2
-		354534, -- Spite 3
+		354479, -- Spite
+		354534, -- Spite
+		354634, -- Spite
 	-- Soulrender Dormazain
-		353429, -- Tormented
-		353023, -- Torment
-		351787, -- Agonizing Spike
-		350647, -- Brand of Torment
+		348987, -- Warmonger Shackle
 		350422, -- Ruinblade
+		350647, -- Brand of Torment
 		350851, -- Vessel of Torment
+		350927, -- Warmonger Shackle
+		351787, -- Agonizing Spike
+		353023, -- Torment
+		353429, -- Tormented
 		354231, -- Soul Manacles
-		348987, -- Warmonger Shackle 1
-		350927, -- Warmonger Shackle 2
 	-- Painsmith Raznal
-		356472, -- Lingering Flames
-		355505, -- Shadowsteel Chains 1
-		355506, -- Shadowsteel Chains 2
 		348456, -- Flameclasp Trap
-		356870, -- Flameclasp Eruption
+		355505, -- Shadowsteel Chains
+		355506, -- Shadowsteel Chains
+		355526, -- Spiked
 		355568, -- Cruciform Axe
 		355786, -- Blackened Armor
-		355526, -- Spiked
+		356472, -- Lingering Flames
+		356870, -- Flameclasp Eruption
 	-- Guardian of the First Ones
-		352394, -- Radiant Energy
-		350496, -- Threat Neutralization
 		347359, -- Suppression Field
-		355357, -- Obliterate
+		350496, -- Threat Neutralization
 		350732, -- Sunder
+		352394, -- Radiant Energy
 		352833, -- Disintegration
+		355357, -- Obliterate
 	-- Fatescribe Roh-Kalo
-		354365, -- Grim Portent
+		350355, -- Fated Conjunction
 		350568, -- Call of Eternity
-		353435, -- Overwhelming Burden
 		351680, -- Invoke Destiny
 		353432, -- Burden of Destiny
+		353435, -- Overwhelming Burden
 		353693, -- Unstable Accretion
-		350355, -- Fated Conjunction
 		353931, -- Twist Fate
+		354365, -- Grim Portent
 	-- Kel'Thuzad
 		346530, -- Frozen Destruction
-		354289, -- Sinister Miasma
-		347454, -- Oblivion's Echo 1
-		347518, -- Oblivion's Echo 2
-		347292, -- Oblivion's Echo 3
-		348978, -- Soul Exhaustion
-		355389, -- Relentless Haunt (Fixate)
-		357298, -- Frozen Binds
-		355137, -- Shadow Pool
+		347292, -- Oblivion's Echo
+		347454, -- Oblivion's Echo
+		347518, -- Oblivion's Echo
 		348638, -- Return of the Damned
 		348760, -- Frost Blast
+		348978, -- Soul Exhaustion
+		354289, -- Sinister Miasma
+		355137, -- Shadow Pool
+		355389, -- Relentless Haunt (Fixate)
+		357298, -- Frozen Binds
 	-- Sylvanas Windrunner
-		349458, -- Domination Chains
-		347704, -- Veil of Darkness
 		347607, -- Banshee's Mark
 		347670, -- Shadow Dagger
+		347704, -- Veil of Darkness
+		348064, -- Wailing Arrow
+		349458, -- Domination Chains
+		351091, -- Destabilize
+		351092, -- Destabilize
 		351117, -- Crushing Dread
-		351870, -- Haunting Wave
 		351253, -- Banshee Wail
 		351451, -- Curse of Lethargy
-		351092, -- Destabilize 1
-		351091, -- Destabilize 2
-		348064, -- Wailing Arrow
+		351870, -- Haunting Wave
 	-- Vigilant Guardian
-		364447, -- Dissonance
-		364904, -- Anti-Matter
-		364881, -- Matter Disolution
-		360415, -- Defenseless
 		360412, -- Exposed Core
+		360415, -- Defenseless
+		364447, -- Dissonance
+		364881, -- Matter Disolution
+		364904, -- Anti-Matter
 		366393, -- Searing Ablation
 	-- Skolex, the Insatiable Ravener
-		364522, -- Devouring Blood
 		359976, -- Riftmaw
 		359981, -- Rend
 		360098, -- Warp Sickness
+		364522, -- Devouring Blood
 		366070, -- Volatile Residue
 	-- Artificer Xy'mox
-		364030, -- Debilitating Ray
-		365681, -- System Shock
-		363413, -- Forerunner Rings A
-		364604, -- Forerunner Rings B
-		362615, -- Interdimensional Wormhole Player 1
-		362614, -- Interdimensional Wormhole Player 2
+		362614, -- Interdimensional Wormhole
+		362615, -- Interdimensional Wormhole
 		362803, -- Glyph of Relocation
+		363413, -- Forerunner Rings A
+		364030, -- Debilitating Ray
+		364604, -- Forerunner Rings B
+		365681, -- System Shock
 	-- Dausegne, The Fallen Oracle
-		361751, -- Disintegration Halo
-		364289, -- Staggering Barrage
-		361018, -- Staggering Barrage Mythic 1
-		360960, -- Staggering Barrage Mythic 2
+		360960, -- Staggering Barrage Mythic
+		361018, -- Staggering Barrage Mythic
 		361225, -- Encroaching Dominion
+		361751, -- Disintegration Halo
 		361966, -- Infused Strikes
+		364289, -- Staggering Barrage
 	-- Prototype Pantheon
-		365306, -- Invigorating Bloom
-		361689, -- Wracking Pain
-		366232, -- Animastorm
-		364839, -- Sinful Projection
 		360259, -- Gloom Bolt
-		362383, -- Anima Bolt
+		361689, -- Wracking Pain
 		362352, -- Pinned
+		362383, -- Anima Bolt
+		364839, -- Sinful Projection
+		365306, -- Invigorating Bloom
+		366232, -- Animastorm
 	-- Lihuvim, Principle Architect
 		360159, -- Unstable Protoform Energy
+		363676, -- Deconstructing Energy
 		363681, -- Deconstructing Blast
-		363676, -- Deconstructing Energy Player 1
-		363795, -- Deconstructing Energy Player 2
+		363795, -- Deconstructing Energy
 		464312, -- Ephemeral Barrier
 	-- Halondrus the Reclaimer
-		361309, -- Lightshatter Beam
+		360114, -- Ephemeral Fissure
 		361002, -- Ephemeral Fissure
-		360114, -- Ephemeral Fissure II
+		361309, -- Lightshatter Beam
 	-- Anduin Wrynn
-		365293, -- Befouled Barrier
 		363020, -- Necrotic Claws
+		365008, -- Psychic Terror
 		365021, -- Wicked Star (marked)
 		365024, -- Wicked Star (hit)
+		365293, -- Befouled Barrier
 		365445, -- Scarred Soul
-		365008, -- Psychic Terror
 		366849, -- Domination Word: Pain
 	-- Lords of Dread
-		360148, -- Bursting Dread
 		360012, -- Cloud of Carrion
 		360146, -- Fearful Trepidation
+		360148, -- Bursting Dread
 		360241, -- Unsettling Dreams
 	-- Rygelon
-		362206, -- Event Horizon
+		361548, -- Dark Eclipse
 		362137, -- Corrupted Wound
 		362172, -- Corrupted Wound
-		361548, -- Dark Eclipse
+		362206, -- Event Horizon
 	-- The Jailer
 		362075, -- Domination
-		365150, -- Rune of Domination
-		363893, -- Martyrdom
+		363332, -- Unbreaking Grasp	
 		363886, -- Imprisonment
+		363893, -- Martyrdom
+		365150, -- Rune of Domination
 		365219, -- Chains of Anguish
 		366285, -- Rune of Compulsion
-		363332, -- Unbreaking Grasp	
 	--[[
 		Dragonflight
 	]]
 	-- Ruby Life Pools
-		392406, -- Thunderclap
-		372820, -- Scorched Earth
-		384823, -- Inferno 1
-		373692, -- Inferno 2
-		381862, -- Infernocore
-		372860, -- Searing Wounds
-		373869, -- Burning Touch
-		385536, -- Flame Dance
-		381518, -- Winds of Change
-		372858, -- Searing Blows
-		372682, -- Primal Chill 1
-		373589, -- Primal Chill 2
-		373693, -- Living Bomb
-		392924, -- Shock Blast
-		381515, -- Stormslam
-		396411, -- Primal Overload
-		384773, -- Flaming Embers
-		392451, -- Flashfire
-		372697, -- Jagged Earth
 		372047, -- Flurry
+		372682, -- Primal Chill
+		372697, -- Jagged Earth
+		372820, -- Scorched Earth
+		372858, -- Searing Blows
+		372860, -- Searing Wounds
 		372963, -- Chillstorm
+		373589, -- Primal Chill
+		373692, -- Inferno
+		373693, -- Living Bomb
+		373869, -- Burning Touch
+		381515, -- Stormslam
+		381518, -- Winds of Change
+		381862, -- Infernocore
+		384773, -- Flaming Embers
+		384823, -- Inferno
+		385536, -- Flame Dance
+		392406, -- Thunderclap
+		392451, -- Flashfire
+		392924, -- Shock Blast
+		396411, -- Primal Overload
 	-- The Nokhud Offensive
-		382628, -- Surge of Power
-		386025, -- Tempest
-		381692, -- Swift Stab
-		387615, -- Grasp of the Dead
-		387629, -- Rotting Wind
-		386912, -- Stormsurge Cloud
-		395669, -- Aftershock
-		384134, -- Pierce
-		388451, -- Stormcaller's Fury
-		388446, -- Also Stormcaller's Fury
-		395035, -- Shatter Soul
-		376899, -- Crackling Cloud
-		384492, -- Hunter's Mark
-		376730, -- Stormwinds
-		376894, -- Crackling Upheaval
-		388801, -- Mortal Strike
-		376827, -- Conductive Strike
-		376864, -- Static Spear
 		375937, -- Rending Strike
 		376634, -- Iron Spear
+		376730, -- Stormwinds
+		376827, -- Conductive Strike
+		376864, -- Static Spear
+		376894, -- Crackling Upheaval
+		376899, -- Crackling Cloud
+		381692, -- Swift Stab
+		382628, -- Surge of Power
+		384134, -- Pierce
+		384492, -- Hunter's Mark
+		386025, -- Tempest
+		386912, -- Stormsurge Cloud
+		387615, -- Grasp of the Dead
+		387629, -- Rotting Wind
+		388446, -- Also Stormcaller's Fury
+		388451, -- Stormcaller's Fury
+		388801, -- Mortal Strike
+		395035, -- Shatter Soul
+		395669, -- Aftershock
 	-- The Azure Vault
-		388777, -- Oppressive Miasma
-		386881, -- Frost Bomb
-		387150, -- Frozen Ground
-		387564, -- Mystic Vapors
-		385267, -- Crackling Vortex
-		386640, -- Tear Flesh
-		374567, -- Explosive Brand
+		370764, -- Piercing Shards
+		371007, -- Splintering Shards
 		374523, -- Arcane Roots
+		374567, -- Explosive Brand
+		374789, -- Infused Strike
+		375591, -- Sappy Burst
 		375596, -- Erratic Growth Channel
 		375602, -- Erratic Growth
-		370764, -- Piercing Shards
-		384978, -- Dragon Strike
 		375649, -- Infused Ground
-		387151, -- Icy Devastator
 		377488, -- Icy Bindings
-		374789, -- Infused Strike
-		371007, -- Splintering Shards
-		375591, -- Sappy Burst
+		384978, -- Dragon Strike
+		385267, -- Crackling Vortex
 		385409, -- Ouch, ouch, ouch!
+		386640, -- Tear Flesh
+		386881, -- Frost Bomb
+		387150, -- Frozen Ground
+		387151, -- Icy Devastator
+		387564, -- Mystic Vapors
+		388777, -- Oppressive Miasma
 	-- Algeth'ar Academy
+		376997, -- Savage Peck
+		377008, -- Deafening Screech
+		377344, -- Peck
+		386181, -- Mana Bomb
+		386201, -- Corrupted Mana
+		387932, -- Astral Whirlwind
+		388544, -- Barkbreaker
+		388866, -- Mana Void
+		388912, -- Severing Slash
+		388984, -- Vicious Ambush
+		389011, -- Overwhelming Power
 		389033, -- Lasher Toxin
 		391977, -- Oversurge
-		386201, -- Corrupted Mana
-		389011, -- Overwhelming Power
-		387932, -- Astral Whirlwind
 		396716, -- Splinterbark
-		388866, -- Mana Void
-		386181, -- Mana Bomb
-		388912, -- Severing Slash
-		377344, -- Peck
-		376997, -- Savage Peck
-		388984, -- Vicious Ambush
-		388544, -- Barkbreaker
-		377008, -- Deafening Screech
 	-- Brackenhide Hollow
-		385361, -- Rotting Sickness
-		378020, -- Gash Frenzy
-		385356, -- Ensnaring Trap
-		373917, -- Decaystrike 1
-		377864, -- Infectious Spit
-		376933, -- Grasping Vines
-		384425, -- Smell Like Meat
-		373912, -- Decaystrike 2
-		373896, -- Withering Rot
-		377844, -- Bladestorm 1
-		378229, -- Marked for Butchery
-		381835, -- Bladestorm 2
-		376149, -- Choking Rotcloud
-		384725, -- Feeding Frenzy
-		385303, -- Teeth Trap
-		368299, -- Toxic Trap
-		384970, -- Scented Meat 1
-		384974, -- Scented Meat 2
-		368091, -- Infected Bite
-		385185, -- Disoriented
-		387210, -- Decaying Strength
-		382808, -- Withering Contagion 1
-		383087, -- Withering Contagion 2
-		382723, -- Crushing Smash
-		382787, -- Decay Claws
-		385058, -- Withering Poison
-		383399, -- Rotting Surge
+		367481, -- Bloody Bite
 		367484, -- Vicious Clawmangle
 		367521, -- Bone Bolt
 		368081, -- Withering
+		368091, -- Infected Bite
+		368299, -- Toxic Trap
+		373896, -- Withering Rot
+		373912, -- Decaystrike
+		373917, -- Decaystrike
 		374245, -- Rotting Creek
-		367481, -- Bloody Bite
+		376149, -- Choking Rotcloud
+		376933, -- Grasping Vines
+		377844, -- Bladestorm
+		377864, -- Infectious Spit
+		378020, -- Gash Frenzy
+		378229, -- Marked for Butchery
+		381835, -- Bladestorm
+		382723, -- Crushing Smash
+		382787, -- Decay Claws
+		382808, -- Withering Contagion
+		383087, -- Withering Contagion
+		383399, -- Rotting Surge
+		384425, -- Smell Like Meat
+		384725, -- Feeding Frenzy
+		384970, -- Scented Meat
+		384974, -- Scented Meat
+		385058, -- Withering Poison
+		385185, -- Disoriented
+		385303, -- Teeth Trap
+		385356, -- Ensnaring Trap
+		385361, -- Rotting Sickness
+		387210, -- Decaying Strength
 	-- Halls of Infusion
-		387571, -- Focused Deluge
-		383935, -- Spark Volley
-		385555, -- Gulp
-		384524, -- Titanic Fist
-		385963, -- Frost Shock
+		257274, -- Vile Coating
+		374020, -- Containment Beam
+		374339, -- Demoralizing Shout
 		374389, -- Gulp Swog Toxin
+		374563, -- Dazzle
+		374615, -- Cheap Shot
+		374706, -- Pyretic Burst
+		374724, -- Molten Subduction
+		375384, -- Rumbling Earth
+		383935, -- Spark Volley
+		384524, -- Titanic Fist
+		385168, -- Thunderstorm
+		385555, -- Gulp
+		385963, -- Frost Shock
 		386743, -- Polar Winds
+		387359, -- Waterlogged
+		387571, -- Focused Deluge
 		389179, -- Power Overload
 		389181, -- Power Field
-		257274, -- Vile Coating
-		375384, -- Rumbling Earth
-		374563, -- Dazzle
-		389446, -- Nullifying Pulse
-		374615, -- Cheap Shot
-		391610, -- Blinding Winds
-		374724, -- Molten Subduction
-		385168, -- Thunderstorm
-		387359, -- Waterlogged
-		391613, -- Creeping Mold
-		374706, -- Pyretic Burst
 		389443, -- Purifying Blast
-		374339, -- Demoralizing Shout
-		374020, -- Containment Beam
+		389446, -- Nullifying Pulse
+		391610, -- Blinding Winds
+		391613, -- Creeping Mold
 		391634, -- Deep Chill
 		393444, -- Gushing Wound
 	-- Neltharus
-		374534, -- Heated Swings
-		373735, -- Dragon Strike
-		377018, -- Molten Gold
-		374842, -- Blazing Aegis 1
-		392666, -- Blazing Aegis 2
-		375890, -- Magma Eruption
-		396332, -- Fiery Focus
-		389059, -- Slag Eruption
-		376784, -- Flame Vulnerability
-		377542, -- Burning Ground
-		374451, -- Burning Chain
-		372461, -- Imbued Magma
-		378818, -- Magma Conflagration
-		377522, -- Burning Pursuit
-		375204, -- Liquid Hot Magma
-		374482, -- Grounding Chain
-		372971, -- Reverberating Slam
-		384161, -- Mote of Combustion
-		374854, -- Erupted Ground
-		373089, -- Scorching Fusillade
-		372224, -- Dragonbone Axe
-		372570, -- Bold Ambush
-		372459, -- Burning
 		372208, -- Djaradin Lava
+		372224, -- Dragonbone Axe
+		372459, -- Burning
+		372461, -- Imbued Magma
+		372570, -- Bold Ambush
+		372971, -- Reverberating Slam
+		373089, -- Scorching Fusillade
+		373735, -- Dragon Strike
+		374451, -- Burning Chain
+		374482, -- Grounding Chain
+		374534, -- Heated Swings
+		374842, -- Blazing Aegis
+		374854, -- Erupted Ground
+		375204, -- Liquid Hot Magma
+		375890, -- Magma Eruption
+		376784, -- Flame Vulnerability
+		377018, -- Molten Gold
+		377522, -- Burning Pursuit
+		377542, -- Burning Ground
+		378818, -- Magma Conflagration
+		384161, -- Mote of Combustion
+		389059, -- Slag Eruption
+		392666, -- Blazing Aegis
+		396332, -- Fiery Focus
 	-- Uldaman: Legacy of Tyr
 		368996, -- Purging Flames
-		369792, -- Skullcracker
-		372718, -- Earthen Shards
-		382071, -- Resonating Orb
-		377405, -- Time Sink
 		369006, -- Burning Heat
 		369110, -- Unstable Embers
-		375286, -- Searing Cannonfire
-		372652, -- Resonating Orb
-		377825, -- Burning Pitch
-		369411, -- Sonic Burst
-		382576, -- Scorn of Tyr
-		369366, -- Trapped in Stone
-		369365, -- Curse of Stone
-		369419, -- Venomous Fangs
-		377486, -- Time Blade
-		369818, -- Diseased Bite
-		377732, -- Jagged Bite
-		369828, -- Chomp
-		369811, -- Brutal Slam
-		376325, -- Eternity Zone
 		369337, -- Difficult Terrain
+		369365, -- Curse of Stone
+		369366, -- Trapped in Stone
+		369411, -- Sonic Burst
+		369419, -- Venomous Fangs
+		369792, -- Skullcracker
+		369811, -- Brutal Slam
+		369818, -- Diseased Bite
+		369828, -- Chomp
+		372652, -- Resonating Orb
+		372718, -- Earthen Shards
+		375286, -- Searing Cannonfire
+		376325, -- Eternity Zone
 		376333, -- Temporal Zone
+		377405, -- Time Sink
+		377486, -- Time Blade
 		377510, -- Stolen Time
+		377732, -- Jagged Bite
+		377825, -- Burning Pitch
+		382071, -- Resonating Orb
+		382576, -- Scorn of Tyr
+	-- Dawn of the Infinite
+		400681, -- Spark of Tyr
+		401420, -- Sand Stomp
+		401667, -- Time Stasis
+		403910, -- Decaying Time
+		403912, -- Accelerating Time
+		404141, -- Chrono-faded
+		407147, -- Blight Seep
+		407406, -- Corrosion
+		408084, -- Necrofrost
+		409266, -- Extinction Blast
+		410497, -- Mortal Wounds
+		412027, -- Chronal Burn
+		413013, -- Chronoshear
+		413041, -- Sheared Lifespan
+		413142, -- Eon Shatter
+		413208, -- Sand Buffeted
+		414300, -- Extinction Blast
+		416716, -- Sheared Lifespan
+		418009, -- Serrated Arrows
 	-- Eranog
+		370597, -- Kill Order
 		370648, -- Primal Flow
 		390715, -- Primal Rifts
-		370597, -- Kill Order
 	-- Terros
-		382776, -- Awakened Earth 1
-		381253, -- Awakened Earth 2
-		386352, -- Rock Blast
+		381253, -- Awakened Earth
 		382458, -- Resonant Aftermath
+		382776, -- Awakened Earth
+		386352, -- Rock Blast
 	-- The Primal Council
 		371624, -- Conductive Mark
 		372027, -- Slashing Blaze
@@ -1668,97 +1777,150 @@ L.filters = {
 	-- Sennarth, the Cold Breath
 		371976, -- Chilling Blast
 		372082, -- Enveloping Webs
-		374659, -- Rush
+		373048, -- Suffocating Webs
 		374104, -- Wrapped in Webs Slow
 		374503, -- Wrapped in Webs Stun
-		373048, -- Suffocating Webs
+		374659, -- Rush
 	-- Dathea, Ascended
-		391686, -- Conductive Mark
 		388290, -- Cyclone
+		391686, -- Conductive Mark
 	-- Kurog Grimtotem
-		377780, -- Skeletal Fractures
+		372458, -- Below Zero
 		372514, -- Frost Bite
-		374554, -- Lava Pool
-		374709, -- Seismic Rupture
 		374023, -- Searing Carnage
 		374427, -- Ground Shatter
+		374554, -- Lava Pool
+		374709, -- Seismic Rupture
+		377780, -- Skeletal Fractures
 		390920, -- Shocking Burst
-		372458, -- Below Zero
 	-- Broodkeeper Diurna
-		388920, -- Frozen Shroud
+		375578, -- Flame Sentry
+		375620, -- Ionizing Charge
 		378782, -- Mortal Wounds
 		378787, -- Crushing Stoneclaws
-		375620, -- Ionizing Charge
-		375578, -- Flame Sentry
+		388920, -- Frozen Shroud
 	-- Raszageth the Storm-Eater
-		381615, -- Static Charge
-		399713, -- Magnetic Charge
-		385073, -- Ball Lightning
 		377467, -- Fulminating Charge
+		381615, -- Static Charge
+		385073, -- Ball Lightning
+		399713, -- Magnetic Charge
 	-- Kazzara
-		406530, -- Riftburn
-		402420, -- Molten Scar
 		402253, -- Ray of Anguish
-		406525, -- Dread Rift
+		402420, -- Molten Scar
 		404743, -- Terror Claws
+		406525, -- Dread Rift
+		406530, -- Riftburn
 	-- Molgoth
-		405084, -- Lingering Umbra
-		405645, -- Engulfing Heat
-		405642, -- Blistering Twilight
-		402617, -- Blazing Heat
 		401809, -- Corrupting Shadow
+		402617, -- Blazing Heat
+		405084, -- Lingering Umbra
 		405394, -- Shadowflame
+		405642, -- Blistering Twilight
+		405645, -- Engulfing Heat
 	-- Experimentation of Dracthyr
-		406317, -- Mutilation 1
-		406365, -- Mutilation 2
-		405392, -- Disintegrate 1
-		405423, -- Disintegrate 2
+		405392, -- Disintegrate
+		405423, -- Disintegrate
 		406233, -- Deep Breath
-		407327, -- Unstable Essence
 		406313, -- Infused Strikes
+		406317, -- Mutilation
+		406365, -- Mutilation
 		407302, -- Infused Explosion
+		407327, -- Unstable Essence
 	-- Zaqali Invasion
-		408873, -- Heavy Cudgel
-		410353, -- Flaming Cudgel
+		401407, -- Blazing Spear
+		401452, -- Blazing Spear
 		407017, -- Vigorous Gale
-		401407, -- Blazing Spear 1
-		401452, -- Blazing Spear 2
+		408873, -- Heavy Cudgel
 		409275, -- Magma Flow
+		410353, -- Flaming Cudgel
 	-- Rashok
+		405819, -- Searing Slam
 		407547, -- Flaming Upsurge
 		407597, -- Earthen Crush
-		405819, -- Searing Slam
 		408857, -- Doom Flame
 	-- Zskarn
-		404955, -- Shrapnel Bomb
+		403978, -- Blast Wave
 		404010, -- Unstable Embers
 		404942, -- Searing Claws
-		403978, -- Blast Wave
-		405592, -- Salvage Parts
+		404955, -- Shrapnel Bomb
 		405462, -- Dragonfire Traps
+		405592, -- Salvage Parts
 		409942, -- Elimination Protocol
 	-- Magmorax
-		404846, -- Incinerating Maws 1
-		408955, -- Incinerating Maws 2
 		402994, -- Molten Spittle
 		403747, -- Igniting Roar
+		404846, -- Incinerating Maws
+		408955, -- Incinerating Maws
 	-- Echo of Neltharion
-		409373, -- Disrupt Earth
-		407220, -- Rushing Shadows 1
-		407182, -- Rushing Shadows 2
-		405484, -- Surrendering to Corruption
-		409058, -- Seeping Lava
-		402120, -- Collapsed Earth
-		407728, -- Sundered Shadow
-		401998, -- Calamitous Strike
-		408160, -- Shadow Strike
-		403846, -- Sweeping Shadows
-		401133, -- Wildshift (Druid)
-		401131, -- Wild Summoning (Warlock)
 		401130, -- Wild Magic (Mage)
+		401131, -- Wild Summoning (Warlock)
+		401133, -- Wildshift (Druid)
 		401135, -- Wild Breath (Evoker)
+		401998, -- Calamitous Strike
+		402120, -- Collapsed Earth
+		403846, -- Sweeping Shadows
+		405484, -- Surrendering to Corruption
+		407182, -- Rushing Shadows
+		407220, -- Rushing Shadows
+		407728, -- Sundered Shadow
 		408071, -- Shapeshifter's Fervor
+		408160, -- Shadow Strike
+		409058, -- Seeping Lava
+		409373, -- Disrupt Earth
 	-- Scalecommander Sarkareth
+		401383, -- Oppressing Howl
+		401951, -- Oblivion
+		403520, -- Embrace of Nothingness
+		407496, -- Infinite Duress
+	-- Gnarlroot
+		421038, -- Ember-Charred II
+		421972, -- Controlled Burn
+		424734, -- Uprooted Agony
+		425002, -- Ember-Charred I
+		426106, -- Dreadfire Barrage
+	-- Igira the Cruel
+		414367, -- Gathering Torment
+		414888, -- Blistering Spear
+		416056, -- Wracking Skever II
+		424065, -- Wracking Skewer I
+	-- Volcoross
+		419054, -- Molten Venom
+		421207, -- Coiling Flames
+		423494, -- Tidal Blaze
+		423759, -- Serpent's Crucible
+	-- Council of Dreams
+		418589, -- Polymorph Bomb
+		420858, -- Poisonous Javelin
+		420948, -- Barreling Charge
+		421031, -- Song of the Dragon
+		421032, -- Captivating Finale
+		426390, -- Corrosive Pollen
+	-- Larodar, Keeper of the Flame
+		421594, -- Smoldering Suffocation
+		425888, -- Igniting Growth
+		426249, -- Blazing Coalescence
+		427299, -- Flash Fire
+		428901, -- Ashen Devastation
+	-- Nymue, Weaver of the Cycle
+		426520, -- Weaver's Burden
+		427137, -- Threads of Life
+		427138, -- Threads of Life
+		428273, -- Woven Resonance
+	-- Smolderon
+		421455, -- Overheated
+		421643, -- Emberscar's Mark
+		421656, -- Cauterizing Wound
+		425574, -- Lingering Burn
+		426018, -- Seeking Inferno
+	-- Tindral Sageswift, Seer of the Flame
+		424495, -- Mass Entanblement
+		424578, -- Blazing Mushroom
+		424579, -- Suppressive Ember
+		424580, -- Falling Stars
+		424581, -- Fiery Growth
+		424665, -- Seed of Flame
+		427297, -- Flame Surge
+	-- Fyrakk the Blazing
 	}
 }
 
