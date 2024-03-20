@@ -81,12 +81,12 @@ AddonCompartmentFrame:SetAlpha(.9)
 GameTimeFrame:Hide()
 
 -- Tracking
-MinimapCluster.Tracking:SetParent(Minimap.Border)
-MinimapCluster.Tracking:SetScale(1)
-MinimapCluster.Tracking:ClearAllPoints()
-MinimapCluster.Tracking:SetPoint("TOPLEFT", Minimap.Border, 4, -4)
-MinimapCluster.Tracking.Background:Hide()
-MinimapCluster.Tracking:SetAlpha(0)
+MinimapCluster.TrackingFrame:SetParent(Minimap.Border)
+MinimapCluster.TrackingFrame:SetScale(1)
+MinimapCluster.TrackingFrame:ClearAllPoints()
+MinimapCluster.TrackingFrame:SetPoint("TOPLEFT", Minimap.Border, 4, -4)
+MinimapCluster.TrackingFrame.Background:Hide()
+MinimapCluster.TrackingFrame:SetAlpha(0)
 
 -- Instance difficulty
 MinimapCluster.InstanceDifficulty.Instance:ClearAllPoints()
@@ -120,7 +120,7 @@ ExpansionLandingPageMinimapButton:SetAlpha(.9)
 
 -- Hide/Show minimap buttons on mouseover
 local function Show()
-  MinimapCluster.Tracking:SetAlpha(.9)
+  MinimapCluster.TrackingFrame:SetAlpha(.9)
   MinimapCluster.InstanceDifficulty:SetAlpha(.9)
   ExpansionLandingPageMinimapButton:SetAlpha(.9)
 end
@@ -130,7 +130,7 @@ local lasttime = 0
 local function Hide()
   if Minimap:IsMouseOver() then return end
   if time() == lasttime then return end
-  MinimapCluster.Tracking:SetAlpha(0)
+  MinimapCluster.TrackingFrame:SetAlpha(0)
   MinimapCluster.InstanceDifficulty:SetAlpha(0)
   ExpansionLandingPageMinimapButton:SetAlpha(0)
 end
