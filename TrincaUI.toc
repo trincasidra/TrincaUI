@@ -4,7 +4,7 @@
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
 ## Credits Zork, Scrable, Afenar
-## OptionalDeps: Plater, TidyPlates, Kui_Nameplates, OmniCD, cargBags_Nivaya, AdiBags, ArkInventory, Bagnon
+## OptionalDeps: Plater, TidyPlates, Kui_Nameplates, OmniCD, cargBags_Nivaya, AdiBags, ArkInventory, Bagnon, ls_Glass, BetterBags
 ## X-oUF: TrincaUI
 ## IconTexture: Interface\AddOns\TrincaUI\Media\icon.blp
 

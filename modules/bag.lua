@@ -1,7 +1,7 @@
 local A, L = ...
 
 local unpack = unpack
-local noBagAddons = not (cargBags_Nivaya or AdiBags or ArkInventory or Bagnon)
+local noBagAddons = not (cargBags_Nivaya or AdiBags or ArkInventory or Bagnon or BetterBags)
 
 if noBagAddons and L.C.bagPosition and L.C.isUltraWide then
     local offsetX, offsetY = unpack(L.C.bagPosition)

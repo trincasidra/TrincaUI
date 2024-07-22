@@ -7,7 +7,7 @@
 -----------------------------
 
 local A, L = ...
-if not (L.C.chat and L.C.chat.enable) or IsAddOnLoaded("Prat-3.0") then return end
+if not (L.C.chat and L.C.chat.enable) or IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("ls_Glass") then return end
 
 -----------------------------
 -- Functions
