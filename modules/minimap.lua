@@ -81,31 +81,45 @@ AddonCompartmentFrame:SetAlpha(.9)
 GameTimeFrame:Hide()
 
 -- Tracking
-MinimapCluster.TrackingFrame:SetParent(Minimap.Border)
-MinimapCluster.TrackingFrame:SetScale(1)
-MinimapCluster.TrackingFrame:ClearAllPoints()
-MinimapCluster.TrackingFrame:SetPoint("TOPLEFT", Minimap.Border, 4, -4)
-MinimapCluster.TrackingFrame.Background:Hide()
-MinimapCluster.TrackingFrame:SetAlpha(0)
+MinimapCluster.Tracking:SetParent(Minimap.Border)
+MinimapCluster.Tracking:SetScale(1)
+MinimapCluster.Tracking:ClearAllPoints()
+MinimapCluster.Tracking:SetPoint("TOPLEFT", Minimap.Border, 4, -4)
+MinimapCluster.Tracking.Background:Hide()
+MinimapCluster.Tracking:SetAlpha(0)
 
 -- Instance difficulty
-MinimapCluster.InstanceDifficulty.Instance:ClearAllPoints()
-MinimapCluster.InstanceDifficulty.Instance:SetPoint("TOP", Minimap.Border, "TOP", 0, -5)
-MinimapCluster.InstanceDifficulty.Instance.Border:Hide()
-MinimapCluster.InstanceDifficulty.Instance.Background:Hide()
+MinimapCluster.InstanceDifficulty:ClearAllPoints()
+MinimapCluster.InstanceDifficulty:SetParent(Minimap.Border)
+MinimapCluster.InstanceDifficulty:SetPoint("TOP", Minimap.Border, 0, -5)
+MinimapCluster.InstanceDifficulty:SetFrameStrata("HIGH")
+MinimapCluster.InstanceDifficulty.ChallengeMode.Background:Hide()
+MinimapCluster.InstanceDifficulty.ChallengeMode.Border:Hide()
+MinimapCluster.InstanceDifficulty.Default.Background:Hide()
+MinimapCluster.InstanceDifficulty.Default.Border:Hide()
+MinimapCluster.InstanceDifficulty.Guild.Background:Hide()
+MinimapCluster.InstanceDifficulty.Guild.Border:Hide()
+
+local function MoveInstanceDifficulty()
+    MinimapCluster.InstanceDifficulty:ClearAllPoints()
+    MinimapCluster.InstanceDifficulty:SetParent(Minimap.Border)
+    MinimapCluster.InstanceDifficulty:SetPoint("TOP", Minimap.Border, 0, -5)
+    MinimapCluster.InstanceDifficulty:SetFrameStrata("HIGH")
+end
+MinimapCluster.InstanceDifficulty:HookScript("OnEvent", MoveInstanceDifficulty)
 
 -- LFG
 local function MoveLfgEye()
-  if not QueueStatusButton.alreadyMoved then
-    QueueStatusButton:SetParent(Minimap.Border)
-    QueueStatusButton:ClearAllPoints()
-    QueueStatusButton:SetScale(.8)
-    QueueStatusButton:SetPoint("BOTTOMLEFT", Minimap.Border, 4, 4)
-    QueueStatusButton:SetFrameStrata("HIGH")
-    QueueStatusButton.SetPoint = dummy
-    MicroMenuContainer.Layout = dummy
-    QueueStatusButton.alreadyMoved = true
-  end
+    if not QueueStatusButton.alreadyMoved then
+        QueueStatusButton:SetParent(Minimap.Border)
+        QueueStatusButton:ClearAllPoints()
+        QueueStatusButton:SetScale(.8)
+        QueueStatusButton:SetPoint("BOTTOMLEFT", Minimap.Border, 4, 4)
+        QueueStatusButton:SetFrameStrata("HIGH")
+        QueueStatusButton.SetPoint = dummy
+        MicroMenuContainer.Layout = dummy
+        QueueStatusButton.alreadyMoved = true
+    end
 end
 QueueStatusButton:HookScript("OnShow", MoveLfgEye)
 
@@ -120,23 +134,23 @@ ExpansionLandingPageMinimapButton:SetAlpha(.9)
 
 -- Hide/Show minimap buttons on mouseover
 local function Show()
-  MinimapCluster.TrackingFrame:SetAlpha(.9)
-  MinimapCluster.InstanceDifficulty:SetAlpha(.9)
-  ExpansionLandingPageMinimapButton:SetAlpha(.9)
+    MinimapCluster.Tracking:SetAlpha(.9)
+    MinimapCluster.InstanceDifficulty:SetAlpha(.9)
+    ExpansionLandingPageMinimapButton:SetAlpha(.9)
 end
 Minimap:HookScript("OnEnter", Show)
 
 local lasttime = 0
 local function Hide()
-  if Minimap:IsMouseOver() then return end
-  if time() == lasttime then return end
-  MinimapCluster.TrackingFrame:SetAlpha(0)
-  MinimapCluster.InstanceDifficulty:SetAlpha(0)
-  ExpansionLandingPageMinimapButton:SetAlpha(0)
+    if Minimap:IsMouseOver() then return end
+    if time() == lasttime then return end
+    MinimapCluster.Tracking:SetAlpha(0)
+    MinimapCluster.InstanceDifficulty:SetAlpha(0)
+    ExpansionLandingPageMinimapButton:SetAlpha(0)
 end
 local function SetTimer()
-  lasttime = time()
-  C_Timer.After(1.5, Hide)
+    lasttime = time()
+    C_Timer.After(1.5, Hide)
 end
 Minimap:HookScript("OnLeave", SetTimer)
 rLib:RegisterCallback("PLAYER_ENTERING_WORLD", Hide)
