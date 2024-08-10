@@ -1,4 +1,3 @@
-
 -- rChat: core
 -- zork, 2016
 
@@ -7,7 +6,7 @@
 -----------------------------
 
 local A, L = ...
-if not (L.C.chat and L.C.chat.enable) or IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("ls_Glass") then return end
+if not (L.C.chat and L.C.chat.enable) or C_AddOns.IsAddOnLoaded("Prat-3.0") or C_AddOns.IsAddOnLoaded("ls_Glass") then return end
 
 -----------------------------
 -- Functions
@@ -15,59 +14,59 @@ if not (L.C.chat and L.C.chat.enable) or IsAddOnLoaded("Prat-3.0") or IsAddOnLoa
 
 --SkinChat
 local function SkinChat(self)
-  if not self then return end
-  local name = self:GetName()
-  --chat frame resizing
-  self:SetClampRectInsets(0, 0, 0, 0)
-  self:SetFont(unpack(L.C.chat.font))
-  self:SetShadowOffset(unpack(L.C.chat.dropshadow.offset))
-  self:SetShadowColor(unpack(L.C.chat.dropshadow.color))
-  --chat fading
-  self:SetFading(true)
-  --hide button frame
-  local bf = _G[name.."ButtonFrame"]
-  bf:HookScript("OnShow", bf.Hide)
-  bf:Hide()
-  --editbox
-  local eb = _G[name.."EditBox"]
-  eb:SetAltArrowKeyMode(false)
-  --textures
-  _G[name.."EditBoxLeft"]:Hide()
-  _G[name.."EditBoxMid"]:Hide()
-  _G[name.."EditBoxRight"]:Hide()
-  --reposition
-  eb:ClearAllPoints()
-  if name == "ChatFrame2" then
-    eb:SetPoint("BOTTOM",self,"TOP",0,22+24) --CombatLogQuickButtonFrame_Custom:GetHeight()
-  else
-    eb:SetPoint("BOTTOM",self,"TOP",0,22)
-  end
-  eb:SetPoint("LEFT",self,-5,0)
-  eb:SetPoint("RIGHT",self,10,0)
+    if not self then return end
+    local name = self:GetName()
+    --chat frame resizing
+    self:SetClampRectInsets(0, 0, 0, 0)
+    self:SetFont(unpack(L.C.chat.font))
+    self:SetShadowOffset(unpack(L.C.chat.dropshadow.offset))
+    self:SetShadowColor(unpack(L.C.chat.dropshadow.color))
+    --chat fading
+    self:SetFading(true)
+    --hide button frame
+    local bf = _G[name .. "ButtonFrame"]
+    bf:HookScript("OnShow", bf.Hide)
+    bf:Hide()
+    --editbox
+    local eb = _G[name .. "EditBox"]
+    eb:SetAltArrowKeyMode(false)
+    --textures
+    _G[name .. "EditBoxLeft"]:Hide()
+    _G[name .. "EditBoxMid"]:Hide()
+    _G[name .. "EditBoxRight"]:Hide()
+    --reposition
+    eb:ClearAllPoints()
+    if name == "ChatFrame2" then
+        eb:SetPoint("BOTTOM", self, "TOP", 0, 22 + 24) --CombatLogQuickButtonFrame_Custom:GetHeight()
+    else
+        eb:SetPoint("BOTTOM", self, "TOP", 0, 22)
+    end
+    eb:SetPoint("LEFT", self, -5, 0)
+    eb:SetPoint("RIGHT", self, 10, 0)
 end
 
 local function UpdateBackgroundAnchors(self)
-  --fix wierd combat log
-  self:SetClampRectInsets(0, 0, 0, 0)
+    --fix wierd combat log
+    self:SetClampRectInsets(0, 0, 0, 0)
 end
 
 --OpenTemporaryWindow
 local function OpenTemporaryWindow()
-  for _, name in next, CHAT_FRAMES do
-    local frame = _G[name]
-    if (frame.isTemporary) then
-      SkinChat(frame)
+    for _, name in next, CHAT_FRAMES do
+        local frame = _G[name]
+        if (frame.isTemporary) then
+            SkinChat(frame)
+        end
     end
-  end
 end
 
 --AddMessage
 local function AddMessage(self, text, ...)
-  --channel replace (Trade and such)
-  text = text:gsub('|h%[(%d+)%. .-%]|h', '|h%1.|h')
-  --url search
-  text = text:gsub('([wWhH][wWtT][wWtT][%.pP]%S+[^%p%s])', '|cffffffff|Hurl:%1|h[%1]|h|r')
-  return self.DefaultAddMessage(self, text, ...)
+    --channel replace (Trade and such)
+    text = text:gsub('|h%[(%d+)%. .-%]|h', '|h%1.|h')
+    --url search
+    text = text:gsub('([wWhH][wWtT][wWtT][%.pP]%S+[^%p%s])', '|cffffffff|Hurl:%1|h[%1]|h|r')
+    return self.DefaultAddMessage(self, text, ...)
 end
 
 -----------------------------
@@ -80,7 +79,7 @@ ChatFontNormal:SetShadowOffset(unpack(L.C.chat.dropshadow.offset))
 ChatFontNormal:SetShadowColor(unpack(L.C.chat.dropshadow.color))
 
 --font size
-CHAT_FONT_HEIGHTS = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+CHAT_FONT_HEIGHTS             = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }
 
 --channels
 CHAT_WHISPER_GET              = "From %s "
@@ -101,17 +100,17 @@ CHAT_RAID_LEADER_GET          = "|Hchannel:Raid|hRL.|h %s: "
 CHAT_RAID_WARNING_GET         = "|Hchannel:RaidWarning|hRW.|h %s: "
 CHAT_INSTANCE_CHAT_GET        = "|Hchannel:Battleground|hI.|h %s: "
 CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:Battleground|hIL.|h %s: "
-CHAT_FLAG_AFK = "<AFK> "
-CHAT_FLAG_DND = "<DND> "
-CHAT_FLAG_GM = "<[GM]> "
+CHAT_FLAG_AFK                 = "<AFK> "
+CHAT_FLAG_DND                 = "<DND> "
+CHAT_FLAG_GM                  = "<[GM]> "
 
 --remove the annoying guild loot messages by replacing them with the original ones
-YOU_LOOT_MONEY_GUILD = YOU_LOOT_MONEY
-LOOT_MONEY_SPLIT_GUILD = LOOT_MONEY_SPLIT
+YOU_LOOT_MONEY_GUILD          = YOU_LOOT_MONEY
+LOOT_MONEY_SPLIT_GUILD        = LOOT_MONEY_SPLIT
 
 --don't cut the toastframe
 BNToastFrame:SetClampedToScreen(true)
-BNToastFrame:SetClampRectInsets(-15,15,15,-15)
+BNToastFrame:SetClampRectInsets(-15, 15, 15, -15)
 
 --ChatFrameMenuButton
 ChatFrameMenuButton:HookScript("OnShow", ChatFrameMenuButton.Hide)
@@ -133,13 +132,13 @@ button:Hide()
 
 --skin chat
 for i = 1, NUM_CHAT_WINDOWS do
-  local chatframe = _G["ChatFrame"..i]
-  SkinChat(chatframe)
-  --adjust channel display
-  if (i ~= 2) then
-    chatframe.DefaultAddMessage = chatframe.AddMessage
-    chatframe.AddMessage = AddMessage
-  end
+    local chatframe = _G["ChatFrame" .. i]
+    SkinChat(chatframe)
+    --adjust channel display
+    if (i ~= 2) then
+        chatframe.DefaultAddMessage = chatframe.AddMessage
+        chatframe.AddMessage = AddMessage
+    end
 end
 
 --temporary chat windows

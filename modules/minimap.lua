@@ -63,7 +63,7 @@ MinimapCluster.IndicatorFrame.MailFrame:SetAlpha(.9)
 MinimapCluster.IndicatorFrame.MailFrame.SetPoint = dummy
 
 -- Clock
-LoadAddOn("Blizzard_TimeManager")
+C_AddOns.LoadAddOn("Blizzard_TimeManager")
 TimeManagerClockButton:ClearAllPoints()
 TimeManagerClockButton:SetPoint("BOTTOM", Minimap.Border, "BOTTOM", 0, 4)
 TimeManagerClockTicker:SetFont(L.C.font, 12, "OUTLINE")
