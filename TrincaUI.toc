@@ -9,6 +9,7 @@
 ## IconTexture: Interface\AddOns\TrincaUI\Media\icon.blp
 
 filters.lua
+bleeds.lua
 config.lua
 
 libs\LibStub\LibStub.lua
