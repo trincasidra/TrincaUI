@@ -20,8 +20,8 @@ libs\rLib\rLib.xml
 init.lua
 
 modules\omnicd.lua
-modules\oUF_DebuffHighlight.lua
-modules\rAbsorbBar.lua
+modules\debuffHighlight.lua
+modules\absorbBar.lua
 modules\minimap.lua
 modules\disableRaidManager.lua
 modules\auraIndicators.lua
@@ -31,8 +31,8 @@ modules\expbar.lua
 modules\tooltip.lua
 modules\loot.lua
 modules\bag.lua
-modules\rChat.lua
-modules\rSellPoor.lua
+modules\chat.lua
+modules\sellPoor.lua
 
 core\functions.lua
 core\tags.lua

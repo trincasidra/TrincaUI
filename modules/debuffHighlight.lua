@@ -10,7 +10,7 @@ local canDispel = {
     MAGE = { Curse = true, },
     DRUID = { Magic = true, Curse = true, Poison = true, },
     MONK = { Magic = true, Disease = true, Poison = true, },
-    EVOKER = { Magic = true, Poison = true, Disease = true, Curse = true, Bleed = true }
+    EVOKER = { Magic = true, Poison = true, }
 }
 local dispelList = canDispel[playerClass] or {}
 local origColors = {}
@@ -19,12 +19,14 @@ local DebuffTypeColor, UnitAura, unpack = DebuffTypeColor, C_UnitAuras.GetAuraDa
 
 local function GetDebuffType(unit, filter)
     for i = 1, 40 do
-        local _, texture, _, debuffType = UnitAura(unit, i, "HARMFUL")
-        if not texture then
-            return
-        end
-        if debuffType and not filter or (filter and dispelList[debuffType]) then
-            return debuffType, texture
+        local aura = UnitAura(unit, i, "HARMFUL")
+        if aura then
+            if not aura.icon then
+                return
+            end
+            if aura.dispelName and not filter or (filter and dispelList[aura.dispelName]) then
+                return aura.dispelName, aura.icon
+            end
         end
     end
 end
