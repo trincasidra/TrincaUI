@@ -9,12 +9,12 @@
 ## IconTexture: Interface\AddOns\TrincaUI\Media\icon.blp
 
 filters.lua
-bleeds.lua
 config.lua
 
 libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
 libs\LibSharedMedia-3.0\lib.xml
+libs\LibDispel\LibDispel.lua
 libs\oUF\oUF.xml
 libs\rLib\rLib.xml
 
