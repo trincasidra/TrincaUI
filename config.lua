@@ -148,6 +148,7 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
     },
     SHAMAN = {
         { 974,    'ffffaa51', 'BOTTOMRIGHT' },   --earth shield
+        { 383648, 'ffffaa51', 'BOTTOMRIGHT' },   --earth shield (on self)
         { 61295,  'ff3333ff', 'TOPRIGHT' },      --riptide
         { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
     },
