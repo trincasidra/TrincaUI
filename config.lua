@@ -109,72 +109,72 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
     iconSize = 14,
     fontSize = 10,
     DRUID = {
-        { 774,    'ffcc66cc', 'TOPRIGHT' }, --rejuvenation
-        { 8936,   'ff33cc33', 'BOTTOMLEFT' }, --regrowth
-        { 33763,  'ff2e5d17', 'TOPLEFT' }, --life bloom
-        { 188550, 'ff2e5d17', 'TOPLEFT' }, --also life bloom
-        { 48438,  'ffcc6600', 'BOTTOMRIGHT' }, --wild growth
-        { 102351, 'ff33cccc', 'BOTTOM' },  --cenarius ward
-        { 102352, 'ff33cccc', 'BOTTOM' },  --also cenarius ward
-        { 155777, 'ffcc66cc', 'RIGHT' },   --germination
-        { 200389, 'ffffff66', 'LEFT' },    --cultivation
-        { 203554, 'ffffff66', 'LEFT' },    --focused growth
-        { 207386, 'ff6633cc', 'TOP' },     --spring blossoms
+        { 774,    'ffcc66cc', 'TOPRIGHT' },        --rejuvenation
+        { 8936,   'ff33cc33', 'BOTTOMLEFT' },      --regrowth
+        { 33763,  'ff2e5d17', 'TOPLEFT' },         --life bloom
+        { 188550, 'ff2e5d17', 'TOPLEFT' },         --also life bloom
+        { 48438,  'ffcc6600', 'BOTTOMRIGHT' },     --wild growth
+        { 102351, 'ff33cccc', 'BOTTOM' },          --cenarius ward
+        { 102352, 'ff33cccc', 'BOTTOM' },          --also cenarius ward
+        { 155777, 'ffcc66cc', 'RIGHT' },           --germination
+        { 200389, 'ffffff66', 'LEFT' },            --cultivation
+        { 203554, 'ffffff66', 'LEFT' },            --focused growth
+        { 207386, 'ff6633cc', 'TOP' },             --spring blossoms
         { 325748, 'ff7c6453', 'TOPRIGHT',   -22 }, --adaptive swarm
         { 391891, 'ff7c6453', 'TOPRIGHT',   -22 }, --also adaptive swarm
-        { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
+        { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 }   --molten radiance (rashok's trinket hot)
     },
     PRIEST = {
-        { 17,     'ffb3b3b3', 'TOPLEFT' }, --power word: shield
-        { 139,    'ff66b333', 'BOTTOMLEFT' }, --renew
-        { 6788,   'ffe31a1a', 'BOTTOMLEFT' }, --weakened soul
-        { 33206,  'ff7859bd', 'LEFT' },    --pain suppression
-        { 41635,  'ffffffa8', 'BOTTOMRIGHT' }, --prayer of mending
-        { 47788,  'ffdb7300', 'TOPRIGHT' }, --guardian spirit
+        { 17,     'ffb3b3b3', 'TOPLEFT' },       --power word: shield
+        { 139,    'ff66b333', 'BOTTOMLEFT' },    --renew
+        { 6788,   'ffe31a1a', 'BOTTOMLEFT' },    --weakened soul
+        { 33206,  'ff7859bd', 'LEFT' },          --pain suppression
+        { 41635,  'ffffffa8', 'BOTTOMRIGHT' },   --prayer of mending
+        { 47788,  'ffdb7300', 'TOPRIGHT' },      --guardian spirit
         --{193065, 'ff8a36c7', 'BOTTOMRIGHT'},      --masochism
-        { 194384, 'ffffffa8', 'TOPRIGHT' }, --atonement
-        { 214206, 'ffffffa8', 'TOPRIGHT' }, --also atonement
+        { 194384, 'ffffffa8', 'TOPRIGHT' },      --atonement
+        { 214206, 'ffffffa8', 'TOPRIGHT' },      --also atonement
         { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
     },
     MONK = {
-        { 115175, 'ff99e6e6', 'TOP' },     --soothing mist
-        { 116841, 'ff1fff87', 'RIGHT' },   --tiger's lust
-        { 116849, 'ff33cc33', 'TOPRIGHT' }, --life cocoon
-        { 119611, 'ff4dcc99', 'TOPLEFT' }, --renewing mist
-        { 124682, 'ffcccc40', 'BOTTOMLEFT' }, --envolving mist
-        { 191840, 'ff459eb3', 'BOTTOMRIGHT' }, --essence font
-        { 325209, 'ff4d9999', 'BOTTOM' },  --enveloping breath
+        { 115175, 'ff99e6e6', 'TOP' },           --soothing mist
+        { 116841, 'ff1fff87', 'RIGHT' },         --tiger's lust
+        { 116849, 'ff33cc33', 'TOPRIGHT' },      --life cocoon
+        { 119611, 'ff4dcc99', 'TOPLEFT' },       --renewing mist
+        { 124682, 'ffcccc40', 'BOTTOMLEFT' },    --envolving mist
+        { 191840, 'ff459eb3', 'BOTTOMRIGHT' },   --essence font
+        { 325209, 'ff4d9999', 'BOTTOM' },        --enveloping breath
         { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
     },
     SHAMAN = {
-        { 974,    'ffffaa51', 'BOTTOMRIGHT' }, --earth shield
-        { 61295,  'ff3333ff', 'TOPRIGHT' }, --riptide
+        { 974,    'ffffaa51', 'BOTTOMRIGHT' },   --earth shield
+        { 61295,  'ff3333ff', 'TOPRIGHT' },      --riptide
         { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
     },
     PALADIN = {
-        { 1022,   'ff3333ff', 'TOPLEFT' }, --blessing of protection
-        { 1044,   'ffe37300', 'TOPLEFT' }, --blessing of freedom
-        { 6940,   'ffe31a1a', 'TOPLEFT' }, --blessing of sacrifice
-        { 204018, 'ff33cccc', 'TOPLEFT' }, --blessing of spellwarding
-        { 53563,  'ffb34db3', 'TOPRIGHT' }, --beacon of light
-        { 156910, 'ffb34db3', 'TOPRIGHT' }, --beacon of faith
-        { 200025, 'ffb34db3', 'TOPRIGHT' }, --beacon of virtue
-        { 157047, 'ff2693d6', 'TOP' },     --saved by the light
-        { 223306, 'ffb3b34d', 'BOTTOMLEFT' }, --bestow faith
-        { 287280, 'ff33cc33', 'BOTTOMRIGHT' }, --glimmer of light
+        { 1022,   'ff3333ff', 'TOPLEFT' },       --blessing of protection
+        { 1044,   'ffe37300', 'TOPLEFT' },       --blessing of freedom
+        { 6940,   'ffe31a1a', 'TOPLEFT' },       --blessing of sacrifice
+        { 204018, 'ff33cccc', 'TOPLEFT' },       --blessing of spellwarding
+        { 53563,  'ffb34db3', 'TOPRIGHT' },      --beacon of light
+        { 156910, 'ffb34db3', 'TOPRIGHT' },      --beacon of faith
+        { 200025, 'ffb34db3', 'TOPRIGHT' },      --beacon of virtue
+        { 157047, 'ff2693d6', 'TOP' },           --saved by the light
+        { 223306, 'ffb3b34d', 'BOTTOMLEFT' },    --bestow faith
+        { 431381, 'ff33cc33', 'BOTTOMRIGHT' },   --dawnlight
         { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
     },
     EVOKER = {
-        { 364343, 'ffceff20', 'TOPRIGHT' },  --echo
-        { 366155, 'ffffffa8', 'BOTTOMRIGHT' }, --reversion
+        { 364343, 'ffceff20', 'TOPRIGHT' },         --echo
+        { 366155, 'ffffffa8', 'BOTTOMRIGHT' },      --reversion
         { 367364, 'ffffffa8', 'BOTTOMRIGHT', -22 }, --reversion (echo'd)
-        { 357170, 'ffdb7300', 'BOTTOM' },    --time dilation
-        { 374227, 'ff7c6453', 'BOTTOMLEFT' }, --zephyr
-        { 373267, 'ffe31a1a', 'TOP' },       --lifebind
-        { 373268, 'ffe31a1a', 'TOP' },       --lifebind (echo'd)
-        { 355941, 'ff37fc83', 'TOPLEFT' },   --dream breath
-        { 376788, 'ff37fc83', 'TOPLEFT',     22 }, --dream breath (echo'd)
-        { 401186, 'ffe25c1d', 'BOTTOMLEFT',  22 } --molten radiance (rashok's trinket hot)
+        { 357170, 'ffdb7300', 'BOTTOM' },           --time dilation
+        { 374227, 'ff7c6453', 'BOTTOMLEFT' },       --zephyr
+        { 373267, 'ffe31a1a', 'TOP' },              --lifebind
+        { 373268, 'ffe31a1a', 'TOP' },              --lifebind (echo'd)
+        { 355941, 'ff37fc83', 'TOPLEFT' },          --dream breath
+        { 376788, 'ff37fc83', 'TOPLEFT',     22 },  --dream breath (echo'd)
+        { 401186, 'ffe25c1d', 'BOTTOMLEFT',  22 }   --molten radiance (rashok's trinket hot)
     }
 }
 
@@ -450,7 +450,7 @@ L.C.focus = {
 L.C.nameplate = {
     enabled = true,
     size = { 105, 30 },
-    point = { "CENTER" },                         --relative to the nameplate base!
+    point = { "CENTER" },                               --relative to the nameplate base!
     scale = .9 * UIParent:GetScale() * L.C.globalscale, --nameplates are not part of uiparent, they must be multiplied by uiparent scale!
     targetedBorderSize = 6,
     healthbar = {

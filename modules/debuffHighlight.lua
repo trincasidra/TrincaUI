@@ -22,12 +22,19 @@ local DebuffTypeColor, UnitAura, unpack, IsSpellUsable, GetSpellCooldown = Debuf
     C_UnitAuras.GetAuraDataByIndex, unpack, C_Spell.IsSpellUsable, C_Spell.GetSpellCooldown
 
 local function GetDebuffType(unit, filter)
+    local cfg = dispelList
+    if playerClass == 'EVOKER' and IsSpellUsable(cauterizingFlameId) then
+        local cauterizingFlameCooldown = GetSpellCooldown(cauterizingFlameId)
+        if cauterizingFlameCooldown.duration == 0 then
+            cfg = omniDispel
+        end
+    end
     for i = 1, 40 do
         local aura = UnitAura(unit, i, "HARMFUL")
         if aura then
-            if aura.icon and aura.dispelName and not filter then
+            if aura.icon and aura.dispelName and not filter and cfg[aura.dispelName] then
                 return aura.dispelName, aura.icon
-            elseif aura.icon and not aura.dispelName and not filter and bleeds[aura.spellId] then
+            elseif aura.icon and not aura.dispelName and not filter and bleeds[aura.spellId] and cfg['Bleed'] then
                 return 'Bleed', aura.icon
             end
         end
@@ -36,15 +43,8 @@ end
 
 local function Update(self, event, unit)
     if self.unit ~= unit then return end
-    local cfg = dispelList
-    if playerClass == 'EVOKER' and IsSpellUsable(cauterizingFlameId) then
-        local cauterizingFlameCooldown = GetSpellCooldown(cauterizingFlameId)
-        if cauterizingFlameCooldown.duration == 0 then
-            cfg = omniDispel
-        end
-    end
     local debuffType, texture = GetDebuffType(unit, self.DebuffHighlightFilter)
-    if cfg and cfg[debuffType] and debuffType and UnitIsFriend('player', unit) and UnitIsPlayer(unit) then
+    if debuffType and UnitIsFriend('player', unit) and UnitIsPlayer(unit) then
         local color = L.C.colors.debuffhighlight[debuffType]
         if self.DebuffHighlight then
             self.DebuffHighlight:SetBackdropColor(color.r, color.g, color.b, color.a)
