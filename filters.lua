@@ -84,7 +84,10 @@ L.filters = {
         392960, -- Waygate Travel
         392992, -- Silent Lava
         393798, -- Activated Defense Systems
-        418990  -- Wicker Men's Curse
+        418990, -- Wicker Men's Curse
+        426790, -- Call of the Elder druid
+        430191, -- Mentor exp
+        455020  -- Wow anniversary
     },
     turtleBuffs = {
         -- Death Knight
@@ -732,6 +735,7 @@ L.filters = {
         396364, -- Mark of Wind
         396369, -- Mark of Lightning
         409492, -- Afflicted Cry
+        440313, -- Void Rift (Xalatath dispel)
         --[[
             Cataclysm
         ]]
