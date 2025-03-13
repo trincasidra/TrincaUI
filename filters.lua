@@ -735,7 +735,10 @@ L.filters = {
         396364, -- Mark of Wind
         396369, -- Mark of Lightning
         409492, -- Afflicted Cry
-        440313, -- Void Rift (Xalatath dispel)
+        440313, -- Void Rift (Xalatath dispel),
+        160029, -- Combat Rez received
+        225080, -- Shaman Ankh
+        255234, -- Totemic Revival
         --[[
             Cataclysm
         ]]
@@ -1115,8 +1118,8 @@ L.filters = {
         257371, -- Tear Gas
         257544, -- Jagged Cut
         259856, -- Chemical Burn
-        260829, -- Homing Missle (travelling)
-        260838, -- Homing Missle (exploded)
+        260829, -- Homing Missile Fixated
+        260838, -- Homing Missile DoT
         262513, -- Azerite Heartseeker
         262794, -- Energy Lash
         263074, -- Festering Bite
@@ -1161,7 +1164,7 @@ L.filters = {
         291928, -- Giga-Zap
         291972, -- Explosive Leap
         291974, -- Obnoxious Monologue
-        292267, -- Giga-Zap
+        292267, -- Giga-Zap too
         293670, -- Chain Blade
         294195, -- Arcing Zap
         294855, -- Blossom Blast
@@ -1950,109 +1953,222 @@ L.filters = {
             The War Within
         ]]
         -- The Stonevault
-        427329, -- Void Corruption
-        435813, -- Void Empowerment
         423572, -- Void Empowerment
-        424889, -- Seismic Reverberation
         424795, -- Refracting Beam
-        457465, -- Entropy
-        425974, -- Ground Pound
-        445207, -- Piercing Wail
-        428887, -- Smashed
-        427382, -- Concussive Smash
-        449154, -- Molten Mortar
-        427361, -- Fracture
-        443494, -- Crystalline Eruption
+        424889, -- Seismic Reverberation
         424913, -- Volatile Explosion
-        443954, -- Exhaust Vents
+        425974, -- Ground Pound
         426308, -- Void Infection
-        429999, -- Flaming Scrap
-        429545, -- Censoring Gear
+        427329, -- Void Corruption
+        427361, -- Fracture
+        427382, -- Concussive Smash
         428819, -- Exhaust Vents
+        428887, -- Smashed
+        429545, -- Censoring Gear
+        429999, -- Flaming Scrap
+        435813, -- Void Empowerment
+        443494, -- Crystalline Eruption
+        443954, -- Exhaust Vents
+        445207, -- Piercing Wail
+        449154, -- Molten Mortar
+        457465, -- Entropy
         -- City of Threads
         434722, -- Subjugate
-        439341, -- Splice
-        440437, -- Shadow Shunpo
-        448561, -- Shadows of Doubt
-        440107, -- Knife Throw
-        439324, -- Umbral Weave
-        442285, -- Corrupted Coating
-        440238, -- Ice Sickles
-        461842, -- Oozing Smash
         434926, -- Lingering Influence
-        440310, -- Chains of Oppression
+        439324, -- Umbral Weave
+        439341, -- Splice
         439646, -- Process of Elimination
-        448562, -- Doubt
-        441391, -- Dark Paranoia
-        461989, -- Oozing Smash
-        441298, -- Freezing Blood
+        440107, -- Knife Throw
+        440238, -- Ice Sickles
+        440310, -- Chains of Oppression
+        440437, -- Shadow Shunpo
         441286, -- Dark Paranoia
-        452151, -- Rigorous Jab
-        451239, -- Brutal Jab
-        443509, -- Ravenous Swarm
-        443437, -- Shadows of Doubt
-        451295, -- Void Rush
-        443427, -- Web Bolt
-        461630, -- Venomous Spray
-        445435, -- Black Blood
+        441298, -- Freezing Blood
+        441391, -- Dark Paranoia
+        442285, -- Corrupted Coating
         443401, -- Venom Strike
+        443427, -- Web Bolt
         443430, -- Silk Binding
-        443438, -- Doubt
-        443435, -- Twist Thoughts
         443432, -- Silk Binding
-        448047, -- Web Wrap
-        451426, -- Gossamer Barrage
+        443435, -- Twist Thoughts
+        443437, -- Shadows of Doubt
+        443438, -- Doubt
+        443509, -- Ravenous Swarm
+        445435, -- Black Blood
         446718, -- Umbral Weave
+        448047, -- Web Wrap
+        448561, -- Shadows of Doubt
+        448562, -- Doubt
         450055, -- Gutburst
         450783, -- Perfume Toss
+        451239, -- Brutal Jab
+        451295, -- Void Rush
+        451426, -- Gossamer Barrage
+        452151, -- Rigorous Jab
+        461630, -- Venomous Spray
+        461842, -- Oozing Smash
+        461989, -- Oozing Smash
         -- The Dawnbreaker
-        463428, -- Lingering Erosion
-        426736, -- Shadow Shroud
-        434096, -- Sticky Webs
-        453173, -- Collapsing Night
-        426865, -- Dark Orb
-        434090, -- Spinneret's Strands
-        434579, -- Corrosion
         426735, -- Burning Shadows
-        434576, -- Acidic Stupor
-        452127, -- Animate Shadows
-        438957, -- Acid Pools
-        434441, -- Rolling Acid
-        451119, -- Abyssal Blast
-        453345, -- Abyssal Rot
-        449332, -- Encroaching Shadows
-        431333, -- Tormenting Beam
+        426736, -- Shadow Shroud
+        426865, -- Dark Orb
         431309, -- Ensnaring Shadows
-        451107, -- Bursting Cocoon
-        434406, -- Rolling Acid
-        431491, -- Tainted Slash
-        434113, -- Spinneret's Strands
+        431333, -- Tormenting Beam
         431350, -- Tormenting Eruption
         431365, -- Tormenting Ray
-        434668, -- Sparking Arathi Bomb
-        460135, -- Dark Scars
-        451098, -- Tacky Nova
-        450855, -- Dark Orb
+        431491, -- Tainted Slash
         431494, -- Black Edge
-        451115, -- Terrifying Slam
         432448, -- Stygian Seed
+        434090, -- Spinneret's Strands
+        434096, -- Sticky Webs
+        434113, -- Spinneret's Strands
+        434406, -- Rolling Acid
+        434441, -- Rolling Acid
+        434576, -- Acidic Stupor
+        434579, -- Corrosion
+        434668, -- Sparking Arathi Bomb
+        438957, -- Acid Pools
+        449332, -- Encroaching Shadows
+        450855, -- Dark Orb
+        451098, -- Tacky Nova
+        451107, -- Bursting Cocoon
+        451115, -- Terrifying Slam
+        451119, -- Abyssal Blast
+        452127, -- Animate Shadows
+        453173, -- Collapsing Night
+        453345, -- Abyssal Rot
+        460135, -- Dark Scars
+        463428, -- Lingering Erosion
         -- Ara-Kara, City of Echoes
-        461487, -- Cultivated Poisons
-        432227, -- Venom Volley
-        432119, -- Faded
-        433740, -- Infestation
-        439200, -- Voracious Bite
-        433781, -- Ceaseless Swarm
-        432132, -- Erupting Webs
-        434252, -- Massive Slam
         432031, -- Grasping Blood
-        438599, -- Bleeding Jab
-        438618, -- Venomous Spit
-        436401, -- AUGH!
+        432119, -- Faded
+        432132, -- Erupting Webs
+        432227, -- Venom Volley
+        433740, -- Infestation
+        433781, -- Ceaseless Swarm
+        433843, -- Erupting Webs
+        434083, -- Ambush
+        434252, -- Massive Slam
         434830, -- Vile Webbing
         436322, -- Poison Bolt
-        434083, -- Ambush
-        433843, -- Erupting Webs
+        436401, -- AUGH!
+        438599, -- Bleeding Jab
+        438618, -- Venomous Spit
+        439200, -- Voracious Bite
+        461487, -- Cultivated Poisons
+        -- The Rookery
+        424739, -- Chaotic Corruption
+        424966, -- Lingering Void
+        426160, -- Dark Gravity
+        427616, -- Energized Barrage
+        430179, -- Seeping Corruption
+        430814, -- Attracting Shadows
+        433067, -- Seeping Corruption
+        458082, -- Stormrider's Charge
+        467907, -- Festering Void
+        472764, -- Void Extraction
+        429493, -- Unstable Corruption
+        1214324, -- Crashing Thunder
+        1214523, -- Feasting Void
+        -- Priory of the Sacred Flame
+        423015, -- Castigator's Shield
+        424414, -- Pierce Armor
+        424426, -- Lunging Strike
+        424430, -- Consecration
+        425556, -- Sanctified Ground
+        427621, -- Impale
+        427635, -- Grievous Rip
+        427897, -- Heat Wave
+        427900, -- Molten Pool
+        428170, -- Blinding Light
+        435165, -- Blazing Strike
+        446403, -- Sacrificial Flame
+        447439, -- Savage Mauling
+        448492, -- Thunderclap
+        448515, -- Divine Judgment
+        448787, -- Purification
+        451764, -- Radiant Flame
+        453461, -- Caltrops
+        -- Cinderbrew Meadery
+        431897, -- Rowdy Yell
+        432182, -- Throw Cinderbrew
+        432196, -- Hot Honey
+        434707, -- Cinderbrew Toss
+        434773, -- Mean Mug
+        435789, -- Cindering Wounds
+        436624, -- Cash Cannon
+        436640, -- Burning Ricochet
+        436644, -- Burning Ricochet
+        437721, -- Boiling Flames
+        437956, -- Erupting Inferno
+        438975, -- Shredding Sting
+        439325, -- Burning Fermentation
+        439586, -- Fluttering Wing
+        440087, -- Oozing Honey
+        440134, -- Honey Marinade
+        440141, -- Honey Marinade
+        441179, -- Oozing Honey
+        441397, -- Bee Venom
+        441413, -- Shredding Sting
+        442589, -- Beeswax
+        442995, -- Swarming Surprise
+        445180, -- Crawling Brawl
+        449090, -- Reckless Delivery
+        463220, -- Volatile Keg
+        -- Darkflame Cleft
+        420307, -- Candlelight
+        420696, -- Throw Darkflame
+        421067, -- Molten Wax
+        421146, -- Throw Darkflame
+        421638, -- Wicklighter Barrage
+        421653, -- Cursed Wax
+        421817, -- Wicklighter Barrage
+        422245, -- Rock Buster
+        422648, -- Darkflame Pickaxe
+        422806, -- Smothering Shadows
+        422807, -- Candlelight
+        423501, -- Wild Wallop
+        423654, -- Ouch!
+        423693, -- Luring Candleflame
+        424223, -- Incite Flames
+        424322, -- Explosive Flame
+        425555, -- Crude Weapons
+        426277, -- One-Hand Headlock
+        426883, -- Bonk!
+        426943, -- Rising Gloom
+        427015, -- Shadowblast
+        427180, -- Fear of the Gloom
+        428019, -- Flashpoint
+        440653, -- Surging Flamethrower
+        443694, -- Crude Weapons
+        469620, -- Creeping Shadow
+        1218308, -- Enkindling Inferno
+        -- Operation: Floodgate
+        460965, -- Barreling Charge
+        462737, -- Black Blood Wound
+        462771, -- Surveying Beam
+        465830, -- Warp Blood
+        466188, -- Thunder Punch
+        468616, -- Leaping Spark
+        468672, -- Pinch
+        468680, -- Crabsplosion
+        468723, -- Shock Water
+        468811, -- Gigazap
+        468815, -- Gigazap
+        469799, -- Overcharge
+        469811, -- Backwash
+        470022, -- Barreling Charge
+        470038, -- Razorchoke Vines
+        472338, -- Surveyed Ground
+        472819, -- Razorchoke Vines
+        472878, -- Sludge Claws
+        473051, -- Rushing Tide
+        473224, -- Sonic Boom
+        473713, -- Kinetic Explosive Gel
+        473836, -- Electrocrush
+        474351, -- Shreddation Sawblade
+        474388, -- Flamethrower
+        1213803, -- Nailed
         -- Ulgrax the Devourer
         434705, -- Tenderized
         435138, -- Digestive Acid
@@ -2118,6 +2234,37 @@ L.filters = {
         441772, -- Void Bolt
         441788, -- Web Vortex
         440001, -- Binding Webs
+        -- Queen Ansurek
+        441865, -- Royal Shackles
+        436800, -- Liquefy
+        455404, -- Feast
+        439829, -- Silken Tomb
+        439825, -- Silken Tomb 2
+        437586, -- Reactive Toxin
+        -- Vexie and the Geargrinders
+        465865, -- Tank Buster
+        459669, -- Spew Oil
+        -- Cauldron of Carnage
+        1213690, -- Molten Phlegm
+        -- Rik Reverb
+        1217122, -- Lingering Voltage
+        -- Stix Bunkjunker
+        461536, -- Rolling Rubbish
+        1217954, -- Meltdown
+        465346, -- Sorted
+        -- Sprocketmonger Lockenstock
+        1218342, -- Unstable Shrapnel
+        465917, -- Gravi-Gunk
+        -- The One-Armed Bandit
+        471927, -- Withering Flames
+        460420, -- Crushed!
+        -- Mug'Zee, Heads of Security
+        4664769, -- Frostshatter Boots
+        -- Chrome King Gallywix
+        466246, -- Focused Detonation
+        469404, -- Giga BOOM!
+        1214749, -- Overloaded Rockets
+        1220761, -- Mechengineer's Canisters
     }
 }
 

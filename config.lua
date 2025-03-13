@@ -26,7 +26,7 @@ L.C = {
     -- 32:9 => ~3.5
     isUltraWide = (GetScreenWidth() / GetScreenHeight()) > 2,
     fade = {
-        microMenuAndBags = true,
+        microMenuAndBags = false,
         expBar = false,
         actionBar1 = true,
         actionBar2 = true,
@@ -139,10 +139,10 @@ L.C.auraIndicators = { --{spellid, color, anchorTo}
     MONK = {
         { 115175, 'ff99e6e6', 'TOP' },           --soothing mist
         { 116841, 'ff1fff87', 'RIGHT' },         --tiger's lust
-        { 116849, 'ff33cc33', 'TOPRIGHT' },      --life cocoon
-        { 119611, 'ff4dcc99', 'TOPLEFT' },       --renewing mist
-        { 124682, 'ffcccc40', 'BOTTOMLEFT' },    --envolving mist
-        { 191840, 'ff459eb3', 'BOTTOMRIGHT' },   --essence font
+        { 116849, 'ff33cc33', 'TOPLEFT' },       --life cocoon
+        { 119611, 'ff4dcc99', 'TOPRIGHT' },      --renewing mist
+        { 124682, 'ffcccc40', 'BOTTOMRIGHT' },   --envolving mist
+        { 191840, 'ff459eb3', 'BOTTOMLEFT' },    --essence font
         { 325209, 'ff4d9999', 'BOTTOM' },        --enveloping breath
         { 401186, 'ffe25c1d', 'BOTTOMLEFT', 22 } --molten radiance (rashok's trinket hot)
     },
