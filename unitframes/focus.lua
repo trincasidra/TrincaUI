@@ -12,7 +12,7 @@ local A, L = ...
 -- CreateFocusStyle
 -----------------------------
 
-if not L.C.focus or not L.C.focus.enabled then return end
+if not L.C.focus or not L.C.focus.enabled or C_AddOns.IsAddOnLoaded("Cell_UnitFrames") then return end
 
 local function CreateFocusStyle(self)
   --config

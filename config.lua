@@ -12,6 +12,11 @@ L.C = {
         },
         font = { STANDARD_TEXT_FONT, 13, "THINOUTLINE" }
     },
+    chatHistory = {
+        enable = true,
+        logLines = 500,
+        logChannels = false, -- Whether to log General, Trade, Defense, Services and Custom channels
+    },
     styleTooltip = true,
     styleRollHistory = false,
     styleBag = false,
@@ -96,10 +101,10 @@ L.C = {
             harm = { .88, .165, .165 }
         },
         threat = { --colors for dps/heal. tanks are automatically inversed
-            lowthreat = { .7, 1, 0 },
-            highthreat = { 1, 1, 0 },
-            unsafetanking = { 1, .5, .31 },
-            tanking = { .88, .165, .165 }
+            lowthreat = { .7, 1, 0 },       -- b5ff00
+            highthreat = { 1, 1, 0 },       -- ffff00
+            unsafetanking = { 1, .5, .31 }, -- ff804f
+            tanking = { .88, .165, .165 }   -- e12a2a
         }
     }
 }

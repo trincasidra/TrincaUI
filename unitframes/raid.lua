@@ -12,7 +12,7 @@ local A, L = ...
 -- CreateRaidStyle
 -----------------------------
 
-if not L.C.raid or not L.C.raid.enabled then return end
+if not L.C.raid or not L.C.raid.enabled or C_AddOns.IsAddOnLoaded("Cell") then return end
 
 local function CreateRaidStyle(self)
   --config

@@ -12,7 +12,7 @@ local A, L = ...
 -- CreatePartyStyle
 -----------------------------
 
-if not L.C.party or not L.C.party.enabled then return end
+if not L.C.party or not L.C.party.enabled or C_AddOns.IsAddOnLoaded("Cell") then return end
 
 local function CreatePartyStyle(self)
   --config

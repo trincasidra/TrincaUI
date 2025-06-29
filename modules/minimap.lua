@@ -121,7 +121,7 @@ local function MoveLfgEye()
         QueueStatusButton.alreadyMoved = true
     end
 end
-QueueStatusButton:HookScript("OnShow", MoveLfgEye)
+--QueueStatusButton:HookScript("OnShow", MoveLfgEye)
 
 -- Garrison
 ExpansionLandingPageMinimapButton:SetParent(Minimap.Border)

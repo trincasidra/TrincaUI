@@ -12,7 +12,7 @@ local A, L = ...
 -- CreateTargetTargetStyle
 -----------------------------
 
-if not L.C.targettarget or not L.C.targettarget.enabled then return end
+if not L.C.targettarget or not L.C.targettarget.enabled or C_AddOns.IsAddOnLoaded("Cell_UnitFrames") then return end
 
 local function CreateTargetTargetStyle(self)
   --config

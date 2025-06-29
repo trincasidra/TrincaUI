@@ -12,7 +12,7 @@ local A, L = ...
 -- CreatePetStyle
 -----------------------------
 
-if not L.C.pet or not L.C.pet.enabled then return end
+if not L.C.pet or not L.C.pet.enabled or C_AddOns.IsAddOnLoaded("Cell_UnitFrames") then return end
 
 local function CreatePetStyle(self)
   --config

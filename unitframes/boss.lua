@@ -12,7 +12,7 @@ local A, L = ...
 -- CreateBossStyle
 -----------------------------
 
-if not L.C.boss or not L.C.boss.enabled then return end
+if not L.C.boss or not L.C.boss.enabled or C_AddOns.IsAddOnLoaded("Cell_UnitFrames") then return end
 
 local function CreateBossStyle(self)
   --config

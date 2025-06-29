@@ -12,6 +12,8 @@ local A, L = ...
 -- CreatePlayerStyle
 -----------------------------
 
+if C_AddOns.IsAddOnLoaded("Cell_UnitFrames") then return end
+
 local function CreatePlayerStyle(self)
   --config
   self.cfg = L.C.player

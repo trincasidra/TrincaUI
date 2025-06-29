@@ -1,12 +1,13 @@
-## Interface: 110100
-## Version: 11.1.0
+## Interface: 110107
+## Version: 11.1.7
 ## Title: Trinca |cff1a9fc0UI|r
 ## Notes: Minimalistic and transparent oUF layout.
 ## Author: Trincasidra
 ## Credits Zork, Scrable, Afenar
-## OptionalDeps: Plater, TidyPlates, Kui_Nameplates, OmniCD, cargBags_Nivaya, AdiBags, ArkInventory, Bagnon, ls_Glass, BetterBags
+## OptionalDeps: Plater, TidyPlates, Kui_Nameplates, OmniCD, cargBags_Nivaya, AdiBags, ArkInventory, Bagnon, ls_Glass, BetterBags, Cell, Cell_UnitFrames
 ## X-oUF: TrincaUI
 ## IconTexture: Interface\AddOns\TrincaUI\Media\icon.blp
+## SavedVariables: TrincaChatHistoryDB
 
 filters.lua
 config.lua
@@ -34,6 +35,7 @@ modules\loot.lua
 modules\bag.lua
 modules\chat.lua
 modules\sellPoor.lua
+modules\chatHistory.lua
 
 core\functions.lua
 core\tags.lua
